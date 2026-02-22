@@ -63,7 +63,7 @@ export default function Freelance() {
 
                 {/* CTAs — always visible */}
                 <div className="flex gap-3 mt-auto pt-1">
-                  <a
+                 {project.web!='' && (<a
                     href={project.web}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -72,8 +72,9 @@ export default function Freelance() {
                   >
                     <ExternalLink size={13} aria-hidden="true" />
                     View Live
-                  </a>
-                  <a
+                  </a>)
+                  }
+                  {project.git!='' && (<a
                     href={project.git}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -83,6 +84,7 @@ export default function Freelance() {
                     <Github size={13} aria-hidden="true" />
                     View Code
                   </a>
+                  )}
                 </div>
               </div>
             </article>
