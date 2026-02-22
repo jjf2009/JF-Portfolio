@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react"
-import { Button } from "./ui/button"
-import { ModeToggle } from "./mode-toggle"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
@@ -16,83 +13,97 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
     setIsMenuOpen(false)
-    const element = document.querySelector(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
+    const target = document.querySelector(href)
+    if (target) target.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-background/50 backdrop-blur-sm"
-      }`}
+      className={`sticky top-0 z-50 w-full transition-colors duration-300 ${isScrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-border"
+          : "bg-transparent"
+        }`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <a href="/" className="flex items-center space-x-2 font-bold text-xl">
-          <span>Jared Furtado</span>
+        {/* Logo */}
+        <a
+          href="#home"
+          onClick={(e) => handleNavClick(e, "#home")}
+          className="font-display text-lg font-bold tracking-tight text-foreground hover:text-primary transition-colors"
+          aria-label="Go to top of page"
+        >
+          JF<span className="text-primary">.</span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        {/* Desktop Nav */}
+        <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <button
+            <a
               key={link.name}
-              onClick={() => scrollToSection(link.href)}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.name}
-            </button>
+            </a>
           ))}
-          <div className="flex items-center space-x-2">
-            <ModeToggle />
-            <Button asChild size="sm">
-              <a href="/MY_CV.pdf" download="Jared_Furtado_CV">
-                MY CV
-              </a>
-            </Button>
-          </div>
+          <a
+            href="/Jared_Furtado_Resume.pdf"
+            download="Jared_Furtado_Resume"
+            className="text-sm font-semibold bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors"
+          >
+            Resume
+          </a>
         </nav>
 
-        {/* Mobile Navigation Toggle */}
-        <div className="flex items-center md:hidden space-x-2">
-          <ModeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle Menu">
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </Button>
-        </div>
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden p-2 rounded-md text-foreground hover:bg-muted transition-colors"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMenuOpen}
+        >
+          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Nav */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md shadow-md z-50">
-          <nav className="container py-4 flex flex-col space-y-3">
+        <nav
+          aria-label="Mobile navigation"
+          className="md:hidden border-t border-border bg-background/95 backdrop-blur-md"
+        >
+          <ul className="container py-4 flex flex-col gap-1" role="list">
             {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => scrollToSection(link.href)}
-                className="py-2 text-sm font-medium transition-colors hover:text-primary"
-              >
-                {link.name}
-              </button>
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="block py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.name}
+                </a>
+              </li>
             ))}
-            <Button asChild size="sm" className="w-full">
-              <a href="/Jared_Furtado_Resume.pdf" download="Jared_Furtado_Resume">
+            <li className="pt-2">
+              <a
+                href="./Jared_Furtado_Resume.pdf"
+                download="Jared_Furtado_Resume"
+                className="block text-center text-sm font-semibold bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors"
+              >
                 Resume
               </a>
-            </Button>
-          </nav>
-        </div>
+            </li>
+          </ul>
+        </nav>
       )}
     </header>
   )

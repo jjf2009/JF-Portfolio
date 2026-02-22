@@ -1,90 +1,41 @@
-"use client"
-
-import { useRef, useEffect, useState } from "react"
-import { Badge } from "./ui/badge"
-
-const frontendSkills = ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap", "Tailwind CSS"]
-
-const backendSkills = ["Node.js", "Express.js", "MongoDB", "RESTful APIs", "AWS", "OpenCV"]
+const skills = [
+  { name: "JavaScript", years: "2 years" },
+  { name: "React", years: "2 years" },
+  { name: "Node.js", years: "2 years" },
+  { name: "Express.js", years: "2 years" },
+  { name: "MongoDB", years: "2 years" },
+  { name: "Tailwind CSS", years: "2 years" },
+  { name: "Python", years: "0.5 years" },
+  { name: "OpenCV", years: "0.5 years" },
+  { name: "RESTful APIs", years: "2 years" },
+]
 
 export default function Skills() {
-  const sectionRef = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      { threshold: 0.3 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
-
   return (
-    <section ref={sectionRef} id="skills" className="py-16 md:py-24">
+    <section id="skills" className="py-20 md:py-28 border-t border-border">
       <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl mb-12">
-          Skills & Technologies
+        <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
+          Skills
+        </p>
+        <h2 className="font-display text-4xl font-bold text-foreground mb-12 sm:text-5xl">
+          What I work with
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div
-            className={`transition-all duration-700 ${
-              isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-            }`}
-          >
-            <h3 className="text-xl font-semibold mb-4">Frontend</h3>
-            <div className="flex flex-wrap gap-2">
-              {frontendSkills.map((skill, index) => (
-                <Badge
-                  key={skill}
-                  variant="outline"
-                  className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-all duration-300 group"
-                  style={{
-                    transitionDelay: `${index * 50}ms`,
-                  }}
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          <div
-            className={`transition-all duration-700 delay-300 ${
-              isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-            }`}
-          >
-            <h3 className="text-xl font-semibold mb-4">Backend</h3>
-            <div className="flex flex-wrap gap-2">
-              {backendSkills.map((skill, index) => (
-                <Badge
-                  key={skill}
-                  variant="outline"
-                  className="text-sm py-2 px-4 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                  style={{
-                    transitionDelay: `${index * 50}ms`,
-                  }}
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
+        <ul
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-5 max-w-3xl"
+          role="list"
+          aria-label="Technical skills and years of experience"
+        >
+          {skills.map((skill) => (
+            <li
+              key={skill.name}
+              className="flex items-center justify-between border-b border-border pb-4"
+            >
+              <span className="text-foreground font-medium">{skill.name}</span>
+              <span className="text-muted-foreground text-sm">{skill.years}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

@@ -1,19 +1,19 @@
 import { ExternalLink, Github } from "lucide-react"
-import { projectsData } from "../lib/projects-data"
+import { freelanceData } from "../lib/freelance-data"
 
-export default function Projects() {
+export default function Freelance() {
   return (
-    <section id="projects" className="py-20 md:py-28 border-t border-border">
+    <section id="freelance" className="py-20 md:py-28 border-t border-border">
       <div className="container px-4 md:px-6">
         <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
-          Projects
+          Freelance Projects
         </p>
         <h2 className="font-display text-4xl font-bold text-foreground mb-12 sm:text-5xl">
-          What I've built
+          What I've work on
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projectsData.map((project) => (
+          {freelanceData.map((project) => (
             <article
               key={project.title}
               className="group rounded-xl border border-border bg-card flex flex-col hover:border-primary/40 transition-colors overflow-hidden"
