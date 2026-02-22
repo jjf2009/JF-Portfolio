@@ -1,7 +1,7 @@
 // Profile images — WebP for modern browsers, PNG fallback
 const PROFILE_WEBP = "/images/Profile_image.webp"
-const PROFILE_PNG = "/images/Profile_image.png"
-
+const PROFILE_PNG = "/images/Profile_image.jpeg"
+import { MapPin } from "lucide-react";
 const scrollTo = (id) => {
   const el = document.querySelector(id)
   if (el) el.scrollIntoView({ behavior: "smooth" })
@@ -28,9 +28,11 @@ export default function Hero() {
             <h1 className="font-display text-5xl font-bold leading-tight tracking-tight sm:text-6xl md:text-7xl text-foreground">
               Jared<br />Furtado
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
-              19 years old · Goa, India
-            </p>
+ <p className="text-muted-foreground text-lg leading-relaxed max-w-md flex items-center gap-2">
+  19 years old
+  <MapPin className="w-5 h-5" />
+     Goa, India
+</p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <button
                 onClick={() => scrollTo("#projects")}

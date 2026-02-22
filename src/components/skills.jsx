@@ -1,13 +1,12 @@
 const skills = [
-  { name: "JavaScript", years: "3 years" },
+  { name: "JavaScript", years: "2 years" },
   { name: "React", years: "2 years" },
   { name: "Node.js", years: "2 years" },
   { name: "Express.js", years: "2 years" },
   { name: "MongoDB", years: "2 years" },
   { name: "Tailwind CSS", years: "2 years" },
-  { name: "Python", years: "2 years" },
-  { name: "AWS", years: "1 year" },
-  { name: "OpenCV", years: "1 year" },
+  { name: "Python", years: "0.5 years" },
+  { name: "OpenCV", years: "0.5 years" },
   { name: "RESTful APIs", years: "2 years" },
 ]
 
