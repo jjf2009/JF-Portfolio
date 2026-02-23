@@ -11,17 +11,6 @@ export const projectsData = [
     technologies: ["Next.js", "React", "Tailwind CSS", "Tambo AI"],
   },
   {
-    title: "Techjeeva",
-    description:
-      "A centralized portal that aggregates government funding schemes for startups and entrepreneurs in India. Users filter by sector and eligibility to discover relevant grants — transforming fragmented funding data into an accessible, searchable directory.",
-    image: "/images/techjeeva.webp",
-    imageFallback: "/images/techjeeva.png",
-    imageAlt: "Techjeeva — government funding portal screenshot",
-    web: "https://findfund.vercel.app/",
-    git: "https://github.com/jjf2009/Techjeeva-",
-    technologies: ["React", "Tailwind CSS", "Google Script API"],
-  },
-  {
     title: "Ride Buddy",
     description:
       "A smart campus carpool platform built for Goa Engineering College. Students can publish or discover rides using live location tracking, Firebase authentication, and interactive route visualization — reducing commute friction while promoting sustainable mobility.",
