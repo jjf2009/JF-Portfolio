@@ -95,7 +95,7 @@ export default function Header() {
             ))}
             <li className="pt-2">
               <a
-                href="./Jared_Furtado_Resume.pdf"
+                href="/Jared_Furtado_Resume.pdf"
                 download="Jared_Furtado_Resume"
                 className="block text-center text-sm font-semibold bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors"
               >
