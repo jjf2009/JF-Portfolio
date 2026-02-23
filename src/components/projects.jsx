@@ -6,7 +6,7 @@ export default function Projects() {
     <section id="projects" className="py-20 md:py-28 border-t border-border">
       <div className="container px-4 md:px-6">
         <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
-          Projects
+         Personal Projects
         </p>
         <h2 className="font-display text-4xl font-bold text-foreground mb-12 sm:text-5xl">
           What I've built
