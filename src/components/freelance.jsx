@@ -9,7 +9,7 @@ export default function Freelance() {
           Freelance Projects
         </p>
         <h2 className="font-display text-4xl font-bold text-foreground mb-12 sm:text-5xl">
-          What I've work on
+          What I've worked on
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
