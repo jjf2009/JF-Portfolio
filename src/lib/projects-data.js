@@ -2,7 +2,7 @@ export const projectsData = [
   {
     title: "IndentOS",
     description:
-      "An AI-powered productivity operating system built to convert user intent into structured execution. Unlike traditional chatbots, IndentOS interprets natural conversations, translates intent into adaptive workflows, and continuously reinforces goal-oriented routines — positioning AI as an active productivity partner rather than a passive interface.",
+      "An AI-powered intent-driven interface that understands what you want to do and generates intelligent workflows to help you achieve it.",
     image: "/images/indentos.webp",
     imageFallback: "/images/indentos.jpg",
     imageAlt: "IndentOS — AI productivity operating system interface",
