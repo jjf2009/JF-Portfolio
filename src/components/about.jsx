@@ -9,17 +9,14 @@ export default function About() {
           <h2 className="font-display text-4xl font-bold text-foreground mb-8 sm:text-5xl">
             Building things that actually work
           </h2>
-          <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
-            <p>
-              I'm Jared — a 19-year-old full stack developer based in Goa, currently studying at Goa College of Engineering. I build web applications end-to-end, from REST APIs and database schemas to the React UIs people actually use.
-            </p>
-            <p>
-              Most of my work lives at the intersection of clean backend logic and interfaces that don't get in the way. I've shipped carpooling platforms, a government funding aggregator, and computer vision tools using YOLO — not because I was assigned to, but because the problems were real and unsolved in my immediate environment.
-            </p>
-            <p>
-              Being 19 in Goa means I figure most things out without a senior engineer looking over my shoulder. That pushes me toward writing clean, maintainable code I can actually debug six months later.
-            </p>
-          </div>
+<div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
+  <p>
+    I'm Jared — a 19-year-old full-stack developer based in Goa and a student at Goa College of Engineering. I build end-to-end web applications, from backend architecture to clean, usable interfaces.
+  </p>
+  <p>
+    I focus on practical solutions — shipping real products like carpooling platforms, funding aggregators, and computer vision tools — with an emphasis on maintainable, scalable code.
+  </p>
+</div>
         </div>
       </div>
     </section>
