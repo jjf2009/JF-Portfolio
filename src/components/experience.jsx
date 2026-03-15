@@ -1,106 +1,86 @@
-"use client"
-
-import { useRef, useEffect, useState } from "react"
-import { Card, CardContent } from "./ui/card"
-
-const experiences = [
-  {
-    title: "Community Manager",
-    company: "Nova Hustlers ",
-    period: "April 2025 - Present",
-    description: [
-      "Contributed to open-source projects under the GSSoC initiative.",
-      "Implemented 13 merged pull requests across various repositories.",
-      "Learned API integration and global collaboration.",
-    ],
-  },
-  {
-    title: "Open Source Contributor",
-    company: "GirlScript Foundation",
-    period: "Sep 2024 - Oct 2024",
-    description: [
-      "Contributed to open-source projects under the GSSoC initiative.",
-      "Implemented 13 merged pull requests across various repositories.",
-      "Learned API integration and global collaboration.",
-    ],
-  },
-  {
-    title: "Campus Ambassador",
-    company: "Multiple Events",
-    period: "Dec 2024 - Present",
-    description: [
-      "Represented BITSMUN Goa, Chaos IIMA, and Plinth LNMIIT.",
-      "Focused on increase participation, brand promotion, and event communication.",
-    ],
-  },
-  {
-    title: "Student Intern",
-    company: "Innomatics Research Labs",
-    period: "Sep 2024 - Nov 2024",
-    description: ["Worked as a Web Developer.", "Enhanced problem-solving skills and built scalable applications."],
-  },
-]
+import { experienceData } from "../lib/experience-data"
 
 export default function Experience() {
-  const sectionRef = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      { threshold: 0.2 },
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
-
   return (
-    <section ref={sectionRef} id="experience" className="py-16 md:py-24 bg-muted/30">
+    <section id="experience" className="py-20 md:py-28 border-t border-border">
       <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12">Work Experience</h2>
+        <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
+          Experience
+        </p>
+        <h2 className="font-display text-4xl font-bold text-foreground mb-12 sm:text-5xl">
+          Where I've worked
+        </h2>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="relative pl-6 border-l-2 border-primary space-y-10">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className={`relative transition-all duration-700 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
-                <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-primary"></div>
-                <Card>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold">{exp.title}</h3>
-                    <p className="text-muted-foreground mb-2">
-                      {exp.company} | {exp.period}
-                    </p>
-                    <ul className="list-disc pl-5 space-y-1">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className="text-sm md:text-base">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+        <div className="space-y-8 max-w-4xl">
+          {experienceData.map((exp, index) => (
+            <article
+              key={index}
+              className="group relative flex flex-col gap-4 border-l-2 border-border pl-6 pb-8 last:pb-0"
+            >
+              {/* Timeline dot */}
+              <div className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full border-2 border-background bg-primary transition-transform duration-300 group-hover:scale-125"></div>
+
+              <div>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                  <h3 className="font-display text-2xl font-bold text-foreground">
+                    {exp.role}
+                  </h3>
+                  <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full w-fit">
+                    {exp.startDate} — {exp.endDate}
+                  </span>
+                </div>
+                
+                <div className="text-muted-foreground text-base mb-4 flex flex-wrap gap-2 items-center">
+                  <span className="font-semibold text-foreground">{exp.organization}</span>
+                  <span>•</span>
+                  <span>{exp.location}</span>
+                  <span>•</span>
+                  <span>{exp.type}</span>
+                </div>
               </div>
-            ))}
-          </div>
+
+              {/* Description */}
+              <ul className="space-y-3 text-muted-foreground leading-relaxed" role="list">
+                {exp.description.map((desc, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span className="text-primary mt-1.5 text-lg leading-none">•</span>
+                    <span>{desc}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Skills */}
+              <ul
+                className="flex flex-wrap gap-2 mt-4"
+                role="list"
+                aria-label={`Skills used as ${exp.role}`}
+              >
+                {exp.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="text-xs text-muted-foreground bg-muted px-2.5 py-1 rounded-md"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+              
+              {/* Projects (if any) */}
+              {exp.projects && exp.projects.length > 0 && (
+                <div className="mt-4 p-4 rounded-xl border border-border bg-card">
+                  <h4 className="font-semibold text-sm mb-3 text-foreground uppercase tracking-widest">Key Projects</h4>
+                  <ul className="space-y-2">
+                    {exp.projects.map((project, i) => (
+                      <li key={i} className="text-sm text-muted-foreground flex items-center justify-between">
+                        <span>{project.name}</span>
+                        {project.organization && <span className="text-xs opacity-70">for {project.organization}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </article>
+          ))}
         </div>
       </div>
     </section>
