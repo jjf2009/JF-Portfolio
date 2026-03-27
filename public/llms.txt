@@ -1,0 +1,20 @@
+# Jared Furtado — Full Stack Developer
+
+Jared Furtado is a 19-year-old Full Stack Developer from Goa, India. He builds AI-powered workflows, smart campus platforms, and high-performance web applications using React, Node.js, and modern tools.
+
+## Key Links
+- Base URL: https://www.jaredfurtado.tech/
+- GitHub: https://github.com/jjf2009
+- LinkedIn: https://linkedin.com/in/jaredfurtado
+
+## Core Projects
+- **IntentOS**: AI-powered intent-driven interface for intelligent workflows.
+- **Ride Buddy**: Smart campus carpooling platform for Goa Engineering College.
+- **OpenCV Tools**: Real-time computer vision pipelines using YOLO and MediaPipe.
+- **Nike Clone**: Pixel-accurate responsive landing page.
+
+## Technical Skills
+- **Frontend**: React, Redux, Tailwind CSS, Framer Motion
+- **Backend/Cloud**: Node.js, Firebase, Supabase, Vercel
+- **Languages**: JavaScript, Python, C++, SQL
+- **AI/CV**: OpenCV, MediaPipe, YOLO

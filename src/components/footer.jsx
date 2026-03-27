@@ -18,7 +18,7 @@ export default function Footer() {
               <a
                 href="https://github.com/jjf2009"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 aria-label="GitHub profile of Jared Furtado"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
@@ -29,7 +29,7 @@ export default function Footer() {
               <a
                 href="https://www.linkedin.com/in/jared-furtado/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 aria-label="LinkedIn profile of Jared Furtado"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
