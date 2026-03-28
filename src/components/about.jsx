@@ -4,7 +4,7 @@ export default function About() {
       <div className="container px-4 md:px-6">
         <div className="max-w-3xl">
           <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
-            About Me
+           05. About Me
           </p>
           <h2 className="font-display text-4xl font-bold text-foreground mb-8 sm:text-5xl">
             Building things that actually work
