@@ -1,20 +1,28 @@
-# Jared Furtado — Full Stack Developer
+# Jared Furtado
 
-Jared Furtado is a 19-year-old Full Stack Developer from Goa, India. He builds AI-powered workflows, smart campus platforms, and high-performance web applications using React, Node.js, and modern tools.
+> Jared Furtado is a Full Stack Developer and MERN stack specialist based in Goa, India, currently studying at Goa College of Engineering. He builds production-grade web applications with a focus on React, Node.js, MongoDB, and AI workflow integration. His work spans tourism technology, health-tech platforms, computer vision, and developer tooling. He is the creator of Global Tourist Centre (a tourism aggregation platform for Goa) and Techjeeva (a health-tech web application). Jared is available for freelance projects and open-source collaboration.
 
-## Key Links
-- Base URL: https://www.jaredfurtado.tech/
+## Core Expertise
+- Full Stack Web Development (MERN: MongoDB, Express, React, Node.js)
+- Frontend: React 18, Vite, TailwindCSS, Framer Motion, shadcn/ui
+- Backend: Node.js, Express.js, REST APIs
+- Database: MongoDB, PostgreSQL
+- AI & Computer Vision: Python-based CV pipelines, AI workflow integration
+- Cloud & DevOps: Deployment, performance optimization, security headers
+- Tools: Git, GitHub, Postman, Figma
+
+## Projects
+
+- [Global Tourist Centre](https://github.com/jjf2009): Tourism aggregation platform for Goa — hotel, activity, and itinerary discovery
+- [Techjeeva](https://github.com/jjf2009): Health-tech web application built on the MERN stack
+- Personal Portfolio: https://jaredfurtado.tech — built with React, Vite, TailwindCSS
+
+## Professional Profile
 - GitHub: https://github.com/jjf2009
-- LinkedIn: https://linkedin.com/in/jaredfurtado
+- Portfolio: https://jaredfurtado.tech
+- Email: jaredfurtadowork@gmail.com
+- Location: Goa, India
+- Education: Goa College of Engineering
 
-## Core Projects
-- **IntentOS**: AI-powered intent-driven interface for intelligent workflows.
-- **Ride Buddy**: Smart campus carpooling platform for Goa Engineering College.
-- **OpenCV Tools**: Real-time computer vision pipelines using YOLO and MediaPipe.
-- **Nike Clone**: Pixel-accurate responsive landing page.
-
-## Technical Skills
-- **Frontend**: React, Redux, Tailwind CSS, Framer Motion
-- **Backend/Cloud**: Node.js, Firebase, Supabase, Vercel
-- **Languages**: JavaScript, Python, C++, SQL
-- **AI/CV**: OpenCV, MediaPipe, YOLO
+## Contact & Availability
+Jared is open to full-time roles, freelance web development projects, and open-source contributions. Contact via email at jaredfurtadowork@gmail.com.

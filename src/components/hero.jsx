@@ -1,16 +1,18 @@
-// Profile images — WebP for modern browsers, PNG fallback
-const PROFILE_WEBP = "/images/Profile_image.webp"
-const PROFILE_PNG = "/images/Profile_image.jpeg"
-import { MapPin } from "lucide-react";
-const scrollTo = (id) => {
-  const el = document.querySelector(id)
-  if (el) el.scrollIntoView({ behavior: "smooth" })
-}
+import { motion } from "framer-motion"
+import { ChevronDown, MapPin } from "lucide-react"
 
 export default function Hero() {
+
+
+
+  const scrollTo = (id) => {
+    const element = document.querySelector(id)
+    if (element) element.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
-    <section id="home" className="relative py-24 md:py-32 lg:py-36 overflow-hidden">
-      {/* Subtle background glow */}
+    <section id="home" aria-labelledby="hero-heading" className="relative py-24 md:py-32 lg:py-36 overflow-hidden">
+      {/* Background elements */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -18,62 +20,99 @@ export default function Hero() {
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-primary/5 blur-3xl" />
       </div>
 
-      <div className="container relative px-4 md:px-6">
+      <div className="container relative px-6 md:px-12 mx-auto max-w-7xl">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          
           {/* Text content */}
-          <div className="space-y-6">
-            <p className="text-sm font-medium tracking-widest text-primary uppercase">
-              Full Stack Developer
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-8 z-10"
+          >
+            <div className="space-y-4">
+              <h1 id="hero-heading" className="font-display text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl md:text-7xl lg:text-[5rem] text-foreground">
+                Jared Furtado
+              </h1>
+              
+              <div className="h-8 sm:h-10 text-xl sm:text-2xl md:text-3xl font-mono text-primary font-medium">
+                <span >Full Stack Developer</span>
+              </div>
+            </div>
+
+            <p className="text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-lg font-light">
+              I build fast, scalable web applications from Goa, India — specializing in MERN stack.
             </p>
-            <h1 className="font-display text-5xl font-bold leading-tight tracking-tight sm:text-6xl md:text-7xl text-foreground">
-              Jared<br />Furtado
-            </h1>
- <p className="text-muted-foreground text-lg leading-relaxed max-w-md flex items-center gap-2">
-  19 years old
-  <MapPin className="w-5 h-5" />
-     Goa, India
-</p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            
+            <div className="flex items-center gap-3 text-muted-foreground text-sm font-mono opacity-80">
+              <MapPin className="w-4 h-4 text-accent" />
+              <span>Based in Goa, IN • Available Worldwide</span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={() => scrollTo("#projects")}
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-primary bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all"
               >
                 View My Projects
               </button>
               <button
                 onClick={() => scrollTo("#contact")}
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-transparent px-6 py-3 text-sm font-semibold text-foreground hover:bg-white/5 transition-all"
               >
-                Let's Collaborate
+                Get In Touch
               </button>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Profile image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Accent ring */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 rounded-2xl bg-primary/10 scale-105 blur-md"
-              />
-              <picture>
-                <source srcSet={PROFILE_WEBP} type="image/webp" />
-                <img
-                  src={PROFILE_PNG}
-                  alt="Portrait of Jared Furtado, Full Stack Developer from Goa"
-                  width={380}
-                  height={380}
-                  fetchPriority="high"
-                  loading="eager"
-                  decoding="sync"
-                  className="relative rounded-2xl object-cover w-[280px] h-[280px] md:w-[340px] md:h-[340px] lg:w-[380px] lg:h-[380px] border border-border"
-                />
-              </picture>
+          {/* Profile Image */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative group">
+              {/* Decorative blocks */}
+              <div aria-hidden="true" className="absolute -inset-4 border border-white/10 translate-x-4 translate-y-4 z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
+              <div aria-hidden="true" className="absolute inset-0 bg-primary/20 blur-xl mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              <div className="relative z-20 w-[280px] h-[340px] sm:w-[320px] sm:h-[400px] md:w-[380px] md:h-[480px] overflow-hidden bg-card border border-white/5">
+                <picture>
+                  <source srcSet="/images/jared-furtado-profile.avif" type="image/avif" />
+                  <source srcSet="/images/jared-furtado-profile.webp" type="image/webp" />
+                  <img
+                    src="/images/jared-furtado-profile.jpg"
+                    alt="Jared Furtado, Full Stack Developer from Goa, India"
+                    width={400}
+                    height={500}
+                    fetchpriority="high"
+                    loading="eager"
+                    className="object-cover w-full h-full object-center filter contrast-125 saturate-100 g transition-all duration-700"
+                  />
+                </picture>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
+        onClick={() => scrollTo("#about")}
+      >
+        <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-muted-foreground opacity-50">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-4 h-4 text-muted-foreground opacity-50" />
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

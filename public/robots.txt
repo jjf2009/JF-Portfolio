@@ -1,27 +1,25 @@
+# jaredfurtado.tech — robots.txt
+# Last updated: 2026-03-28
+
 User-agent: *
 Allow: /
-Sitemap: https://www.jaredfurtado.tech/sitemap.xml
+Disallow: /private/
 
-# AI Crawler Management
+# Sitemap
+Sitemap: https://jaredfurtado.tech/sitemap.xml
+
+# AI Crawlers — explicitly allowed for GEO citation indexing
 User-agent: GPTBot
-Disallow: 
-User-agent: ChatGPT-User
-Disallow: 
+Allow: /
+
 User-agent: ClaudeBot
-Disallow: 
+Allow: /
+
 User-agent: PerplexityBot
-Disallow: 
-User-agent: Applebot-Extended
-Disallow: 
-User-agent: Google-Extended
-Disallow: 
-User-agent: Bytespider
-Disallow: 
-User-agent: CCBot
-Disallow: 
-User-agent: anthropic-ai
-Disallow: 
-User-agent: FacebookBot
-Disallow: 
-User-agent: Amazonbot
-Disallow: 
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Googlebot
+Allow: /
