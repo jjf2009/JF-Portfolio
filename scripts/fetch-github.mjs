@@ -40,9 +40,11 @@ async function get(path) {
   const res = await fetch(`${API}${path}`, { headers })
   if (!res.ok) {
     const remaining = res.headers.get("x-ratelimit-remaining")
-    throw new Error(
+    const err = new Error(
       `GET ${path} -> ${res.status}${remaining === "0" ? " (rate limit exhausted)" : ""}`,
     )
+    err.status = res.status
+    throw err
   }
   return res.json()
 }
@@ -84,6 +86,10 @@ async function build() {
       r = await get(`/repos/${USER}/${slug}`)
       languages = await get(`/repos/${USER}/${slug}/languages`)
     } catch (e) {
+      // Only a 404 means the repo is genuinely gone or private. A 403 or 429 is
+      // throttling, and treating that as "not public" would quietly drop real
+      // projects from the site — so rethrow and let the snapshot fallback run.
+      if (e.status !== 404) throw e
       warn(`skipping ${slug}: ${e.message}`)
       missing.push(slug)
       continue
