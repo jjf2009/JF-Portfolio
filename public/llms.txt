@@ -1,28 +1,44 @@
 # Jared Furtado
 
-> Jared Furtado is a Full Stack Developer and MERN stack specialist based in Goa, India, currently studying at Goa College of Engineering. He builds production-grade web applications with a focus on React, Node.js, MongoDB, and AI workflow integration. His work spans tourism technology, health-tech platforms, computer vision, and developer tooling. He is the creator of Global Tourist Centre (a tourism aggregation platform for Goa) and Techjeeva (a health-tech web application). Jared is available for freelance projects and open-source collaboration.
+> Jared Furtado is a full-stack engineer based in Goa, India, and a third-year Computer Engineering student at Goa College of Engineering (2024–2028). He builds and ships web applications — paid client work, campus tools, and hackathon projects — and is currently moving into DevOps and infrastructure. He takes freelance projects and is looking for internships, particularly on the backend and infrastructure side. He is not looking for full-time roles while studying.
 
-## Core Expertise
-- Full Stack Web Development (MERN: MongoDB, Express, React, Node.js)
-- Frontend: React 18, Vite, TailwindCSS, Framer Motion, shadcn/ui
-- Backend: Node.js, Express.js, REST APIs
-- Database: MongoDB, PostgreSQL
-- AI & Computer Vision: Python-based CV pipelines, AI workflow integration
-- Cloud & DevOps: Deployment, performance optimization, security headers
-- Tools: Git, GitHub, Postman, Figma
+## Positioning
+
+Jared is a full-stack engineer who is learning DevOps, not a DevOps engineer. His production experience is in web application development and deployment. The infrastructure work — Go services, containers, CI/CD, infrastructure as code, observability — is in progress and is presented on his site as a learning track rather than as delivered experience.
+
+## Core Expertise (backed by shipped code)
+- Frontend: React, Next.js, TypeScript, Tailwind CSS, Redux
+- Backend: Node.js, Express.js, Go (in progress)
+- Data: PostgreSQL, MongoDB, Supabase, Drizzle ORM, Prisma
+- Python: computer vision with OpenCV, MediaPipe and YOLO
+- Deployment and SEO: Vercel, schema markup, Open Graph, robots.txt, sitemaps
+- Testing: Playwright
+
+## Currently learning
+Go, Docker, CI/CD pipelines, Linux, Terraform, Kubernetes, Prometheus, Grafana, OpenTelemetry.
+
+## Client work
+- **Global Tourist Centre website rebuild** (https://globaltouristcentre.com/) — rebuilt a live Goa tourism operator's site in Next.js with internationalisation for German, French, Russian and Italian, a persistent WhatsApp Business enquiry widget, and conversion-focused landing page work.
+- **TechJeeva** (https://findfund.vercel.app/) — a searchable directory of Indian government funding schemes and grants for founders, built for FIIRE (Forum for Innovation, Incubation, Research and Entrepreneurship). React with the Google Apps Script API.
 
 ## Projects
+- **Campus Exchange** (https://campus-exchange-nu.vercel.app, https://github.com/jjf2009/Campus-Exchange) — a marketplace for Goa College of Engineering students to buy and sell used academic equipment and hostel items. No payment rail; the seller's WhatsApp contact is revealed once a request is accepted. Next.js 15, TypeScript, Supabase, PostgreSQL, Drizzle ORM, Playwright.
+- **HeatWatch** (https://heat-watch-two.vercel.app, https://github.com/jjf2009/heat_watch) — urban heat island analysis fusing NASA MODIS satellite data with ground telemetry through an ONNX model. Built by a four-person hackathon team; Jared worked on the data pipeline and mapping frontend.
+- **RideBuddy** (https://github.com/jjf2009/RideBuddy) — campus carpooling for GEC students with live location, Firebase auth and Leaflet routing. Built for the InternSpirit hackathon.
+- **IntentOS** (https://github.com/jjf2009/IntentOS) — an intent-driven interface on Tambo AI that generates workflows and UI from natural language. No hosted demo.
+- **OpenCV Projects** (https://github.com/jjf2009/OpenCV_Projects) — local computer vision tools using YOLO and MediaPipe.
+- **Beacon** (private repo) — an uptime and incident platform in progress. The Go API over PostgreSQL works; the monitoring worker, alerting and observability stack are not yet built.
 
-- [Global Tourist Centre](https://github.com/jjf2009): Tourism aggregation platform for Goa — hotel, activity, and itinerary discovery
-- [Techjeeva](https://github.com/jjf2009): Health-tech web application built on the MERN stack
-- Personal Portfolio: https://jaredfurtado.tech — built with React, Vite, TailwindCSS
+## Experience
+- Freelance Web Developer, self-employed (Dec 2025 – present)
+- Growth & Strategy Intern, The Grit City (Apr 2026 – Jun 2026)
+- Vice President, GEC Coders Club (Event Coordinator from Jul 2025, VP since Aug 2026)
+- Open Source Contributor, GirlScript Summer of Code (Oct 2024 – Nov 2024) — 13+ merged pull requests
 
-## Professional Profile
+## Profile
+- Website: https://www.jaredfurtado.tech
 - GitHub: https://github.com/jjf2009
-- Portfolio: https://jaredfurtado.tech
+- LinkedIn: https://www.linkedin.com/in/jared-furtado/
 - Email: jaredfurtadowork@gmail.com
 - Location: Goa, India
-- Education: Goa College of Engineering
-
-## Contact & Availability
-Jared is open to full-time roles, freelance web development projects, and open-source contributions. Contact via email at jaredfurtadowork@gmail.com.
+- Education: Goa College of Engineering, BTech Computer Engineering, 2024–2028

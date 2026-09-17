@@ -1,20 +1,7 @@
 # jaredfurtado.tech — robots.txt
-# Last updated: 2026-04-13
+# Last updated: 2026-09-17
 
 User-agent: *
 Allow: /
-Disallow: /private/
 
-# Sitemap
-Sitemap: https://jaredfurtado.tech/sitemap.xml
-
-# AI Discoverability (GEO/AEO)
-# Specific allows for major AI agents contribute to better indexing in Answer Engines.
-User-agent: GPTBot
-Allow: /
-User-agent: ClaudeBot
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: Googlebot
-Allow: /
+Sitemap: https://www.jaredfurtado.tech/sitemap.xml

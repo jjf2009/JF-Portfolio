@@ -9,10 +9,10 @@ export default function Footer() {
           <h2 className="font-display font-bold text-2xl text-foreground">
             Jared Furtado
           </h2>
-          <p className="font-mono text-sm text-muted-foreground uppercase tracking-widest">
-            Full Stack Developer
+          <p className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
+            Full-Stack Engineer · Learning DevOps
           </p>
-          <address className="not-italic text-sm text-muted-foreground/80 mt-2 font-sans">
+          <address className="not-italic text-sm text-muted-foreground mt-2 font-sans">
             <p>Goa, India</p>
             <a href="mailto:jaredfurtadowork@gmail.com" className="hover:text-primary transition-colors">
               jaredfurtadowork@gmail.com
@@ -55,8 +55,8 @@ export default function Footer() {
             </li>
           </ul>
           
-          <p className="text-sm font-mono text-muted-foreground/60">
-            &copy; 2026 Jared Furtado. All rights reserved.
+          <p className="text-sm font-mono text-muted-foreground">
+            &copy; {new Date().getFullYear()} Jared Furtado.
           </p>
         </div>
       </div>

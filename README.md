@@ -60,7 +60,7 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/jjf2009/Personalwebsite.git
+   git clone https://github.com/jjf2009/JF-Portfolio.git
    cd Personalwebsite
    ```
 
@@ -181,7 +181,7 @@ This project supports all modern browsers:
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/jjf2009/Personalwebsite/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/jjf2009/JF-Portfolio/issues).
 
 ## 📄 License
 
@@ -196,7 +196,7 @@ This project is for personal use. Please contact the owner for usage permissions
 
 ## 🙏 Acknowledgments
 
-- [Vite](https://vitejs.dev/) for the amazing build tool
+- [Vite](https://vite.dev/) for the amazing build tool
 - [React](https://react.dev/) for the UI library
 - [TailwindCSS](https://tailwindcss.com/) for the CSS framework
 - [shadcn/ui](https://ui.shadcn.com/) for the beautiful component library
