@@ -1,0 +1,180 @@
+{
+  "generatedAt": "2026-09-17T02:30:15.867Z",
+  "profile": {
+    "login": "jjf2009",
+    "name": "Jared Furtado",
+    "publicRepos": 58,
+    "followers": 25,
+    "url": "https://github.com/jjf2009"
+  },
+  "repos": {
+    "Campus-Exchange": {
+      "name": "Campus-Exchange",
+      "description": "Campus Exchange is a marketplace exclusively for students of Goa College of Engineering (GEC) to buy and sell used academic equipment, electronics, books, hostel items, and other student essentials.",
+      "url": "https://github.com/jjf2009/Campus-Exchange",
+      "homepage": "https://campus-exchange-nu.vercel.app",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 97.7,
+        "CSS": 2,
+        "JavaScript": 0.3
+      },
+      "topics": [],
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2026-08-13T16:36:39Z",
+      "createdAt": "2026-08-06T16:30:29Z",
+      "archived": false
+    },
+    "heat_watch": {
+      "name": "heat_watch",
+      "description": null,
+      "url": "https://github.com/jjf2009/heat_watch",
+      "homepage": "https://heat-watch-two.vercel.app",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 98.8,
+        "CSS": 1,
+        "JavaScript": 0.2
+      },
+      "topics": [],
+      "stars": 2,
+      "forks": 0,
+      "pushedAt": "2026-08-11T17:31:40Z",
+      "createdAt": "2026-05-14T05:01:55Z",
+      "archived": false
+    },
+    "RideBuddy": {
+      "name": "RideBuddy",
+      "description": "RideBuddy is a modern ride-sharing/carpooling web application that connects drivers with passengers. Built with React and powered by Firebase authentication, this platform makes sharing rides easy, affordable, and environmentally friendly.",
+      "url": "https://github.com/jjf2009/RideBuddy",
+      "homepage": "https://ride-buddy-forntend.vercel.app",
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 97.4,
+        "Python": 2,
+        "HTML": 0.4,
+        "CSS": 0.3
+      },
+      "topics": [
+        "carpooling",
+        "express",
+        "noce",
+        "node",
+        "react",
+        "redux"
+      ],
+      "stars": 0,
+      "forks": 2,
+      "pushedAt": "2026-09-15T06:23:02Z",
+      "createdAt": "2025-02-18T17:20:11Z",
+      "archived": false
+    },
+    "IntentOS": {
+      "name": "IntentOS",
+      "description": "An AI-powered intent-driven interface that understands what you want to do and generates intelligent workflows to help you achieve it.",
+      "url": "https://github.com/jjf2009/IntentOS",
+      "homepage": "https://intent-os-zeta.vercel.app",
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 99,
+        "CSS": 0.7,
+        "JavaScript": 0.3
+      },
+      "topics": [
+        "ai",
+        "genrative-ui",
+        "hackathon",
+        "indent",
+        "solo",
+        "tambo-ai",
+        "wemakedevs"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2026-06-26T12:51:18Z",
+      "createdAt": "2026-02-04T16:32:24Z",
+      "archived": false
+    },
+    "OpenCV_Projects": {
+      "name": "OpenCV_Projects",
+      "description": "Computer vision experiments and prototypes using Python",
+      "url": "https://github.com/jjf2009/OpenCV_Projects",
+      "homepage": null,
+      "language": "Python",
+      "languages": {
+        "Python": 100
+      },
+      "topics": [
+        "ai",
+        "beginer-projects",
+        "chatgpt",
+        "easy",
+        "opencv",
+        "opencv-projects",
+        "opencv-python3",
+        "python"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2025-01-11T14:24:25Z",
+      "createdAt": "2025-01-07T13:05:24Z",
+      "archived": false
+    },
+    "Beacon": {
+      "name": "Beacon",
+      "description": "Deploy-aware monitoring & incident platform",
+      "url": "https://github.com/jjf2009/Beacon",
+      "homepage": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 56.2,
+        "Go": 33.9,
+        "JavaScript": 5.2,
+        "CSS": 4.6
+      },
+      "topics": [],
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2026-09-16T19:56:32Z",
+      "createdAt": "2026-08-04T16:24:03Z",
+      "archived": false
+    }
+  },
+  "activity": {
+    "pushesObserved": 49,
+    "windowStart": "2026-08-18T15:50:51Z",
+    "repos": [
+      {
+        "repo": "puff-cam",
+        "at": "2026-09-15T17:37:04Z",
+        "commits": 0
+      },
+      {
+        "repo": "jjf2009",
+        "at": "2026-09-15T07:00:10Z",
+        "commits": 0
+      },
+      {
+        "repo": "ScrapCo",
+        "at": "2026-09-15T06:50:40Z",
+        "commits": 0
+      },
+      {
+        "repo": "solarsync",
+        "at": "2026-09-15T06:47:59Z",
+        "commits": 0
+      },
+      {
+        "repo": "Beacon",
+        "at": "2026-09-15T06:47:20Z",
+        "commits": 0
+      },
+      {
+        "repo": "AutoLedger",
+        "at": "2026-09-15T06:46:54Z",
+        "commits": 0
+      }
+    ]
+  }
+}

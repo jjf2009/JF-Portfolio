@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/fetch-github.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "links": "node scripts/link-check.mjs"
+    "links": "node scripts/link-check.mjs",
+    "github:refresh": "node scripts/fetch-github.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

@@ -1,0 +1,44 @@
+# Revalidation for the GitHub data layer.
+#
+# Vite has no ISR, so "revalidate every N hours" is implemented here: re-run the
+# build-time fetch on a schedule and commit the snapshot when it actually
+# changes. The commit triggers a Vercel deploy, which rebuilds with fresh data.
+# If nothing changed, no commit and no deploy.
+name: Refresh GitHub data
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # every 12 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch repo data
+        # GITHUB_TOKEN here is the Actions-provided token, which raises the
+        # rate limit. The script works without it too.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-github.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/github-snapshot.json; then
+            echo "snapshot unchanged, nothing to do"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/github-snapshot.json
+          git commit -m "chore: refresh GitHub snapshot"
+          git push
