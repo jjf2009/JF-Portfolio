@@ -73,10 +73,21 @@ async function build() {
 
   const profile = await get(`/users/${USER}`)
   const repos = {}
+  const missing = []
 
   for (const { slug } of featuredRepos) {
-    const r = await get(`/repos/${USER}/${slug}`)
-    const languages = await get(`/repos/${USER}/${slug}/languages`)
+    // A single repo going private or being renamed must not abort the whole
+    // refresh — that would freeze every other repo's stats at the last
+    // snapshot. Skip it, record it, and carry on.
+    let r, languages
+    try {
+      r = await get(`/repos/${USER}/${slug}`)
+      languages = await get(`/repos/${USER}/${slug}/languages`)
+    } catch (e) {
+      warn(`skipping ${slug}: ${e.message}`)
+      missing.push(slug)
+      continue
+    }
     const total = Object.values(languages).reduce((a, b) => a + b, 0) || 1
     repos[slug] = {
       name: r.name,
@@ -106,8 +117,13 @@ async function build() {
     warn(`activity fetch failed, omitting: ${e.message}`)
   }
 
+  if (missing.length) {
+    warn(`not public: ${missing.join(", ")} — these render without repo links`)
+  }
+
   return {
     generatedAt: new Date().toISOString(),
+    missing,
     profile: {
       login: profile.login,
       name: profile.name,

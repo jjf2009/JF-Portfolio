@@ -15,8 +15,12 @@ function merge(entry) {
 
   return {
     ...entry,
-    repoUrl: gh?.url ?? `https://github.com/jjf2009/${entry.slug}`,
-    live: entry.live ?? gh?.homepage ?? null,
+    // Only link a repo the snapshot actually saw. A repo that has been made
+    // private or renamed would otherwise get a "View Code" button that 404s.
+    repoUrl: gh?.url ?? null,
+    // An explicit `live: null` in the curation file is an opt-out, not a gap:
+    // some repos have a stale homepage field pointing at a dead deploy.
+    live: Object.hasOwn(entry, "live") ? entry.live : (gh?.homepage ?? null),
     stars: gh?.stars ?? 0,
     forks: gh?.forks ?? 0,
     pushedAt: gh?.pushedAt ?? null,

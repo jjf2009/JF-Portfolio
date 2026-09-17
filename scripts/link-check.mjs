@@ -25,7 +25,10 @@ const IGNORE_HOST = /^https?:\/\/(schema\.org|www\.w3\.org|www\.sitemaps\.org|og
 
 // (kind, value, file, line)
 const refs = []
-const files = walk(ROOT).filter((f) => !/^(package-lock|linkedin-profile-data|FULL-AUDIT-REPORT|ACTION-PLAN)/.test(relative(ROOT, f)))
+// Reports and notes deliberately quote dead URLs, so they are not scanned.
+const files = walk(ROOT).filter(
+  (f) => !/^(package-lock|linkedin-profile-data|PHASE-1-AUDIT|CHANGES)/.test(relative(ROOT, f)),
+)
 
 for (const file of files) {
   const rel = relative(ROOT, file)
@@ -35,10 +38,15 @@ for (const file of files) {
     for (const m of line.matchAll(/https?:\/\/[^"'`\s)<>\]]+/g)) {
       const url = m[0].replace(/[.,;]$/, "")
       if (IGNORE_HOST.test(url)) continue
+      // Template literals are built at runtime, so the literal source text is
+      // not a real URL to check.
+      if (url.includes("${")) continue
       refs.push({ kind: "external", value: url, at })
     }
     // href/src/image/web/git fields pointing at local paths
     for (const m of line.matchAll(/(?:href|src|srcSet|image|imageFallback)[=:]\s*["'](\/[^"']*)["']/g)) {
+      // /src/... is Vite's dev entry; the build rewrites it.
+      if (m[1].startsWith("/src/")) continue
       refs.push({ kind: "asset", value: m[1], at })
     }
     for (const m of line.matchAll(/href=["'](#[^"']*)["']/g)) {

@@ -110,7 +110,7 @@ export default function Experience() {
               <header className="mb-4 space-y-2 lg:absolute lg:top-0 lg:left-[-25%] lg:w-[20%] lg:pr-8 lg:mb-0 lg:-mt-1">
                 <time 
                   dateTime={exp.startDate} 
-                  className="font-mono text-sm sm:text-base font-semibold text-foreground/70 tracking-wide bg-muted/40 px-3 py-1 rounded inline-block whitespace-nowrap lg:bg-transparent lg:px-0 lg:py-0"
+                  className="font-mono text-sm sm:text-base font-semibold text-foreground/85 tracking-wide bg-muted/40 px-3 py-1 rounded inline-block whitespace-nowrap lg:bg-transparent lg:px-0 lg:py-0"
                 >
                   {exp.displayDate}
                 </time>
@@ -124,7 +124,7 @@ export default function Experience() {
                   <h3 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
                     {exp.role} <span className="hidden lg:inline text-muted-foreground font-light">@ {exp.company}</span>
                   </h3>
-                  <div className="flex flex-wrap items-center gap-2 mt-2 font-mono text-sm text-muted-foreground/80">
+                  <div className="flex flex-wrap items-center gap-2 mt-2 font-mono text-sm text-muted-foreground">
                     <span className="text-accent">{exp.type}</span>
                     <span>•</span>
                     <span>{exp.location}</span>

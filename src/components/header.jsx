@@ -41,7 +41,7 @@ export default function Header() {
           href="#home"
           onClick={(e) => handleNavClick(e, "#home")}
           className="font-display text-lg font-bold tracking-tight text-foreground hover:text-primary transition-colors"
-          aria-label="Go to top of page"
+          aria-label="JF — go to top of page"
         >
           JF<span className="text-primary">.</span>
         </a>

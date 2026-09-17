@@ -73,12 +73,12 @@ export default function ProjectCard({ project }) {
           <p className="text-sm leading-relaxed text-muted-foreground">{project.blurb}</p>
 
           {project.note && (
-            <p className="border-l-2 border-border pl-3 font-mono text-xs leading-relaxed text-muted-foreground/70">
+            <p className="border-l-2 border-border pl-3 font-mono text-xs leading-relaxed text-muted-foreground">
               {project.note}
             </p>
           )}
 
-          <p className="text-xs leading-relaxed text-foreground/70">
+          <p className="text-xs leading-relaxed text-foreground/85">
             <span className="font-mono text-muted-foreground">Role — </span>
             {project.role}
           </p>
@@ -96,7 +96,7 @@ export default function ProjectCard({ project }) {
 
         {/* Live GitHub stats. Zeroes are hidden rather than shown as "0 stars". */}
         {project.hasStats && (
-          <div className="flex flex-wrap items-center gap-4 font-mono text-[11px] text-muted-foreground/70">
+          <div className="flex flex-wrap items-center gap-4 font-mono text-[11px] text-muted-foreground">
             {project.stars > 0 && (
               <span className="flex items-center gap-1.5">
                 <Star size={12} aria-hidden="true" />
@@ -120,22 +120,24 @@ export default function ProjectCard({ project }) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-              aria-label={`Open the live version of ${project.title}`}
+              aria-label={`View Live: ${project.title}`}
             >
               <ExternalLink size={13} aria-hidden="true" />
               View Live
             </a>
           )}
-          <a
-            href={project.repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
-            aria-label={`View the source code of ${project.title} on GitHub`}
-          >
-            <Github size={13} aria-hidden="true" />
-            View Code
-          </a>
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
+              aria-label={`View Code: ${project.title} on GitHub`}
+            >
+              <Github size={13} aria-hidden="true" />
+              View Code
+            </a>
+          )}
         </div>
       </div>
     </article>

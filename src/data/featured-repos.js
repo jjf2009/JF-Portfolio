@@ -17,7 +17,8 @@
  *   blurb   what problem it solves. Written here, never scraped.
  *   role    what Jared actually did. Required on team projects.
  *   stack   shown as-is. The live language breakdown comes from the API.
- *   live    demo URL. Falls back to the repo's homepage field if omitted.
+ *   live    demo URL. Falls back to the repo's homepage field if omitted;
+ *           set it to null to suppress the link when that field is stale.
  *   status  "shipped" | "building" | "paused". Drives the badge.
  *   note    optional honesty caveat rendered under the blurb.
  *   image   optional local screenshot in public/images.
@@ -57,8 +58,9 @@ export const featuredRepos = [
       "Campus carpooling for GEC students. Riders publish or search for trips by live location, authenticate through Firebase, and see routes drawn on an interactive Leaflet map.",
     role: "Built for the InternSpirit hackathon. I handled the frontend and the geolocation state.",
     stack: ["React", "Redux", "Firebase", "Leaflet"],
-    live: "https://ride-buddy-forntend.vercel.app",
+    live: null, // the repo's homepage field still points at a deploy that 404s
     status: "shipped",
+    note: "The original deployment is offline; the source is still up.",
     image: "/images/Ridebuddy.webp",
     imageFallback: "/images/Ridebuddy.png",
     imageAlt: "RideBuddy — campus carpooling platform interface",
@@ -72,8 +74,8 @@ export const featuredRepos = [
       "An intent-driven interface built on Tambo AI. Instead of clicking through menus, you state what you want in natural language and the system generates the workflow and renders the UI components needed to complete it.",
     role: "Built solo.",
     stack: ["Next.js", "React", "Tailwind CSS", "Tambo AI"],
+    live: "https://intent-os-zeta.vercel.app",
     status: "shipped",
-    note: "No hosted demo — runs locally against a Tambo API key.",
     image: "/images/indentos.webp",
     imageFallback: "/images/indentos.jpg",
     imageAlt: "IntentOS — intent-driven AI workflow interface",
@@ -104,7 +106,7 @@ export const featuredRepos = [
     role: "Built solo. Go backend, Next.js frontend.",
     stack: ["Go", "PostgreSQL", "Next.js", "TypeScript"],
     status: "building",
-    note: "In progress. The API layer works; the observability stack is still a plan, not a deployment.",
+    note: "In progress, and the repo is currently private — no public code link yet. The API layer works; the observability stack is still a plan, not a deployment.",
   },
 ]
 

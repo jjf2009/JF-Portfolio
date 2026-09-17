@@ -1,4 +1,3 @@
-import { motion } from "framer-motion"
 import { ChevronDown, MapPin } from "lucide-react"
 
 export default function Hero() {
@@ -24,12 +23,7 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           
           {/* Text content */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8 z-10"
-          >
+          <div className="animate-hero-rise z-10 space-y-8">
             <div className="space-y-4">
               <h1 id="hero-heading" className="font-display text-5xl font-extrabold leading-tight tracking-tight sm:text-6xl md:text-7xl lg:text-[5rem] text-foreground">
                 Jared Furtado
@@ -37,7 +31,7 @@ export default function Hero() {
               
               <div className="text-xl font-mono font-medium text-primary sm:text-2xl md:text-3xl">
                 <span>Full-Stack Engineer</span>
-                <span className="mx-2 text-muted-foreground/50" aria-hidden="true">/</span>
+                <span className="mx-2 text-muted-foreground" aria-hidden="true">/</span>
                 <span className="text-accent">learning DevOps</span>
               </div>
             </div>
@@ -48,7 +42,7 @@ export default function Hero() {
               containers, CI, observability. That's the career I'm building toward.
             </p>
             
-            <div className="flex items-center gap-3 text-muted-foreground text-sm font-mono opacity-80">
+            <div className="flex items-center gap-3 font-mono text-sm text-muted-foreground">
               <MapPin className="w-4 h-4 text-accent" />
               <span>Based in Goa, IN • Available Worldwide</span>
             </div>
@@ -67,15 +61,10 @@ export default function Hero() {
                 Get In Touch
               </button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Profile Image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="flex justify-center lg:justify-end"
-          >
+          <div className="animate-hero-scale flex justify-center lg:justify-end">
             <div className="relative group">
               {/* Decorative blocks */}
               <div aria-hidden="true" className="absolute -inset-4 border border-white/10 translate-x-4 translate-y-4 z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
@@ -97,26 +86,20 @@ export default function Hero() {
                 </picture>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
+      <div
+        className="animate-hero-fade absolute bottom-8 left-1/2 flex -translate-x-1/2 cursor-pointer flex-col items-center gap-2"
         onClick={() => scrollTo("#skills")}
       >
-        <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-muted-foreground opacity-50">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-        >
-          <ChevronDown className="w-4 h-4 text-muted-foreground opacity-50" />
-        </motion.div>
-      </motion.div>
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Scroll</span>
+        <div className="animate-hero-nudge">
+          <ChevronDown className="h-4 w-4 text-muted-foreground" />
+        </div>
+      </div>
     </section>
   )
 }

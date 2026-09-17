@@ -1,3 +1,5 @@
+@import "./fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,4 +67,76 @@
 /* Subtle section divider */
 .section-divider {
   border-color: hsl(var(--border));
+}
+
+/* Hero entrance.
+   The hero is above the fold, so it animates in CSS rather than through
+   framer-motion — that keeps the animation library out of the critical path
+   and lets the rest of the page load it lazily. Respects reduced motion. */
+/* Transform only, no opacity ramp: the hero heading is an LCP candidate and
+   fading it in delayed largest-contentful-paint by about a second. */
+@keyframes hero-rise {
+  from {
+    transform: translateY(24px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* Used for genuinely below-the-fold decoration, where a fade is free. */
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* The portrait is the LCP element, so it must never start at opacity 0 —
+   an invisible element does not count as painted, which pushed LCP out by
+   more than a second. It scales in instead, at full opacity. */
+@keyframes hero-scale {
+  from {
+    transform: scale(0.97);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes hero-nudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-hero-rise {
+  animation: hero-rise 0.5s ease-out both;
+}
+
+.animate-hero-scale {
+  animation: hero-scale 0.6s ease-out both;
+}
+
+.animate-hero-fade {
+  animation: hero-fade-in 0.8s ease-out 1s both;
+}
+
+.animate-hero-nudge {
+  animation: hero-nudge 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-rise,
+  .animate-hero-scale,
+  .animate-hero-fade,
+  .animate-hero-nudge {
+    animation: none;
+  }
 }

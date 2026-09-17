@@ -112,7 +112,7 @@ export default function Infrastructure() {
                           aria-hidden="true"
                         />
                       </span>
-                      <span className="whitespace-nowrap font-mono text-[11px] text-muted-foreground/70">
+                      <span className="whitespace-nowrap font-mono text-[11px] text-muted-foreground">
                         {formatMonth(r.at)}
                       </span>
                     </a>
