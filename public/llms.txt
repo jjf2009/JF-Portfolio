@@ -27,11 +27,12 @@ Go, Docker, CI/CD pipelines, Linux, Terraform, Kubernetes, Prometheus, Grafana, 
 - **RideBuddy** (https://github.com/jjf2009/RideBuddy) — campus carpooling for GEC students with live location, Firebase auth and Leaflet routing. Built for the InternSpirit hackathon.
 - **IntentOS** (https://github.com/jjf2009/IntentOS) — an intent-driven interface on Tambo AI that generates workflows and UI from natural language. No hosted demo.
 - **OpenCV Projects** (https://github.com/jjf2009/OpenCV_Projects) — local computer vision tools using YOLO and MediaPipe.
-- **Beacon** (private repo) — an uptime and incident platform in progress. The Go API over PostgreSQL works; the monitoring worker, alerting and observability stack are not yet built.
+- **Beacon** (https://github.com/jjf2009/Beacon) — an uptime and incident platform in progress. The Go API over PostgreSQL works; the monitoring worker, alerting and observability stack are not yet built.
 
 ## Experience
 - Freelance Web Developer, self-employed (Dec 2025 – present)
-- Growth & Strategy Intern, The Grit City (Apr 2026 – Jun 2026)
+- Founder, VGen Studio (Jul 2026, paused) — a solo attempt at a small web and AI automation studio, worked on for about three weeks before college took priority; intended to resume
+- Growth & Strategy Intern, The Grit City (Apr 2026 – Jun 2026) — a short part-time stint on the growth side of an education product; competitor backlink and keyword research, and a vetted list of 50+ backlink opportunities
 - Vice President, GEC Coders Club (Event Coordinator from Jul 2025, VP since Aug 2026)
 - Open Source Contributor, GirlScript Summer of Code (Oct 2024 – Nov 2024) — 13+ merged pull requests
 

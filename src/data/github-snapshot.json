@@ -1,13 +1,10 @@
 {
-  "generatedAt": "2026-09-17T03:37:10.282Z",
-  "missing": [
-    "OpenCV_Projects",
-    "Beacon"
-  ],
+  "generatedAt": "2026-09-17T04:29:36.873Z",
+  "missing": [],
   "profile": {
     "login": "jjf2009",
     "name": "Jared Furtado",
-    "publicRepos": 57,
+    "publicRepos": 58,
     "followers": 25,
     "url": "https://github.com/jjf2009"
   },
@@ -99,7 +96,86 @@
       "pushedAt": "2026-06-26T12:51:18Z",
       "createdAt": "2026-02-04T16:32:24Z",
       "archived": false
+    },
+    "OpenCV_Projects": {
+      "name": "OpenCV_Projects",
+      "description": "Computer vision experiments and prototypes using Python",
+      "url": "https://github.com/jjf2009/OpenCV_Projects",
+      "homepage": null,
+      "language": "Python",
+      "languages": {
+        "Python": 100
+      },
+      "topics": [
+        "ai",
+        "beginer-projects",
+        "chatgpt",
+        "easy",
+        "opencv",
+        "opencv-projects",
+        "opencv-python3",
+        "python"
+      ],
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2025-01-11T14:24:25Z",
+      "createdAt": "2025-01-07T13:05:24Z",
+      "archived": false
+    },
+    "Beacon": {
+      "name": "Beacon",
+      "description": "Deploy-aware monitoring & incident platform",
+      "url": "https://github.com/jjf2009/Beacon",
+      "homepage": null,
+      "language": "TypeScript",
+      "languages": {
+        "TypeScript": 56.2,
+        "Go": 33.9,
+        "JavaScript": 5.2,
+        "CSS": 4.6
+      },
+      "topics": [],
+      "stars": 0,
+      "forks": 0,
+      "pushedAt": "2026-09-16T19:56:32Z",
+      "createdAt": "2026-08-04T16:24:03Z",
+      "archived": false
     }
   },
-  "activity": null
+  "activity": {
+    "pushesObserved": 49,
+    "windowStart": "2026-08-18T15:50:51Z",
+    "repos": [
+      {
+        "repo": "puff-cam",
+        "at": "2026-09-15T17:37:04Z",
+        "commits": 0
+      },
+      {
+        "repo": "jjf2009",
+        "at": "2026-09-15T07:00:10Z",
+        "commits": 0
+      },
+      {
+        "repo": "ScrapCo",
+        "at": "2026-09-15T06:50:40Z",
+        "commits": 0
+      },
+      {
+        "repo": "solarsync",
+        "at": "2026-09-15T06:47:59Z",
+        "commits": 0
+      },
+      {
+        "repo": "Beacon",
+        "at": "2026-09-15T06:47:20Z",
+        "commits": 0
+      },
+      {
+        "repo": "AutoLedger",
+        "at": "2026-09-15T06:46:54Z",
+        "commits": 0
+      }
+    ]
+  }
 }

@@ -137,6 +137,7 @@ const schemas = [
     description:
       "An uptime and incident platform under development. The Go API covers endpoint and project management over PostgreSQL with JWT middleware; the monitoring worker, alerting and observability stack are in progress.",
     programmingLanguage: ["Go", "TypeScript"],
+    codeRepository: "https://github.com/jjf2009/Beacon",
     author: { "@id": `${SITE}/#person` },
     applicationCategory: "Developer Tools",
   },

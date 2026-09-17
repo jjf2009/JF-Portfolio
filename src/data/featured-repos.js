@@ -106,7 +106,7 @@ export const featuredRepos = [
     role: "Built solo. Go backend, Next.js frontend.",
     stack: ["Go", "PostgreSQL", "Next.js", "TypeScript"],
     status: "building",
-    note: "In progress, and the repo is currently private — no public code link yet. The API layer works; the observability stack is still a plan, not a deployment.",
+    note: "In progress. The API layer works; the observability stack is still a plan, not a deployment.",
   },
 ]
 

@@ -18,6 +18,21 @@ const experiences = [
     tags: ["Next.js", "React", "i18n", "Production Deployment", "SEO"],
   },
   {
+    role: "Founder",
+    company: "VGen Studio",
+    location: "Goa, India",
+    startDate: "2026-07",
+    displayDate: "Jul 2026 — paused",
+    type: "Side venture",
+    description:
+      "A solo attempt at a small web and AI automation studio. I worked on it for about three weeks before college took priority, so it is on hold rather than trading — I plan to pick it back up alongside freelancing.",
+    achievements: [
+      "Set up the positioning and service offering for a web and AI automation studio.",
+      "Paused after roughly three weeks to focus on coursework; intend to resume.",
+    ],
+    tags: ["Positioning", "SEO", "Solo Venture"],
+  },
+  {
     role: "Growth & Strategy Intern",
     company: "The Grit City",
     location: "Remote / Goa, India",
@@ -26,13 +41,13 @@ const experiences = [
     displayDate: "Apr 2026 — Jun 2026",
     type: "Internship",
     description:
-      "Worked on the acquisition side of an education product — finding where sign-ups leaked and where organic traffic could come from.",
+      "A short, part-time stint on the growth side of an education product, alongside a full college term. Small team, limited scope — mostly competitor research and building a list of places worth getting links from.",
     achievements: [
-      "Analysed user workflows to identify friction points in the demo sign-up funnel.",
-      "Ran backlink and keyword analysis across the top five competitors to find link acquisition opportunities.",
-      "Identified and vetted 200+ target backlink opportunities for an outreach campaign.",
+      "Ran backlink and keyword analysis on competing products to find where their organic traffic came from.",
+      "Identified and vetted 50+ backlink opportunities for an outreach list.",
+      "Looked at where demo sign-ups were dropping off in the funnel.",
     ],
-    tags: ["Funnel Analysis", "Keyword Research", "Backlink Research"],
+    tags: ["Keyword Research", "Backlink Research", "Funnel Analysis"],
   },
   {
     role: "Vice President",
