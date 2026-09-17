@@ -13,7 +13,7 @@ checkable against a public repo.
 |---|---|
 | Hero | "Full-Stack Engineer / learning DevOps". One concrete line on what he builds and where he's heading. |
 | Skills | Split into **Building with** (backed by shipped code) and **Learning** (the infra track). Go, Docker, CI/CD, Terraform, Kubernetes, Prometheus and Grafana sit in the second group. |
-| Experience | Added The Grit City and GirlScript Summer of Code; promoted Coders Club to Vice President. |
+| Experience | Added VGen Studio, The Grit City and GirlScript Summer of Code; promoted Coders Club to Vice President. |
 | Projects | Now driven by the GitHub data layer. Each card shows the problem, stack, role, live link, language breakdown and last-push date. |
 | Infrastructure | New section. Beacon plus an honest "working through next" list. |
 | About | Two paragraphs, no hardcoded age. |
@@ -55,18 +55,27 @@ committed `src/data/github-snapshot.json`. Nothing is fetched in the browser.
 | | Performance | Accessibility | Best practices | SEO |
 |---|---|---|---|---|
 | Desktop before | 94 | 96 | 100 | 100 |
-| **Desktop after** | **99** | **100** | **100** | **100** |
+| **Desktop after** | **100** | **100** | **100** | **100** |
 | Mobile before | 72 | 96 | 100 | 100 |
-| **Mobile after** | **80** | **100** | **100** | **100** |
+| **Mobile after** | **93** | **100** | **100** | **100** |
 
 Measured with Lighthouse against local production builds of `4fd3a80` and this
 branch, so the comparison is like for like. Lighthouse is not a dependency; run
 it with `npx lighthouse`.
 
-Mobile FCP went 4.0s → 2.9s and initial JS 425 kB → 161 kB, mainly by
-self-hosting the fonts (the Google Fonts stylesheet was render-blocking) and
-lazy-loading everything below the fold. Console is clean, CLS is 0, and the
-layout was checked at 375, 768 and 1440px.
+Mobile FCP went 4.0s → 2.0s and LCP 4.4s → 3.0s. Three things got it there:
+self-hosting the fonts (the Google Fonts stylesheet was render-blocking, worth
+~1.2s), lazy-loading everything below the fold (initial JS 425 kB → 161 kB),
+and prerendering the first screen at build time so paint no longer waits on
+React. Console is clean on both profiles and CLS is 0.
+
+**Prerendering.** `scripts/prerender.mjs` runs as `postbuild`, renders the app
+once with `renderToString`, and writes the markup into `dist/index.html`; the
+client hydrates it. Only the header and hero are prerendered — `renderToString`
+emits the Suspense fallback for lazy components, which is the behaviour we
+want. Prerendering the whole page was measurably worse (84 kB of markup put
+mobile at 75), so the below-the-fold sections stay split and mount after
+hydration.
 
 ---
 
@@ -87,29 +96,19 @@ layout was checked at 375, 768 and 1440px.
 
 ## What I need from you
 
-1. **Beacon went private partway through this work.** It was public in the
-   morning and 404s now, and it is the only project in the Infrastructure
-   section. The card currently says so and renders without a code link. Make it
-   public again and it will link itself on the next refresh — otherwise the
-   section rests on a project nobody can inspect.
-2. **LinkedIn is unverified.** This sandbox cannot reach LinkedIn at the network
-   layer. Please confirm `https://www.linkedin.com/in/jared-furtado/` resolves —
-   it is in the footer, the schema and llms.txt.
-3. **Mobile Lighthouse is 80, not 90+.** The remaining cost is React booting
-   under 4× CPU throttling. The real fix for a Vite SPA is prerendering the
-   first paint, which is a structural change I did not want to make without
-   asking. Say the word and I will.
-4. **The Grit City bullets came from your LinkedIn.** "200+ backlink
-   opportunities" is your number, not mine — confirm you can defend it.
-5. **HeatWatch is credited as a four-person hackathon team** and the card says
+1. **HeatWatch is credited as a four-person hackathon team** and the card says
    you did the data pipeline and mapping frontend. Correct that if it is wrong.
-6. **Freelance end date.** LinkedIn end-dates the freelance role Aug 2026 but
+2. **Freelance end date.** LinkedIn end-dates the freelance role Aug 2026 but
    writes about it in the present tense. The site says "Present".
-7. **VGen Studio** is on your LinkedIn but not the site. Add it, or leave it off?
-8. **Resume PDF** loads, but I have not read it. It should match the new
-   positioning.
-9. **The repo count is 57 public**, not the 127 you mentioned — the rest are
+3. **Resume PDF** loads, but I have not read it. It should match the new
+   positioning — particularly the VGen Studio and Grit City framing.
+4. **The repo count is 58 public**, not the 127 you mentioned — the rest are
    presumably private.
+5. **Below-the-fold sections could not be visually verified here.** They use
+   framer-motion's `whileInView`, and the headless browser available in this
+   environment does not fire IntersectionObserver reliably, so those sections
+   photograph blank. The pre-existing build behaves identically, so this is not
+   a regression — but please scroll the deployed site once to confirm.
 
 ---
 
