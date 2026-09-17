@@ -35,13 +35,17 @@ export default function Hero() {
                 Jared Furtado
               </h1>
               
-              <div className="h-8 sm:h-10 text-xl sm:text-2xl md:text-3xl font-mono text-primary font-medium">
-                <span >Full Stack Developer</span>
+              <div className="text-xl font-mono font-medium text-primary sm:text-2xl md:text-3xl">
+                <span>Full-Stack Engineer</span>
+                <span className="mx-2 text-muted-foreground/50" aria-hidden="true">/</span>
+                <span className="text-accent">learning DevOps</span>
               </div>
             </div>
 
-            <p className="text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-lg font-light">
-              I build fast, scalable web applications from Goa, India — specializing in MERN stack.
+            <p className="max-w-lg text-lg font-light leading-relaxed text-muted-foreground sm:text-xl">
+              I build and ship full-stack web apps — client work, campus tools, hackathon
+              builds. Right now I'm going deep on the infrastructure side: Go services,
+              containers, CI, observability. That's the career I'm building toward.
             </p>
             
             <div className="flex items-center gap-3 text-muted-foreground text-sm font-mono opacity-80">
@@ -103,7 +107,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
-        onClick={() => scrollTo("#about")}
+        onClick={() => scrollTo("#skills")}
       >
         <span className="text-[10px] uppercase font-mono tracking-[0.2em] text-muted-foreground opacity-50">Scroll</span>
         <motion.div

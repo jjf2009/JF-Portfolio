@@ -1,22 +1,29 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-28 border-t border-border">
+    <section id="about" className="border-t border-border py-20 md:py-28">
       <div className="container px-4 md:px-6">
         <div className="max-w-3xl">
-          <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
-           05. About Me
+          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">
+            06. About Me
           </p>
-          <h2 className="font-display text-4xl font-bold text-foreground mb-8 sm:text-5xl">
+          <h2 className="mb-8 font-display text-4xl font-bold text-foreground sm:text-5xl">
             Building things that actually work
           </h2>
-<div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
-  <p>
-    I'm Jared — a 19-year-old full-stack developer based in Goa and a student at Goa College of Engineering. I build end-to-end web applications, from backend architecture to clean, usable interfaces.
-  </p>
-  <p>
-    I focus on practical solutions — shipping real products like carpooling platforms, funding aggregators, and computer vision tools — with an emphasis on maintainable, scalable code.
-  </p>
-</div>
+          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
+            <p>
+              I'm Jared — a third-year Computer Engineering student at Goa College of
+              Engineering and a freelance full-stack developer. I've been paid to rebuild a
+              live tourism site and to build a funding directory for a startup incubator, and
+              most of what I make outside client work is for the campus I'm on.
+            </p>
+            <p>
+              What I'm doing now is going one layer down. I can build and deploy an
+              application; I'm learning to run it properly — Go on the backend, containers,
+              pipelines, and observability — and that's the direction I want my career to
+              take. It's early, and the Infrastructure section says exactly how far along
+              it is.
+            </p>
+          </div>
         </div>
       </div>
     </section>

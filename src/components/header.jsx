@@ -2,10 +2,12 @@ import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
+  { name: "Freelance", href: "#freelance" },
   { name: "Projects", href: "#projects" },
+  { name: "Infrastructure", href: "#infrastructure" },
+  { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -45,7 +47,7 @@ export default function Header() {
         </a>
 
         {/* Desktop Nav */}
-        <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -67,7 +69,7 @@ export default function Header() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 rounded-md text-foreground hover:bg-muted transition-colors"
+          className="rounded-md p-2 lg:hidden text-foreground hover:bg-muted transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
@@ -80,7 +82,7 @@ export default function Header() {
       {isMenuOpen && (
         <nav
           aria-label="Mobile navigation"
-          className="md:hidden border-t border-border bg-background/95 backdrop-blur-md"
+          className="border-t border-border lg:hidden bg-background/95 backdrop-blur-md"
         >
           <ul className="container py-4 flex flex-col gap-1" role="list">
             {navLinks.map((link) => (

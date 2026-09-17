@@ -8,6 +8,7 @@ import Contact from "./components/contact"
 import Footer from "./components/footer"
 import SchemaMarkup from "./components/seo/SchemaMarkup"
 import Freelance from "./components/freelance"
+import Infrastructure from "./components/infrastructure"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Experience />
           <Freelance/>
           <Projects />
+          <Infrastructure />
           <About />
           <Contact />
         </main>

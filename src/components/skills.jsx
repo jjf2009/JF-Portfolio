@@ -149,61 +149,102 @@ Redux: {
     ),
   },
 }
-const skills = [
-  "JavaScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "Prisma",
-  "Supabase",
-  "Tailwind CSS",
-  "Python",
-  "OpenCV",
-  "Redux",
-  "RESTful APIs",
-  "i18n",
-  "RAG",
+
+/**
+ * Split deliberately. "Building with" is everything backed by shipped code in
+ * public repos. "Learning" is the infrastructure track — real work, but not yet
+ * something to claim as a skill. Moving an item up a group requires code to
+ * point at, not just time spent reading.
+ */
+const skillGroups = [
+  {
+    label: "Building with",
+    caption: "Backed by shipped projects",
+    items: [
+      "TypeScript",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "MongoDB",
+      "Supabase",
+      "Prisma",
+      "Tailwind CSS",
+      "Python",
+      "OpenCV",
+      "Redux",
+      "RESTful APIs",
+    ],
+  },
+  {
+    label: "Learning",
+    caption: "Infrastructure track — in progress, not yet production experience",
+    items: ["Go", "Docker", "CI/CD", "Linux", "Terraform", "Kubernetes", "Prometheus", "Grafana"],
+  },
 ]
+
+function SkillTile({ skill, muted }) {
+  const icon = skillIcons[skill]
+
+  return (
+    <div
+      className={`group flex cursor-default flex-col items-center gap-2 rounded-xl border border-border p-3 transition-all duration-300 hover:scale-105 ${
+        muted ? "opacity-90" : ""
+      }`}
+      style={{ background: icon?.bg ?? "transparent" }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = `0 0 18px 2px ${icon?.color ?? "#888"}44`
+        e.currentTarget.style.borderColor = `${icon?.color ?? "#888"}55`
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = ""
+        e.currentTarget.style.borderColor = ""
+      }}
+    >
+      <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center">
+        {/* Not every skill has an icon; fall back to a monogram rather than a
+            broken <img>, which is what the previous version rendered. */}
+        {icon?.svg ??
+          (icon?.image ? (
+            <img src={icon.image} alt="" width={32} height={32} aria-hidden="true" />
+          ) : (
+            <span className="font-mono text-sm font-semibold text-muted-foreground" aria-hidden="true">
+              {skill.slice(0, 2)}
+            </span>
+          ))}
+      </div>
+      <span className="text-center text-xs font-medium leading-tight text-foreground">{skill}</span>
+    </div>
+  )
+}
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-28 border-t border-border">
+    <section id="skills" className="border-t border-border py-20 md:py-28">
       <div className="container px-4 md:px-6">
-        <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
+        <p className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">
           01. Skills
         </p>
-        <h2 className="font-display text-4xl font-bold text-foreground mb-12 sm:text-5xl">
+        <h2 className="mb-12 font-display text-4xl font-bold text-foreground sm:text-5xl">
           What I work with
         </h2>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 max-w-4xl">
-          {skills.map((skill) => {
-            const icon = skillIcons[skill]
-            return (
-              <div
-                key={skill}
-                className="group flex flex-col items-center gap-2 rounded-xl border border-border p-3 transition-all duration-300 hover:scale-105 cursor-default"
-                style={{ background: icon?.bg ?? "transparent" }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = `0 0 18px 2px ${icon?.color ?? "#888"}44`
-                  e.currentTarget.style.borderColor = `${icon?.color ?? "#888"}55`
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = ""
-                  e.currentTarget.style.borderColor = ""
-                }}
-              >
-                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                  {icon?.svg ?? <img src={icon?.image} alt={skill} />}
-                </div>
-                <span className="text-xs font-medium text-foreground text-center leading-tight">
-                  {skill}
-                </span>
+        <div className="space-y-12">
+          {skillGroups.map((group) => (
+            <div key={group.label}>
+              <div className="mb-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h3 className="font-display text-lg font-semibold text-foreground">{group.label}</h3>
+                <p className="font-mono text-xs text-muted-foreground">{group.caption}</p>
               </div>
-            )
-          })}
+              <div className="grid max-w-4xl grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                {group.items.map((skill) => (
+                  <SkillTile key={skill} skill={skill} muted={group.label === "Learning"} />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -51,13 +51,15 @@ const onSubmit = async (data) => {
           >
             <div>
               <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">
-                06. Communication
+                07. Communication
               </span>
               <h2 id="contact-heading" className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6">
                 Get In Touch
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6 font-sans">
-                I'm currently looking for full-time opportunities and available for freelance web development projects. Whether you have a question or just want to engineer something cool — my inbox is always open.
+                I'm a student, so I'm looking for internships and freelance work rather than
+                a full-time role — particularly anything on the infrastructure or backend side.
+                If you're hiring for that, or you just want to talk shop, my inbox is open.
               </p>
             </div>
 
