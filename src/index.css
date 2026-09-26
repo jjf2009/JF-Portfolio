@@ -66,3 +66,142 @@
 .section-divider {
   border-color: hsl(var(--border));
 }
+
+/* ───────────── FX layer ───────────── */
+
+/* Hide the native cursor only when the custom one is mounted (fine pointers). */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Film grain over everything */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 8s steps(10) infinite;
+}
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-5%, 5%); }
+  40% { transform: translate(5%, -3%); }
+  60% { transform: translate(-3%, -5%); }
+  80% { transform: translate(3%, 5%); }
+}
+
+/* Faint blueprint grid */
+.bg-grid {
+  background-image:
+    linear-gradient(hsl(var(--foreground) / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--foreground) / 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* Marquee */
+.marquee-track {
+  animation: marquee linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Drifting aurora blobs */
+.aurora {
+  animation: aurora 18s ease-in-out infinite alternate;
+}
+@keyframes aurora {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(8%, -6%) scale(1.15) rotate(20deg); }
+  100% { transform: translate(-6%, 8%) scale(0.95) rotate(-15deg); }
+}
+
+/* Animated gradient text */
+.text-shine {
+  background: linear-gradient(110deg, hsl(var(--primary)) 20%, #f0abfc 40%, #67e8f9 55%, hsl(var(--primary)) 75%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+@keyframes shine {
+  to { background-position: -250% 0; }
+}
+
+/* Outlined display text */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px hsl(var(--foreground) / 0.25);
+}
+
+/* Glitch on hover — uses data-text for the offset copies */
+.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.glitch:hover::before {
+  opacity: 0.8;
+  color: #f0abfc;
+  animation: glitch 0.35s steps(2) infinite;
+  transform: translate(-3px, 0);
+  clip-path: inset(10% 0 55% 0);
+}
+.glitch:hover::after {
+  opacity: 0.8;
+  color: #67e8f9;
+  animation: glitch 0.35s steps(2) infinite reverse;
+  transform: translate(3px, 0);
+  clip-path: inset(55% 0 10% 0);
+}
+@keyframes glitch {
+  0% { clip-path: inset(20% 0 60% 0); }
+  25% { clip-path: inset(60% 0 5% 0); }
+  50% { clip-path: inset(5% 0 80% 0); }
+  75% { clip-path: inset(40% 0 30% 0); }
+  100% { clip-path: inset(70% 0 10% 0); }
+}
+
+/* Easter egg: chaos mode */
+html.chaos main,
+html.chaos footer {
+  animation: chaos-hue 3s linear infinite;
+}
+html.chaos h1,
+html.chaos h2 {
+  animation: chaos-wobble 0.6s ease-in-out infinite alternate;
+}
+@keyframes chaos-hue {
+  to { filter: hue-rotate(360deg); }
+}
+@keyframes chaos-wobble {
+  from { transform: rotate(-1.5deg) skewX(-3deg); }
+  to { transform: rotate(1.5deg) skewX(3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .grain::after,
+  .marquee-track,
+  .aurora,
+  .text-shine,
+  html.chaos main,
+  html.chaos footer,
+  html.chaos h1,
+  html.chaos h2 {
+    animation: none !important;
+  }
+}

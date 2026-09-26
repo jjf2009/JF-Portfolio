@@ -2,7 +2,7 @@ import { Github, Mail, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border/50 py-12 text-center md:text-left">
+    <footer className="relative overflow-hidden bg-background border-t border-border/50 pt-12 text-center md:text-left">
       <div className="container px-6 md:px-12 mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
         
         <div className="space-y-2">
@@ -58,7 +58,17 @@ export default function Footer() {
           <p className="text-sm font-mono text-muted-foreground/60">
             &copy; 2026 Jared Furtado. All rights reserved.
           </p>
+          <p className="hidden text-xs font-mono text-muted-foreground/40 md:block">
+            psst — try <kbd className="text-primary/70">Ctrl/⌘ + K</kbd>, or type <kbd className="text-primary/70">crazy</kbd>
+          </p>
         </div>
+      </div>
+
+      {/* Oversized signature */}
+      <div aria-hidden="true" className="mt-10 select-none overflow-hidden">
+        <p className="text-outline whitespace-nowrap text-center font-display text-[17vw] font-extrabold uppercase leading-[0.8] tracking-tighter transition-colors duration-700 hover:[-webkit-text-stroke-color:hsl(var(--primary))]">
+          Furtado
+        </p>
       </div>
     </footer>
   )

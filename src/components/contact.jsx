@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Send, MapPin, Globe, Clock, Mail } from "lucide-react"
 import { useForm as useHookForm } from "react-hook-form"
 import { useForm as useFormspree, ValidationError } from "@formspree/react"
+import Marquee from "./fx/Marquee"
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -39,6 +40,20 @@ const onSubmit = async (data) => {
       {/* Decorative background element */}
       <div aria-hidden="true" className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] mix-blend-screen opacity-50 translate-x-1/3 translate-y-1/3" />
 
+      {/* Giant call-to-action ticker */}
+      <div aria-hidden="true" className="relative -mt-8 mb-16 md:-mt-12 md:mb-24">
+        <Marquee speed={25}>
+          {["Let's build something", "Let's build something"].map((t, i) => (
+            <span key={i} className="flex items-center gap-10 whitespace-nowrap font-display text-6xl font-extrabold uppercase md:text-8xl">
+              <span className="text-outline">{t}</span>
+              <span className="text-primary">✦</span>
+              <span className="text-shine">crazy</span>
+              <span className="text-primary">✦</span>
+            </span>
+          ))}
+        </Marquee>
+      </div>
+
       <div className="container relative px-6 md:px-12 mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 items-start">
           
@@ -50,9 +65,11 @@ const onSubmit = async (data) => {
             className="lg:col-span-2 space-y-10"
           >
             <div>
-              <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">
-                06. Communication
-              </span>
+              <p className="mb-4 flex items-center gap-3 font-mono text-sm uppercase tracking-widest text-primary">
+                <span>06.</span>
+                <span className="h-px w-10 bg-primary/60" />
+                <span>Communication</span>
+              </p>
               <h2 id="contact-heading" className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6">
                 Get In Touch
               </h2>
@@ -79,7 +96,7 @@ const onSubmit = async (data) => {
               
               <div className="flex items-center gap-4 text-foreground/80">
                 <div className="w-10 h-10 flex items-center justify-center bg-background border border-border/60 rounded-sm">
-                  <Globe className="w-4 h-4 text-success" />
+                  <Globe className="w-4 h-4 text-emerald-400" />
                 </div>
                 <span>Open to remote opportunities</span>
               </div>
@@ -105,8 +122,8 @@ const onSubmit = async (data) => {
 
             {state.succeeded ? (
               <div className="h-full min-h-[400px] flex flex-col items-center justify-center text-center space-y-6">
-                <div className="w-20 h-20 rounded-full bg-success/20 flex items-center justify-center mb-4">
-                  <Send className="w-8 h-8 text-success" />
+                <div className="w-20 h-20 rounded-full bg-emerald-400/20 flex items-center justify-center mb-4">
+                  <Send className="w-8 h-8 text-emerald-400" />
                 </div>
                 <h3 className="text-3xl font-display font-medium text-foreground">Message Sent</h3>
                 <p className="text-muted-foreground text-lg max-w-sm">
@@ -180,7 +197,7 @@ const onSubmit = async (data) => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="w-full flex items-center justify-center gap-3 bg-primary text-primary-foreground rounded-md px-8 py-4 font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
+                  className="relative w-full overflow-hidden flex items-center justify-center gap-3 bg-primary text-primary-foreground rounded-md px-8 py-4 font-semibold shadow-[0_0_40px_hsl(var(--primary)/0.25)] hover:shadow-[0_0_60px_hsl(var(--primary)/0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
                 >
                   {state.submitting ?  (
                     "Sending..."

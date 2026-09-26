@@ -8,18 +8,28 @@ import Contact from "./components/contact"
 import Footer from "./components/footer"
 import SchemaMarkup from "./components/seo/SchemaMarkup"
 import Freelance from "./components/freelance"
+import Preloader from "./components/fx/Preloader"
+import CustomCursor from "./components/fx/CustomCursor"
+import ScrollProgress from "./components/fx/ScrollProgress"
+import CommandPalette from "./components/fx/CommandPalette"
+import ChaosMode from "./components/fx/ChaosMode"
 
 function App() {
   return (
     <>
       <SchemaMarkup />
-      <div className="flex min-h-screen flex-col bg-background text-foreground selection:bg-primary/30 selection:text-foreground">        
+      <Preloader />
+      <ScrollProgress />
+      <CustomCursor />
+      <CommandPalette />
+      <ChaosMode />
+      <div className="grain flex min-h-screen flex-col bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
         <Header />
         <main id="main" className="flex-1">
           <Hero />
           <Skills />
           <Experience />
-          <Freelance/>
+          <Freelance />
           <Projects />
           <About />
           <Contact />

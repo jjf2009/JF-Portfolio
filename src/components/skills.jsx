@@ -1,3 +1,8 @@
+import { motion } from "framer-motion"
+import TiltCard from "./fx/TiltCard"
+import Marquee from "./fx/Marquee"
+import SectionHeading from "./fx/SectionHeading"
+
 const skillIcons = {
   JavaScript: {
     color: "#F7DF1E",
@@ -167,44 +172,66 @@ const skills = [
   "RAG",
 ]
 
+function SkillIcon({ skill }) {
+  const icon = skillIcons[skill]
+  return icon?.svg ?? <img src={icon?.image} alt="" className="h-full w-full" />
+}
+
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-28 border-t border-border">
+    <section id="skills" aria-labelledby="skills-heading" className="relative overflow-hidden py-20 md:py-28">
       <div className="container px-4 md:px-6">
-        <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
-          01. Skills
-        </p>
-        <h2 className="font-display text-4xl font-bold text-foreground mb-12 sm:text-5xl">
-          What I work with
-        </h2>
+        <SectionHeading index="01" label="Skills" title="What I work with" id="skills-heading" />
+      </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 max-w-4xl">
-          {skills.map((skill) => {
+      {/* Two tickers running in opposite directions */}
+      <div aria-hidden="true" className="mb-14 space-y-4 [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
+        {[false, true].map((reverse) => (
+          <Marquee key={String(reverse)} reverse={reverse} speed={reverse ? 50 : 40}>
+            {(reverse ? [...skills].reverse() : skills).map((skill) => (
+              <span
+                key={skill}
+                className="flex items-center gap-3 whitespace-nowrap rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground"
+              >
+                <span className="h-5 w-5">
+                  <SkillIcon skill={skill} />
+                </span>
+                {skill}
+              </span>
+            ))}
+          </Marquee>
+        ))}
+      </div>
+
+      <div className="container px-4 md:px-6">
+        <ul className="grid max-w-5xl grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5" role="list">
+          {skills.map((skill, i) => {
             const icon = skillIcons[skill]
             return (
-              <div
+              <motion.li
                 key={skill}
-                className="group flex flex-col items-center gap-2 rounded-xl border border-border p-3 transition-all duration-300 hover:scale-105 cursor-default"
-                style={{ background: icon?.bg ?? "transparent" }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = `0 0 18px 2px ${icon?.color ?? "#888"}44`
-                  e.currentTarget.style.borderColor = `${icon?.color ?? "#888"}55`
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = ""
-                  e.currentTarget.style.borderColor = ""
-                }}
+                initial={{ opacity: 0, scale: 0.6, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.04, type: "spring", stiffness: 260, damping: 20 }}
               >
-                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                  {icon?.svg ?? <img src={icon?.image} alt={skill} />}
-                </div>
-                <span className="text-xs font-medium text-foreground text-center leading-tight">
-                  {skill}
-                </span>
-              </div>
+                <TiltCard
+                  as="div"
+                  max={14}
+                  glow={`${icon?.color ?? "#888888"}40`}
+                  data-cursor
+                  className="flex h-full flex-col items-center gap-3 overflow-hidden rounded-xl border border-border p-4 transition-colors duration-300 hover:border-[var(--skill)]"
+                  style={{ background: icon?.bg ?? "transparent", "--skill": `${icon?.color ?? "#888888"}88` }}
+                >
+                  <div className="relative z-20 flex h-10 w-10 flex-shrink-0 items-center justify-center transition-transform duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
+                    <SkillIcon skill={skill} />
+                  </div>
+                  <span className="relative z-20 text-center text-xs font-medium leading-tight text-foreground">{skill}</span>
+                </TiltCard>
+              </motion.li>
             )
           })}
-        </div>
+        </ul>
       </div>
     </section>
   )
