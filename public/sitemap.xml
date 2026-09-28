@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://jaredfurtado.tech</loc>
-    <lastmod>2026-03-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://jaredfurtado.tech/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/jared-furtado-profile.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/gtc.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/techjeeva.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jaredfurtado.tech/llms.txt</loc>
+    <lastmod>2026-09-28</lastmod>
   </url>
 </urlset>

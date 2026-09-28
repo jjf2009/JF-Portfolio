@@ -1,55 +1,7 @@
 import { useRef } from "react"
 import { motion, useScroll, useSpring } from "framer-motion"
 import SectionHeading from "./fx/SectionHeading"
-
-const experiences = [
-  {
-    role: "Freelance Web Developer",
-    company: "Self-Employed",
-    location: "Remote / Goa, India",
-    startDate: "2025-12",
-    displayDate: "Dec 2025 — Present",
-    type: "Freelance",
-    description: "Specializing in building production-ready MERN stack applications for clients worldwide. Developed full-stack solutions with custom authentication, complex database schemas, and optimized frontends.",
-    achievements: [
-      "Completed two paid client projects including rebuilding the Global Tourist Centre website with multilingual support.",
-      "Developed the Techjeeva funding platform for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship).",
-      "Implemented SEO best practices such as Schema markup, Open Graph tags, robots.txt configuration, and XML sitemap generation.",
-    ],
-    tags: ["Full Stack Development", "MERN Stack", "SEO Architecture", "React Frontend"],
-  },
-  {
-    role: "Sales Intern",
-    company: "Avyott",
-    location: "North Goa, India",
-    startDate: "2025-12",
-    endDate: "2026-01",
-    displayDate: "Dec 2025 — Jan 2026",
-    type: "Internship",
-    description: "Worked closely with product teams to understand and communicate the value proposition of a text AI agent product.",
-    achievements: [
-      "Conducted B2B outreach through cold calls, WhatsApp messaging, email campaigns, and LinkedIn DMs.",
-      "Generated two qualified leads through consistent outreach efforts.",
-      "Developed practical experience in handling client objections and understanding product-market fit.",
-    ],
-    tags: ["B2B Sales", "Client Communication", "Product Market Fit"],
-  },
-  {
-    role: "Event Coordinator",
-    company: "GEC Coders Club",
-    location: "Goa College of Engineering",
-    startDate: "2025-07",
-    displayDate: "Jul 2025 — Present",
-    type: "Leadership",
-    description: "Organizing and leading coding initiatives, technical workshops, and hackathon participation strategies for engineering students.",
-    achievements: [
-      "Organized technical workshops and coding competitions for students.",
-      "Conducted sessions such as 'Getting Started with Hackathons' to help juniors enter competitive coding.",
-      "Mentored junior students on technical fundamentals.",
-    ],
-    tags: ["Leadership", "Mentoring", "Event Management"],
-  },
-]
+import { experiences } from "../lib/experience-data"
 
 export default function Experience() {
   const timelineRef = useRef(null)
@@ -71,7 +23,7 @@ export default function Experience() {
           <motion.div
             aria-hidden="true"
             style={{ scaleY: lineScale }}
-            className="hidden lg:block absolute top-2 left-[-3.5rem] bottom-0 w-[2px] origin-top bg-gradient-to-b from-primary via-fuchsia-500 to-cyan-400 shadow-[0_0_12px_hsl(var(--primary))]"
+            className="hidden lg:block absolute top-2 left-[-3.5rem] bottom-0 w-[2px] origin-top bg-primary"
           />
 
           {experiences.map((exp, idx) => (
@@ -87,10 +39,10 @@ export default function Experience() {
               <motion.div
                 aria-hidden="true"
                 initial={{ scale: 0 }}
-                whileInView={{ scale: [0, 1.6, 1] }}
+                whileInView={{ scale: 1 }}
                 viewport={{ once: true, margin: "-40% 0px -40% 0px" }}
                 transition={{ duration: 0.6 }}
-                className="hidden lg:block absolute top-2 left-[-3.75rem] w-3 h-3 bg-primary border-2 border-primary rounded-full z-10 shadow-[0_0_16px_hsl(var(--primary))]"
+                className="hidden lg:block absolute top-2 left-[-3.75rem] w-3 h-3 bg-primary border-2 border-primary rounded-full z-10"
               />
 
               <header className="mb-4 space-y-2 lg:absolute lg:top-0 lg:left-[-25%] lg:w-[20%] lg:pr-8 lg:mb-0 lg:-mt-1">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Command } from "cmdk"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowRight, Download, Github, Linkedin, Mail, Sparkles, Copy } from "lucide-react"
+import { ArrowRight, Download, Github, Linkedin, Mail, Copy } from "lucide-react"
 
 const sections = [
   ["Home", "#home"],
@@ -10,12 +10,13 @@ const sections = [
   ["Freelance Work", "#freelance"],
   ["Projects", "#projects"],
   ["About", "#about"],
+  ["FAQ", "#faq"],
   ["Contact", "#contact"],
 ]
 
 export const openCommandPalette = () => window.dispatchEvent(new Event("jf:palette"))
 
-// ⌘K / Ctrl+K launcher for navigation, links and the chaos easter egg.
+// ⌘K / Ctrl+K launcher for navigation and quick links.
 export default function CommandPalette() {
   const [open, setOpen] = useState(false)
 
@@ -75,7 +76,7 @@ export default function CommandPalette() {
                 <kbd className="rounded border border-border px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground">ESC</kbd>
               </div>
               <Command.List className="max-h-[50vh] overflow-y-auto p-2">
-                <Command.Empty className="px-3 py-6 text-center text-sm text-muted-foreground">Nothing here. Try "projects".</Command.Empty>
+                <Command.Empty className="px-3 py-6 text-center text-sm text-muted-foreground">No results.</Command.Empty>
                 <Command.Group heading="Navigate" className={groupClass}>
                   {sections.map(([name, href]) => (
                     <Command.Item key={href} value={`go ${name}`} className={itemClass} onSelect={run(() => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" }))}>
@@ -98,11 +99,6 @@ export default function CommandPalette() {
                   </Command.Item>
                   <Command.Item value="copy email" className={itemClass} onSelect={run(() => navigator.clipboard?.writeText("jaredfurtadowork@gmail.com"))}>
                     <Copy size={14} className="text-primary" /> Copy email address
-                  </Command.Item>
-                </Command.Group>
-                <Command.Group heading="Secret" className={groupClass}>
-                  <Command.Item value="chaos mode crazy party" className={itemClass} onSelect={run(() => window.dispatchEvent(new Event("jf:chaos")))}>
-                    <Sparkles size={14} className="text-fuchsia-400" /> Toggle chaos mode
                   </Command.Item>
                 </Command.Group>
               </Command.List>

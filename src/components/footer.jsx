@@ -6,9 +6,9 @@ export default function Footer() {
       <div className="container px-6 md:px-12 mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
         
         <div className="space-y-2">
-          <h2 className="font-display font-bold text-2xl text-foreground">
+          <p className="font-display font-bold text-2xl text-foreground">
             Jared Furtado
-          </h2>
+          </p>
           <p className="font-mono text-sm text-muted-foreground uppercase tracking-widest">
             Full Stack Developer
           </p>
@@ -56,17 +56,14 @@ export default function Footer() {
           </ul>
           
           <p className="text-sm font-mono text-muted-foreground/60">
-            &copy; 2026 Jared Furtado. All rights reserved.
-          </p>
-          <p className="hidden text-xs font-mono text-muted-foreground/40 md:block">
-            psst — try <kbd className="text-primary/70">Ctrl/⌘ + K</kbd>, or type <kbd className="text-primary/70">crazy</kbd>
+            &copy; {new Date().getFullYear()} Jared Furtado. All rights reserved.
           </p>
         </div>
       </div>
 
       {/* Oversized signature */}
       <div aria-hidden="true" className="mt-10 select-none overflow-hidden">
-        <p className="text-outline whitespace-nowrap text-center font-display text-[17vw] font-extrabold uppercase leading-[0.8] tracking-tighter transition-colors duration-700 hover:[-webkit-text-stroke-color:hsl(var(--primary))]">
+        <p className="text-outline whitespace-nowrap text-center font-display text-[17vw] font-extrabold uppercase leading-[0.8] tracking-tighter">
           Furtado
         </p>
       </div>

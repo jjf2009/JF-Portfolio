@@ -1,104 +1,75 @@
-import { useEffect, useRef, useState } from "react"
-import { motion, useInView, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
+import { Code2, RefreshCcw, Search } from "lucide-react"
 import SectionHeading from "./fx/SectionHeading"
 import TiltCard from "./fx/TiltCard"
+import { services } from "../lib/site-data"
+import { freelanceData } from "../lib/freelance-data"
+import { projectsData } from "../lib/projects-data"
+
+const serviceIcons = [Code2, RefreshCcw, Search]
 
 const stats = [
-  { value: 6, suffix: "+", label: "Projects shipped" },
-  { value: 2, suffix: "", label: "Paid client builds" },
-  { value: 15, suffix: "", label: "Technologies in rotation" },
-  { value: 19, suffix: "", label: "Years old (and counting)" },
+  { value: `${freelanceData.length + projectsData.length}+`, label: "Projects shipped" },
+  { value: String(freelanceData.length), label: "Client builds delivered" },
+  { value: "4", label: "Languages added for GTC" },
+  { value: "24h", label: "Typical reply time" },
 ]
 
-function Counter({ value, suffix }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true })
-  const [n, setN] = useState(0)
-
-  useEffect(() => {
-    if (!inView) return
-    const start = performance.now()
-    let raf = 0
-    const tick = (t) => {
-      const p = Math.min(1, (t - start) / 1400)
-      setN(Math.round(value * (1 - Math.pow(1 - p, 3))))
-      if (p < 1) raf = requestAnimationFrame(tick)
-    }
-    raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
-  }, [inView, value])
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {n}
-      <span className="text-primary">{suffix}</span>
-    </span>
-  )
-}
-
-const statement = "I don't just write code. I ship products people actually use."
-
 export default function About() {
-  const statementRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: statementRef, offset: ["start 85%", "end 45%"] })
-  const words = statement.split(" ")
-
   return (
     <section id="about" aria-labelledby="about-heading" className="border-t border-border py-20 md:py-28">
       <div className="container px-4 md:px-6">
-        <SectionHeading index="05" label="About Me" title="Building things that actually work" id="about-heading" className="mb-8 max-w-4xl" />
+        <SectionHeading index="05" label="About" title="Building things that actually work" id="about-heading" className="mb-10 max-w-4xl" />
 
-        <div className="grid gap-16 lg:grid-cols-2">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="max-w-2xl space-y-5 text-lg leading-relaxed text-muted-foreground">
             <p>
-              I'm Jared — a 19-year-old full-stack developer based in Goa and a student at Goa College of Engineering. I build end-to-end web
-              applications, from backend architecture to clean, usable interfaces.
+              I'm <strong className="font-medium text-foreground">Jared Furtado</strong>, a full stack developer based in Goa, India, and a student at
+              Goa College of Engineering. I build end-to-end web applications — from database design and APIs to clean, accessible interfaces.
             </p>
             <p>
-              I focus on practical solutions — shipping real products like carpooling platforms, funding aggregators, and computer vision tools —
-              with an emphasis on maintainable, scalable code.
+              I focus on practical, maintainable solutions: a multilingual Next.js rebuild for a live tourism business, a government-funding discovery
+              portal for FIIRE Forum, a campus carpooling platform and real-time computer vision tools.
             </p>
+            <p>In plain terms: you bring the problem, I'll ship a fast, reliable website or web app that solves it.</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {stats.map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <TiltCard as="div" max={10} className="h-full rounded-xl border border-border bg-card p-6">
-                  <div className="relative z-20 font-display text-5xl font-extrabold text-foreground md:text-6xl">
-                    <Counter value={s.value} suffix={s.suffix} />
-                  </div>
-                  <p className="relative z-20 mt-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">{s.label}</p>
-                </TiltCard>
-              </motion.div>
+          <dl className="grid grid-cols-2 gap-4 self-start">
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col rounded-xl border border-border bg-card p-6">
+                <dt className="order-2 mt-2 text-xs font-medium uppercase tracking-widest text-muted-foreground">{s.label}</dt>
+                <dd className="font-display text-4xl font-extrabold text-foreground md:text-5xl">{s.value}</dd>
+              </div>
             ))}
-          </div>
+          </dl>
         </div>
 
-        {/* Scroll-lit statement: each word brightens as you scroll through it */}
-        <p ref={statementRef} className="mt-24 max-w-5xl font-display text-3xl font-bold leading-tight sm:text-5xl md:text-6xl">
-          {words.map((w, i) => (
-            <Word key={i} progress={scrollYProgress} range={[i / words.length, (i + 1) / words.length]}>
-              {w}
-            </Word>
-          ))}
-        </p>
+        <h3 className="mb-6 mt-20 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">How I can help</h3>
+        <ul className="grid gap-4 md:grid-cols-3" role="list">
+          {services.map((s, i) => {
+            const Icon = serviceIcons[i]
+            return (
+              <motion.li
+                key={s.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+              >
+                <TiltCard as="div" max={0} className="h-full rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/40">
+                  <div className="relative z-20">
+                    <span className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-primary/30 bg-primary/10 text-primary">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <h4 className="mb-2 font-display text-lg font-bold text-foreground">{s.title}</h4>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{s.description}</p>
+                  </div>
+                </TiltCard>
+              </motion.li>
+            )
+          })}
+        </ul>
       </div>
     </section>
-  )
-}
-
-function Word({ children, progress, range }) {
-  const opacity = useTransform(progress, range, [0.12, 1])
-  const highlight = children === "ship" || children === "use."
-  return (
-    <motion.span style={{ opacity }} className={`mr-[0.25em] inline-block ${highlight ? "text-primary" : "text-foreground"}`}>
-      {children}
-    </motion.span>
   )
 }

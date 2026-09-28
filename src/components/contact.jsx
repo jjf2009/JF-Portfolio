@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { Send, MapPin, Globe, Clock, Mail } from "lucide-react"
 import { useForm as useHookForm } from "react-hook-form"
 import { useForm as useFormspree, ValidationError } from "@formspree/react"
-import Marquee from "./fx/Marquee"
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -40,20 +39,6 @@ const onSubmit = async (data) => {
       {/* Decorative background element */}
       <div aria-hidden="true" className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] mix-blend-screen opacity-50 translate-x-1/3 translate-y-1/3" />
 
-      {/* Giant call-to-action ticker */}
-      <div aria-hidden="true" className="relative -mt-8 mb-16 md:-mt-12 md:mb-24">
-        <Marquee speed={25}>
-          {["Let's build something", "Let's build something"].map((t, i) => (
-            <span key={i} className="flex items-center gap-10 whitespace-nowrap font-display text-6xl font-extrabold uppercase md:text-8xl">
-              <span className="text-outline">{t}</span>
-              <span className="text-primary">✦</span>
-              <span className="text-shine">crazy</span>
-              <span className="text-primary">✦</span>
-            </span>
-          ))}
-        </Marquee>
-      </div>
-
       <div className="container relative px-6 md:px-12 mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 items-start">
           
@@ -66,12 +51,12 @@ const onSubmit = async (data) => {
           >
             <div>
               <p className="mb-4 flex items-center gap-3 font-mono text-sm uppercase tracking-widest text-primary">
-                <span>06.</span>
+                <span>07.</span>
                 <span className="h-px w-10 bg-primary/60" />
-                <span>Communication</span>
+                <span>Contact</span>
               </p>
               <h2 id="contact-heading" className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6">
-                Get In Touch
+                Let's work together
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6 font-sans">
                 I'm currently looking for full-time opportunities and available for freelance web development projects. Whether you have a question or just want to engineer something cool — my inbox is always open.

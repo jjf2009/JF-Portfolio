@@ -6,13 +6,13 @@ export default function ProjectCard({ project, index, badge }) {
   const number = String(index + 1).padStart(2, "0")
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60, rotate: index % 2 ? 2 : -2 }}
-      whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, delay: (index % 2) * 0.12, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay: (index % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
       className="h-full"
     >
-      <TiltCard max={5} className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors duration-300 hover:border-primary/50">
+      <TiltCard max={0} className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors duration-300 hover:border-primary/50">
         {/* Project image — fixed aspect ratio prevents layout shift */}
         <div className="relative aspect-video w-full overflow-hidden bg-muted">
           <picture>
@@ -24,11 +24,11 @@ export default function ProjectCard({ project, index, badge }) {
               height={360}
               loading="lazy"
               decoding="async"
-              className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
+              className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
           </picture>
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
-          <span aria-hidden="true" className="text-outline absolute bottom-2 right-4 font-display text-7xl font-extrabold leading-none transition-all duration-500 group-hover:-translate-y-2 group-hover:[-webkit-text-stroke-color:hsl(var(--primary))]">
+          <span aria-hidden="true" className="text-outline absolute bottom-2 right-4 font-display text-6xl font-extrabold leading-none">
             {number}
           </span>
           {badge && (
@@ -41,7 +41,7 @@ export default function ProjectCard({ project, index, badge }) {
         {/* Card body */}
         <div className="relative z-20 flex flex-1 flex-col gap-4 p-6">
           <div className="space-y-2">
-            <h3 className="glitch font-display text-2xl font-bold text-foreground" data-text={project.title}>
+            <h3 className="font-display text-2xl font-bold text-foreground">
               {project.title}
             </h3>
             <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
