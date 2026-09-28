@@ -1,28 +1,40 @@
 # Jared Furtado
 
-> Jared Furtado is a Full Stack Developer and MERN stack specialist based in Goa, India, currently studying at Goa College of Engineering. He builds production-grade web applications with a focus on React, Node.js, MongoDB, and AI workflow integration. His work spans tourism technology, health-tech platforms, computer vision, and developer tooling. He is the creator of Global Tourist Centre (a tourism aggregation platform for Goa) and Techjeeva (a health-tech web application). Jared is available for freelance projects and open-source collaboration.
+> Jared Furtado is a full stack developer based in Goa, India. He specialises in the MERN stack (MongoDB, Express, React, Node.js) and Next.js, builds production websites and web applications for clients as a freelancer, and is a student at Goa College of Engineering. He is currently learning DevOps through the 100xDevs cohort, is interested in entrepreneurship (no venture yet), and regularly takes part in hackathons and tech events in Goa. He is available for freelance projects and part-time roles, remotely and worldwide.
 
-## Core Expertise
-- Full Stack Web Development (MERN: MongoDB, Express, React, Node.js)
-- Frontend: React 18, Vite, TailwindCSS, Framer Motion, shadcn/ui
-- Backend: Node.js, Express.js, REST APIs
-- Database: MongoDB, PostgreSQL
-- AI & Computer Vision: Python-based CV pipelines, AI workflow integration
-- Cloud & DevOps: Deployment, performance optimization, security headers
-- Tools: Git, GitHub, Postman, Figma
+Website: https://jaredfurtado.tech/
+Email: jaredfurtadowork@gmail.com
+Location: Goa, India (works remotely worldwide)
 
-## Projects
+## Now
+- Learning DevOps through the 100xDevs cohort (https://100xdevs.com/) and applying it to his own projects.
+- Interested in entrepreneurship; has not started a venture yet and is learning the business side through client work, a sales internship and events.
+- Regularly attends and competes in hackathons and tech events, e.g. the Build with AI 2026 hackathon in Goa with Google Developer Groups Goa (certificate of participation).
 
-- [Global Tourist Centre](https://github.com/jjf2009): Tourism aggregation platform for Goa — hotel, activity, and itinerary discovery
-- [Techjeeva](https://github.com/jjf2009): Health-tech web application built on the MERN stack
-- Personal Portfolio: https://jaredfurtado.tech — built with React, Vite, TailwindCSS
+## Services
+- Full stack web applications: end-to-end MERN and Next.js builds — data model, API, authentication and a fast, responsive interface.
+- Website rebuilds & modernisation: migrating live sites to modern stacks with better performance, multilingual support and conversion-focused UX.
+- Technical SEO & discoverability: structured data, Open Graph, sitemaps and crawlability.
 
-## Professional Profile
+## Client work
+- [Global Tourist Centre](https://globaltouristcentre.com/): End-to-end Next.js rebuild of a live tourism website. Added multilingual support (German, French, Russian, Italian), a WhatsApp Business widget, promotional pop-ups and countdown timers, with SEO improvements. Stack: Next.js, React, Tailwind CSS, i18n.
+- [Techjeeva](https://findfund.vercel.app/): Portal built for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship) that aggregates Indian government funding schemes for startups and entrepreneurs, filterable by sector and eligibility. Stack: React, Tailwind CSS, Google Apps Script API. Source: https://github.com/jjf2009/Techjeeva-
+
+## Personal projects
+- [IntentOS](https://github.com/jjf2009/IntentOS): AI-powered, intent-driven interface that generates workflows from what the user wants to do. Stack: Next.js, React, Tailwind CSS, Tambo AI.
+- [Ride Buddy](https://github.com/jjf2009/RideBuddy_Forntend): Campus carpooling platform for Goa College of Engineering students with live location, Firebase authentication and route maps. Stack: React, Redux, Firebase, Leaflet.
+- [OpenCV Projects](https://github.com/jjf2009/OpenCV_Projects): Real-time computer vision tools — object detection, hand-gesture tracking and face recognition — running locally. Stack: Python, OpenCV, MediaPipe, YOLO.
+- [Nike Landing Page](https://nike-landing-lac.vercel.app/): Responsive, pixel-accurate landing page clone. Stack: React, Tailwind CSS, Vite.
+
+## Experience
+- Freelance Web Developer, self-employed (Dec 2025 – present): client projects above; SEO implementation (schema markup, Open Graph, robots.txt, XML sitemaps).
+- Sales Intern, Avyott, North Goa (Dec 2025 – Jan 2026): B2B outreach for a text AI agent product; generated two qualified leads.
+- Event Coordinator, GEC Coders Club, Goa College of Engineering (Jul 2025 – present): runs technical workshops and coding competitions and mentors junior students.
+
+## Skills
+JavaScript, React, Next.js, Node.js, Express.js, MongoDB, Prisma, Supabase, Redux, Tailwind CSS, REST APIs, i18n, Python, OpenCV, retrieval-augmented generation (RAG).
+
+## Profiles
 - GitHub: https://github.com/jjf2009
-- Portfolio: https://jaredfurtado.tech
-- Email: jaredfurtadowork@gmail.com
-- Location: Goa, India
-- Education: Goa College of Engineering
-
-## Contact & Availability
-Jared is open to full-time roles, freelance web development projects, and open-source contributions. Contact via email at jaredfurtadowork@gmail.com.
+- LinkedIn: https://www.linkedin.com/in/jared-furtado/
+- Resume (PDF): https://jaredfurtado.tech/Jared_Furtado_Resume.pdf

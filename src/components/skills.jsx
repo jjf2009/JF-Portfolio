@@ -1,3 +1,7 @@
+import { motion } from "framer-motion"
+import TiltCard from "./fx/TiltCard"
+import SectionHeading from "./fx/SectionHeading"
+
 const skillIcons = {
   JavaScript: {
     color: "#F7DF1E",
@@ -167,44 +171,49 @@ const skills = [
   "RAG",
 ]
 
+function SkillIcon({ skill }) {
+  const icon = skillIcons[skill]
+  return icon?.svg ?? <img src={icon?.image} alt="" className="h-full w-full" />
+}
+
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 md:py-28 border-t border-border">
+    <section id="skills" aria-labelledby="skills-heading" className="relative border-t border-border py-20 md:py-28">
       <div className="container px-4 md:px-6">
-        <p className="text-sm font-medium tracking-widest text-primary uppercase mb-4">
-          01. Skills
+        <SectionHeading index="01" label="Skills" title="What I work with" id="skills-heading" className="mb-6" />
+        <p className="mb-12 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          A modern JavaScript stack for shipping production web apps end to end, plus Python for AI and computer vision work.
         </p>
-        <h2 className="font-display text-4xl font-bold text-foreground mb-12 sm:text-5xl">
-          What I work with
-        </h2>
+      </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 max-w-4xl">
-          {skills.map((skill) => {
+      <div className="container px-4 md:px-6">
+        <ul className="grid max-w-5xl grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5" role="list" aria-label="Technical skills">
+          {skills.map((skill, i) => {
             const icon = skillIcons[skill]
             return (
-              <div
+              <motion.li
                 key={skill}
-                className="group flex flex-col items-center gap-2 rounded-xl border border-border p-3 transition-all duration-300 hover:scale-105 cursor-default"
-                style={{ background: icon?.bg ?? "transparent" }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = `0 0 18px 2px ${icon?.color ?? "#888"}44`
-                  e.currentTarget.style.borderColor = `${icon?.color ?? "#888"}55`
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = ""
-                  e.currentTarget.style.borderColor = ""
-                }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.03, duration: 0.4 }}
               >
-                <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                  {icon?.svg ?? <img src={icon?.image} alt={skill} />}
-                </div>
-                <span className="text-xs font-medium text-foreground text-center leading-tight">
-                  {skill}
-                </span>
-              </div>
+                <TiltCard
+                  as="div"
+                  max={0}
+                  glow={`${icon?.color ?? "#888888"}40`}
+                  className="flex h-full flex-col items-center gap-3 overflow-hidden rounded-xl border border-border p-4 transition-colors duration-300 hover:border-[var(--skill)]"
+                  style={{ background: icon?.bg ?? "transparent", "--skill": `${icon?.color ?? "#888888"}88` }}
+                >
+                  <div className="relative z-20 flex h-10 w-10 flex-shrink-0 items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <SkillIcon skill={skill} />
+                  </div>
+                  <span className="relative z-20 text-center text-xs font-medium leading-tight text-foreground">{skill}</span>
+                </TiltCard>
+              </motion.li>
             )
           })}
-        </div>
+        </ul>
       </div>
     </section>
   )

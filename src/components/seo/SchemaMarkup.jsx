@@ -1,187 +1,154 @@
-// src/components/seo/SchemaMarkup.jsx
-// Injects all JSON-LD structured data for maximum schema coverage
+// JSON-LD structured data, generated from the same data the page renders so the two never drift apart.
+import { SITE_URL, profile, faqs, services } from "../../lib/site-data"
+import { freelanceData } from "../../lib/freelance-data"
+import { projectsData } from "../../lib/projects-data"
+import { experiences } from "../../lib/experience-data"
+import { galleryData } from "../../lib/gallery-data"
 
-const schemas = [
+const PERSON_ID = `${SITE_URL}/#person`
 
-  // === 1. PERSON SCHEMA (Entity Definition) ===
+const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
+
+const workToSchema = (p, isClient) => ({
+  "@type": p.git ? "SoftwareSourceCode" : "CreativeWork",
+  "@id": `${SITE_URL}/#work-${slug(p.title)}`,
+  name: p.title,
+  description: p.description,
+  ...(p.web && { url: p.web }),
+  ...(p.git && { codeRepository: p.git }),
+  image: `${SITE_URL}${p.imageFallback}`,
+  keywords: p.technologies.join(", "),
+  creator: { "@id": PERSON_ID },
+  ...(isClient && { genre: "Client project" }),
+})
+
+const graph = [
   {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://jaredfurtado.tech/#person",
-    "name": "Jared Furtado",
-    "givenName": "Jared",
-    "familyName": "Furtado",
-    "jobTitle": "Full Stack Developer",
-    "description": "Full Stack Developer and MERN stack specialist from Goa, India. Builds production-grade web applications with React, Node.js, MongoDB, and AI workflow integration.",
-    "url": "https://jaredfurtado.tech",
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://jaredfurtado.tech/images/jared-furtado-profile.avif",
-      "width": 400,
-      "height": 400
-    },
-    "email": "jaredfurtadowork@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Goa",
-      "addressCountry": "IN"
-    },
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Goa College of Engineering",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Goa",
-        "addressCountry": "IN"
-      }
-    },
-    "knowsAbout": [
-      "Full Stack Development",
-      "MERN Stack",
-      "React",
-      "Node.js",
-      "MongoDB",
-      "Express.js",
-      "AI Workflows",
-      "Computer Vision",
-      "Cloud Computing",
-      "TailwindCSS",
-      "Python",
-      "PostgreSQL"
-    ],
-    "sameAs": [
-      "https://github.com/jjf2009"
-    ]
+    "@type": "ProfilePage",
+    "@id": `${SITE_URL}/#profilepage`,
+    url: SITE_URL,
+    name: `${profile.name} — ${profile.tagline}`,
+    inLanguage: "en-IN",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    mainEntity: { "@id": PERSON_ID },
+    primaryImageOfPage: { "@type": "ImageObject", url: profile.image },
+    hasPart: [...freelanceData, ...projectsData].map((p) => ({ "@id": `${SITE_URL}/#work-${slug(p.title)}` })),
   },
-
-  // === 2. WEBSITE SCHEMA ===
   {
-    "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://jaredfurtado.tech/#website",
-    "url": "https://jaredfurtado.tech",
-    "name": "Jared Furtado — Full Stack Developer",
-    "description": "Personal portfolio of Jared Furtado, Full Stack Developer from Goa, India.",
-    "author": {
-      "@id": "https://jaredfurtado.tech/#person"
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: profile.name,
+    description: profile.summary,
+    inLanguage: "en-IN",
+    publisher: { "@id": PERSON_ID },
+  },
+  {
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: profile.name,
+    givenName: profile.givenName,
+    familyName: profile.familyName,
+    jobTitle: profile.jobTitle,
+    description: profile.summary,
+    url: SITE_URL,
+    email: `mailto:${profile.email}`,
+    image: { "@type": "ImageObject", url: profile.image, width: 400, height: 500 },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: profile.locality,
+      addressRegion: profile.region,
+      addressCountry: profile.country,
     },
-    "inLanguage": "en-IN"
-  },
-
-  // === 3. COLLECTION PAGE SCHEMA ===
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "@id": "https://jaredfurtado.tech/#collection",
-    "url": "https://jaredfurtado.tech",
-    "name": "Projects by Jared Furtado",
-    "description": "A showcase of web development, AI, and computer vision projects built by Jared Furtado.",
-    "author": {
-      "@id": "https://jaredfurtado.tech/#person"
-    }
-  },
-
-  // === 4. SOFTWARE PROJECT: Global Tourist Centre ===
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "@id": "https://jaredfurtado.tech/#project-gtc",
-    "name": "Global Tourist Centre",
-    "description": "A tourism aggregation web application for Goa, India. Allows users to discover hotels, activities, restaurants, and build custom itineraries. Built with the MERN stack.",
-    "programmingLanguage": ["JavaScript", "React", "Node.js", "MongoDB"],
-    "codeRepository": "https://github.com/jjf2009",
-    "author": {
-      "@id": "https://jaredfurtado.tech/#person"
+    homeLocation: { "@type": "Place", name: `${profile.locality}, ${profile.countryName}` },
+    affiliation: { "@type": "CollegeOrUniversity", name: profile.school },
+    alumniOf: { "@type": "CollegeOrUniversity", name: profile.school },
+    hasOccupation: {
+      "@type": "Occupation",
+      name: profile.jobTitle,
+      occupationLocation: { "@type": "Country", name: profile.countryName },
+      skills: "React, Next.js, Node.js, Express.js, MongoDB, Tailwind CSS, Python",
     },
-    "applicationCategory": "Travel & Tourism",
-    "keywords": "Goa tourism, hotel discovery, itinerary builder, MERN stack"
+    knowsAbout: [
+      "Full Stack Web Development",
+      "MERN Stack",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Prisma",
+      "Supabase",
+      "Redux",
+      "Tailwind CSS",
+      "REST APIs",
+      "Internationalization (i18n)",
+      "Technical SEO",
+      "Python",
+      "OpenCV",
+      "Computer Vision",
+      "Retrieval-Augmented Generation",
+      "DevOps",
+    ],
+    knowsLanguage: ["en"],
+    sameAs: [profile.social.github, profile.social.linkedin],
+    worksFor: experiences
+      .filter((e) => e.current)
+      .map((e) => ({ "@type": "Organization", name: e.company === "Self-Employed" ? `${profile.name} (Freelance)` : e.company })),
   },
-
-  // === 5. SOFTWARE PROJECT: Techjeeva ===
   {
-    "@context": "https://schema.org",
-    "@type": "SoftwareSourceCode",
-    "@id": "https://jaredfurtado.tech/#project-techjeeva",
-    "name": "Techjeeva",
-    "description": "A health-tech web application built on the MERN stack. Connects patients and healthcare providers through an intuitive digital interface.",
-    "programmingLanguage": ["JavaScript", "React", "Node.js", "MongoDB"],
-    "codeRepository": "https://github.com/jjf2009",
-    "author": {
-      "@id": "https://jaredfurtado.tech/#person"
-    },
-    "applicationCategory": "Health & Medical"
-  },
-
-  // === 6. PROFESSIONAL SERVICE (Freelance) ===
-  {
-    "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://jaredfurtado.tech/#service",
-    "name": "Jared Furtado — Freelance Web Development",
-    "description": "Freelance full stack web development services. Specializing in MERN stack applications, React frontends, Node.js backends, and AI workflow integration.",
-    "provider": {
-      "@id": "https://jaredfurtado.tech/#person"
+    "@id": `${SITE_URL}/#service`,
+    name: `${profile.name} — Freelance Web Development`,
+    url: SITE_URL,
+    image: profile.image,
+    email: profile.email,
+    founder: { "@id": PERSON_ID },
+    provider: { "@id": PERSON_ID },
+    address: { "@type": "PostalAddress", addressLocality: profile.locality, addressRegion: profile.region, addressCountry: profile.country },
+    areaServed: [{ "@type": "Country", name: "India" }, { "@type": "Place", name: "Worldwide" }],
+    serviceType: "Full Stack Web Development",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Web development services",
+      itemListElement: services.map((s) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: s.title, description: s.description },
+      })),
     },
-    "areaServed": {
-      "@type": "Country",
-      "name": "India"
-    },
-    "serviceType": "Full Stack Web Development",
-    "url": "https://jaredfurtado.tech"
   },
-
-  // === 7. FAQ SCHEMA (Targets AI citation queries) ===
+  ...freelanceData.map((p) => workToSchema(p, true)),
+  ...projectsData.map((p) => workToSchema(p, false)),
   {
-    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "@id": `${SITE_URL}/#gallery`,
+    name: `${profile.name} — Hackathons & events`,
+    about: { "@id": PERSON_ID },
+    image: galleryData.map((g) => ({
+      "@type": "ImageObject",
+      contentUrl: `${SITE_URL}${g.src}.jpg`,
+      width: g.width,
+      height: g.height,
+      caption: g.caption,
+      description: g.alt,
+      ...(g.date && { dateCreated: g.date }),
+      ...(g.location && { contentLocation: { "@type": "Place", name: g.location } }),
+    })),
+  },
+  {
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Who is Jared Furtado?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jared Furtado is a Full Stack Developer from Goa, India, specializing in MERN stack development (MongoDB, Express, React, Node.js). He is currently studying at Goa College of Engineering and has built projects including Global Tourist Centre and Techjeeva."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What technologies does Jared Furtado specialize in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jared Furtado specializes in React, Node.js, MongoDB, Express.js, TailwindCSS, Python, AI workflows, and computer vision. He is proficient in both frontend and backend development with a focus on the MERN stack."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Jared Furtado available for freelance projects?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Jared Furtado is available for freelance web development projects. He can be contacted at jaredfurtadowork@gmail.com."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What projects has Jared Furtado built?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jared Furtado has built Global Tourist Centre (a tourism discovery platform for Goa), Techjeeva (a MERN-based health-tech application), and various AI and computer vision projects. His full portfolio is at jaredfurtado.tech."
-        }
-      }
-    ]
-  }
+    "@id": `${SITE_URL}/#faq`,
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+]
 
-];
+const json = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c")
 
 export default function SchemaMarkup() {
-  return (
-    <>
-      {schemas.map((schema, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema, null, 2) }}
-        />
-      ))}
-    </>
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />
 }

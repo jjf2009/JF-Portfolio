@@ -1,3 +1,6 @@
+// Optional `devops` field marks a project that is being taken through DevOps work
+// (shown as a badge on the card and listed in the "Now" section), e.g.
+//   devops: { status: "In progress", summary: "Containerising and automating deploys", stack: ["Docker", "GitHub Actions", "AWS"] },
 export const projectsData = [
   {
     title: "IndentOS",

@@ -2,13 +2,13 @@ import { Github, Mail, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border/50 py-12 text-center md:text-left">
+    <footer className="relative overflow-hidden bg-background border-t border-border/50 pt-12 text-center md:text-left">
       <div className="container px-6 md:px-12 mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
         
         <div className="space-y-2">
-          <h2 className="font-display font-bold text-2xl text-foreground">
+          <p className="font-display font-bold text-2xl text-foreground">
             Jared Furtado
-          </h2>
+          </p>
           <p className="font-mono text-sm text-muted-foreground uppercase tracking-widest">
             Full Stack Developer
           </p>
@@ -56,9 +56,16 @@ export default function Footer() {
           </ul>
           
           <p className="text-sm font-mono text-muted-foreground/60">
-            &copy; 2026 Jared Furtado. All rights reserved.
+            &copy; {new Date().getFullYear()} Jared Furtado. All rights reserved.
           </p>
         </div>
+      </div>
+
+      {/* Oversized signature */}
+      <div aria-hidden="true" className="mt-10 select-none overflow-hidden">
+        <p className="text-outline whitespace-nowrap text-center font-display text-[17vw] font-extrabold uppercase leading-[0.8] tracking-tighter">
+          Furtado
+        </p>
       </div>
     </footer>
   )

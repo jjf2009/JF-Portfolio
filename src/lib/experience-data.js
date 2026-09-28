@@ -1,74 +1,50 @@
-export const experienceData = [
+export const experiences = [
   {
     role: "Freelance Web Developer",
-    organization: "Self-Employed",
-    location: "Remote",
-    startDate: "Dec 2025",
-    endDate: "Present",
+    company: "Self-Employed",
+    location: "Remote / Goa, India",
+    startDate: "2025-12",
+    displayDate: "Dec 2025 — Present",
+    current: true,
     type: "Freelance",
-    description: [
+    description: "Specializing in building production-ready MERN stack applications for clients worldwide. Developed full-stack solutions with custom authentication, complex database schemas, and optimized frontends.",
+    achievements: [
       "Completed two paid client projects including rebuilding the Global Tourist Centre website with multilingual support.",
       "Developed the Techjeeva funding platform for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship).",
-      "Implemented SEO best practices such as Schema markup, Open Graph tags, robots.txt configuration, and XML sitemap generation to improve search visibility."
+      "Implemented SEO best practices such as Schema markup, Open Graph tags, robots.txt configuration, and XML sitemap generation.",
     ],
-    skills: [
-      "Full Stack Development",
-      "SEO",
-      "Schema Markup",
-      "Open Graph",
-      "XML Sitemap",
-      "Robots.txt"
-    ],
-    projects: [
-      {
-        name: "Global Tourist Centre Website Rebuild",
-        type: "Client Project"
-      },
-      {
-        name: "Techjeeva Funding Platform",
-        organization: "FIIRE Forum",
-        type: "Client Project"
-      }
-    ]
+    tags: ["Full Stack Development", "MERN Stack", "SEO Architecture", "React Frontend"],
   },
   {
     role: "Sales Intern",
-    organization: "Avyott",
-    location: "North Goa",
-    startDate: "Dec 2025",
-    endDate: "Jan 2026",
+    company: "Avyott",
+    location: "North Goa, India",
+    startDate: "2025-12",
+    endDate: "2026-01",
+    displayDate: "Dec 2025 — Jan 2026",
     type: "Internship",
-    description: [
-      "Conducted B2B outreach through cold calls, WhatsApp messaging, email campaigns, and LinkedIn DMs to promote a text AI agent product.",
+    description: "Worked closely with product teams to understand and communicate the value proposition of a text AI agent product.",
+    achievements: [
+      "Conducted B2B outreach through cold calls, WhatsApp messaging, email campaigns, and LinkedIn DMs.",
       "Generated two qualified leads through consistent outreach efforts.",
-      "Developed practical experience in handling client objections and understanding product–market fit challenges."
+      "Developed practical experience in handling client objections and understanding product-market fit.",
     ],
-    skills: [
-      "B2B Sales",
-      "Cold Outreach",
-      "Lead Generation",
-      "Client Communication",
-      "Product Market Fit"
-    ]
+    tags: ["B2B Sales", "Client Communication", "Product Market Fit"],
   },
   {
     role: "Event Coordinator",
-    organization: "GEC Coders Club",
-    location: "Goa",
-    startDate: "Jul 2025",
-    endDate: "Present",
+    company: "GEC Coders Club",
+    location: "Goa College of Engineering",
+    startDate: "2025-07",
+    displayDate: "Jul 2025 — Present",
+    current: true,
     type: "Leadership",
-    description: [
+    description: "Organizing and leading coding initiatives, technical workshops, and hackathon participation strategies for engineering students.",
+    achievements: [
       "Organized technical workshops and coding competitions for students.",
       "Conducted sessions such as 'Getting Started with Hackathons' to help juniors enter competitive coding.",
-      "Mentored junior students on technical fundamentals and hackathon participation strategies."
+      "Mentored junior students on technical fundamentals.",
     ],
-    skills: [
-      "Leadership",
-      "Event Management",
-      "Mentoring",
-      "Community Building",
-      "Technical Workshops"
-    ]
-  }
+    tags: ["Leadership", "Mentoring", "Event Management"],
+  },
 ]

@@ -50,14 +50,16 @@ const onSubmit = async (data) => {
             className="lg:col-span-2 space-y-10"
           >
             <div>
-              <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">
-                06. Communication
-              </span>
+              <p className="mb-4 flex items-center gap-3 font-mono text-sm uppercase tracking-widest text-primary">
+                <span>09.</span>
+                <span className="h-px w-10 bg-primary/60" />
+                <span>Contact</span>
+              </p>
               <h2 id="contact-heading" className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6">
-                Get In Touch
+                Let's work together
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6 font-sans">
-                I'm currently looking for full-time opportunities and available for freelance web development projects. Whether you have a question or just want to engineer something cool — my inbox is always open.
+                I'm available for freelance web development projects and part-time roles. Have a product idea, a site that needs rebuilding, or an event I should be at? My inbox is always open.
               </p>
             </div>
 
@@ -79,9 +81,9 @@ const onSubmit = async (data) => {
               
               <div className="flex items-center gap-4 text-foreground/80">
                 <div className="w-10 h-10 flex items-center justify-center bg-background border border-border/60 rounded-sm">
-                  <Globe className="w-4 h-4 text-success" />
+                  <Globe className="w-4 h-4 text-emerald-400" />
                 </div>
-                <span>Open to remote opportunities</span>
+                <span>Freelance &amp; part-time · remote-friendly</span>
               </div>
               
               <div className="flex items-center gap-4 text-foreground/80">
@@ -105,8 +107,8 @@ const onSubmit = async (data) => {
 
             {state.succeeded ? (
               <div className="h-full min-h-[400px] flex flex-col items-center justify-center text-center space-y-6">
-                <div className="w-20 h-20 rounded-full bg-success/20 flex items-center justify-center mb-4">
-                  <Send className="w-8 h-8 text-success" />
+                <div className="w-20 h-20 rounded-full bg-emerald-400/20 flex items-center justify-center mb-4">
+                  <Send className="w-8 h-8 text-emerald-400" />
                 </div>
                 <h3 className="text-3xl font-display font-medium text-foreground">Message Sent</h3>
                 <p className="text-muted-foreground text-lg max-w-sm">
@@ -180,7 +182,7 @@ const onSubmit = async (data) => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="w-full flex items-center justify-center gap-3 bg-primary text-primary-foreground rounded-md px-8 py-4 font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
+                  className="relative w-full overflow-hidden flex items-center justify-center gap-3 bg-primary text-primary-foreground rounded-md px-8 py-4 font-semibold shadow-[0_0_40px_hsl(var(--primary)/0.25)] hover:shadow-[0_0_60px_hsl(var(--primary)/0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
                 >
                   {state.submitting ?  (
                     "Sending..."
