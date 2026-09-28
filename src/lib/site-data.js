@@ -57,7 +57,7 @@ export const now = [
     label: "Interested in",
     title: "Entrepreneurship",
     description:
-      "I'm most excited by building products end to end — spotting a real problem, shipping a solution and getting it in front of users. Client work and sales experience have shown me the business side, not just the code.",
+      "Entrepreneurship is where I'd like to head one day. I haven't started a venture yet — for now I'm learning how businesses work through client projects, my sales internship and the founders I meet at events.",
   },
   {
     key: "events",
@@ -88,7 +88,7 @@ export const faqs = [
   },
   {
     q: "What is Jared Furtado working on right now?",
-    a: "He is learning DevOps through the 100xDevs cohort and applying it to his projects, taking on freelance client work, and regularly taking part in hackathons and tech events in Goa. He is especially interested in entrepreneurship and building his own products.",
+    a: "He is learning DevOps through the 100xDevs cohort and applying it to his projects, taking on freelance client work, and regularly taking part in hackathons and tech events in Goa. He is also interested in entrepreneurship, though he has not started a venture yet.",
   },
   {
     q: "Where is Jared Furtado based?",

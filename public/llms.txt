@@ -1,6 +1,6 @@
 # Jared Furtado
 
-> Jared Furtado is a full stack developer based in Goa, India. He specialises in the MERN stack (MongoDB, Express, React, Node.js) and Next.js, builds production websites and web applications for clients as a freelancer, and is a student at Goa College of Engineering. He is currently learning DevOps through the 100xDevs cohort, is strongly interested in entrepreneurship, and regularly takes part in hackathons and tech events in Goa. He is available for freelance projects and part-time roles, remotely and worldwide.
+> Jared Furtado is a full stack developer based in Goa, India. He specialises in the MERN stack (MongoDB, Express, React, Node.js) and Next.js, builds production websites and web applications for clients as a freelancer, and is a student at Goa College of Engineering. He is currently learning DevOps through the 100xDevs cohort, is interested in entrepreneurship (no venture yet), and regularly takes part in hackathons and tech events in Goa. He is available for freelance projects and part-time roles, remotely and worldwide.
 
 Website: https://jaredfurtado.tech/
 Email: jaredfurtadowork@gmail.com
@@ -8,7 +8,7 @@ Location: Goa, India (works remotely worldwide)
 
 ## Now
 - Learning DevOps through the 100xDevs cohort (https://100xdevs.com/) and applying it to his own projects.
-- Interested in entrepreneurship: building products end to end, from problem to users.
+- Interested in entrepreneurship; has not started a venture yet and is learning the business side through client work, a sales internship and events.
 - Regularly attends and competes in hackathons and tech events, e.g. the Build with AI 2026 hackathon in Goa with Google Developer Groups Goa (certificate of participation).
 
 ## Services

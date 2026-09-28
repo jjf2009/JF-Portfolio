@@ -90,7 +90,6 @@ const graph = [
       "Computer Vision",
       "Retrieval-Augmented Generation",
       "DevOps",
-      "Entrepreneurship",
     ],
     knowsLanguage: ["en"],
     sameAs: [profile.social.github, profile.social.linkedin],
