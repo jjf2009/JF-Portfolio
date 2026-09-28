@@ -9,7 +9,7 @@ export default function Faq() {
     <section id="faq" aria-labelledby="faq-heading" className="border-t border-border py-20 md:py-28">
       <div className="container grid gap-12 px-4 md:px-6 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
         <div>
-          <SectionHeading index="06" label="FAQ" title="Frequently asked questions" id="faq-heading" className="mb-6" />
+          <SectionHeading index="08" label="FAQ" title="Frequently asked questions" id="faq-heading" className="mb-6" />
           <p className="text-lg leading-relaxed text-muted-foreground">
             Quick answers about who I am, what I build and how to work with me.
           </p>

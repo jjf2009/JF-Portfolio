@@ -51,7 +51,7 @@ const onSubmit = async (data) => {
           >
             <div>
               <p className="mb-4 flex items-center gap-3 font-mono text-sm uppercase tracking-widest text-primary">
-                <span>07.</span>
+                <span>09.</span>
                 <span className="h-px w-10 bg-primary/60" />
                 <span>Contact</span>
               </p>
@@ -59,7 +59,7 @@ const onSubmit = async (data) => {
                 Let's work together
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6 font-sans">
-                I'm currently looking for full-time opportunities and available for freelance web development projects. Whether you have a question or just want to engineer something cool — my inbox is always open.
+                I'm available for freelance web development projects and part-time roles. Have a product idea, a site that needs rebuilding, or an event I should be at? My inbox is always open.
               </p>
             </div>
 
@@ -83,7 +83,7 @@ const onSubmit = async (data) => {
                 <div className="w-10 h-10 flex items-center justify-center bg-background border border-border/60 rounded-sm">
                   <Globe className="w-4 h-4 text-emerald-400" />
                 </div>
-                <span>Open to remote opportunities</span>
+                <span>Freelance &amp; part-time · remote-friendly</span>
               </div>
               
               <div className="flex items-center gap-4 text-foreground/80">

@@ -10,6 +10,8 @@ const sections = [
   ["Freelance Work", "#freelance"],
   ["Projects", "#projects"],
   ["About", "#about"],
+  ["Now", "#now"],
+  ["Hackathon Gallery", "#gallery"],
   ["FAQ", "#faq"],
   ["Contact", "#contact"],
 ]

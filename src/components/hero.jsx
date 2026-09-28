@@ -26,7 +26,7 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60 motion-reduce:hidden" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
               </span>
-              Available for freelance projects &amp; full-time roles
+              {profile.availability}
             </p>
 
             <div className="space-y-5">

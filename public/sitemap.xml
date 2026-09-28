@@ -13,6 +13,24 @@
     <image:image>
       <image:loc>https://jaredfurtado.tech/images/techjeeva.png</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/gallery/build-with-ai-2026-certificates.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/gallery/pitching-to-judges-assagao-2025.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/gallery/hackathon-coding-session.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/gallery/team-panaji-2026.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/gallery/pair-programming.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://jaredfurtado.tech/images/gallery/team-selfie.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://jaredfurtado.tech/llms.txt</loc>

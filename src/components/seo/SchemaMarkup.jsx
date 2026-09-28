@@ -3,6 +3,7 @@ import { SITE_URL, profile, faqs, services } from "../../lib/site-data"
 import { freelanceData } from "../../lib/freelance-data"
 import { projectsData } from "../../lib/projects-data"
 import { experiences } from "../../lib/experience-data"
+import { galleryData } from "../../lib/gallery-data"
 
 const PERSON_ID = `${SITE_URL}/#person`
 
@@ -88,6 +89,8 @@ const graph = [
       "OpenCV",
       "Computer Vision",
       "Retrieval-Augmented Generation",
+      "DevOps",
+      "Entrepreneurship",
     ],
     knowsLanguage: ["en"],
     sameAs: [profile.social.github, profile.social.linkedin],
@@ -118,6 +121,22 @@ const graph = [
   },
   ...freelanceData.map((p) => workToSchema(p, true)),
   ...projectsData.map((p) => workToSchema(p, false)),
+  {
+    "@type": "ImageGallery",
+    "@id": `${SITE_URL}/#gallery`,
+    name: `${profile.name} — Hackathons & events`,
+    about: { "@id": PERSON_ID },
+    image: galleryData.map((g) => ({
+      "@type": "ImageObject",
+      contentUrl: `${SITE_URL}${g.src}.jpg`,
+      width: g.width,
+      height: g.height,
+      caption: g.caption,
+      description: g.alt,
+      ...(g.date && { dateCreated: g.date }),
+      ...(g.location && { contentLocation: { "@type": "Place", name: g.location } }),
+    })),
+  },
   {
     "@type": "FAQPage",
     "@id": `${SITE_URL}/#faq`,

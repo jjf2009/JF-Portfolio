@@ -56,6 +56,15 @@ export default function ProjectCard({ project, index, badge }) {
             ))}
           </ul>
 
+          {project.devops && (
+            <p className="flex items-center gap-2 rounded-md border border-primary/20 bg-primary/5 px-3 py-2 text-xs text-muted-foreground">
+              <span className="rounded-full bg-primary/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                DevOps · {project.devops.status}
+              </span>
+              {project.devops.stack.join(" · ")}
+            </p>
+          )}
+
           {/* CTAs — always visible */}
           <div className="mt-auto flex gap-3 pt-1">
             {project.web && (

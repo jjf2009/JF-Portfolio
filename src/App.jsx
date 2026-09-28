@@ -9,6 +9,8 @@ import Footer from "./components/footer"
 import SchemaMarkup from "./components/seo/SchemaMarkup"
 import Freelance from "./components/freelance"
 import Faq from "./components/faq"
+import Now from "./components/now"
+import Gallery from "./components/gallery"
 import ScrollProgress from "./components/fx/ScrollProgress"
 import CommandPalette from "./components/fx/CommandPalette"
 
@@ -27,6 +29,8 @@ function App() {
           <Freelance />
           <Projects />
           <About />
+          <Now />
+          <Gallery />
           <Faq />
           <Contact />
         </main>

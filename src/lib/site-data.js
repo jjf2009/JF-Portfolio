@@ -10,7 +10,8 @@ export const profile = {
   jobTitle: "Full Stack Developer",
   tagline: "Full Stack Developer in Goa, India",
   summary:
-    "Jared Furtado is a full stack developer based in Goa, India, specialising in the MERN stack (MongoDB, Express, React, Node.js) and Next.js. He builds production web applications for clients and is a student at Goa College of Engineering.",
+    "Jared Furtado is a full stack developer based in Goa, India, specialising in the MERN stack (MongoDB, Express, React, Node.js) and Next.js. He builds production web applications for clients, is currently learning DevOps through 100xDevs, and is a student at Goa College of Engineering with a strong interest in entrepreneurship.",
+  availability: "Available for freelance & part-time work",
   email: "jaredfurtadowork@gmail.com",
   locality: "Goa",
   region: "Goa",
@@ -41,6 +42,33 @@ export const services = [
   },
 ]
 
+// What I'm focused on right now (rendered in the "Now" section).
+export const now = [
+  {
+    key: "devops",
+    label: "Learning",
+    title: "DevOps with 100xDevs",
+    description:
+      "Currently learning DevOps through the 100xDevs cohort and applying it to my own projects — taking them from “works on my machine” to properly deployed, automated and production-ready.",
+    link: { href: "https://100xdevs.com/", text: "100xdevs.com" },
+  },
+  {
+    key: "entrepreneurship",
+    label: "Interested in",
+    title: "Entrepreneurship",
+    description:
+      "I'm most excited by building products end to end — spotting a real problem, shipping a solution and getting it in front of users. Client work and sales experience have shown me the business side, not just the code.",
+  },
+  {
+    key: "events",
+    label: "Always at",
+    title: "Hackathons & tech events",
+    description:
+      "I show up to as many hackathons, meetups and community events as I can — to build under pressure, pitch to judges and meet people who are building things too.",
+    link: { href: "#gallery", text: "See the gallery" },
+  },
+]
+
 export const faqs = [
   {
     q: "Who is Jared Furtado?",
@@ -56,7 +84,11 @@ export const faqs = [
   },
   {
     q: "Is Jared Furtado available for hire?",
-    a: "Yes. He is available for freelance web development projects worldwide and is open to full-time opportunities, including remote roles. The best way to reach him is by email at jaredfurtadowork@gmail.com; he typically replies within 24 hours.",
+    a: "Yes. He is available for freelance web development projects and part-time roles, remotely and worldwide. The best way to reach him is by email at jaredfurtadowork@gmail.com; he typically replies within 24 hours.",
+  },
+  {
+    q: "What is Jared Furtado working on right now?",
+    a: "He is learning DevOps through the 100xDevs cohort and applying it to his projects, taking on freelance client work, and regularly taking part in hackathons and tech events in Goa. He is especially interested in entrepreneurship and building his own products.",
   },
   {
     q: "Where is Jared Furtado based?",
