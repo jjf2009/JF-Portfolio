@@ -1,37 +1,42 @@
 # Jared Furtado
 
-> Jared Furtado is a full stack developer based in Goa, India. He specialises in the MERN stack (MongoDB, Express, React, Node.js) and Next.js, builds production websites and web applications for clients as a freelancer, and is a student at Goa College of Engineering. He is currently learning DevOps through the 100xDevs cohort, is interested in entrepreneurship (no venture yet), and regularly takes part in hackathons and tech events in Goa. He is available for freelance projects and part-time roles, remotely and worldwide.
+> Jared Furtado is an engineering student at Goa College of Engineering in Goa, India, and is still early in learning web development. He has practised with React, Next.js and Node.js through personal learning projects, two client websites (Global Tourist Centre and Techjeeva) and eight hackathons in Goa. He is currently learning DevOps through the 100xDevs cohort. He is interested in entrepreneurship but has not started a venture yet.
 
 Website: https://jaredfurtado.tech/
 Email: jaredfurtadowork@gmail.com
-Location: Goa, India (works remotely worldwide)
+Location: Goa, India
 
 ## Now
 - Learning DevOps through the 100xDevs cohort (https://100xdevs.com/) and applying it to his own projects.
 - Interested in entrepreneurship; has not started a venture yet and is learning the business side through client work, a sales internship and events.
-- Regularly attends and competes in hackathons and tech events, e.g. the Build with AI 2026 hackathon in Goa with Google Developer Groups Goa (certificate of participation).
-
-## Services
-- Full stack web applications: end-to-end MERN and Next.js builds — data model, API, authentication and a fast, responsive interface.
-- Website rebuilds & modernisation: migrating live sites to modern stacks with better performance, multilingual support and conversion-focused UX.
-- Technical SEO & discoverability: structured data, Open Graph, sitemaps and crawlability.
+- Takes part in hackathons across Goa (see the list below).
 
 ## Client work
-- [Global Tourist Centre](https://globaltouristcentre.com/): End-to-end Next.js rebuild of a live tourism website. Added multilingual support (German, French, Russian, Italian), a WhatsApp Business widget, promotional pop-ups and countdown timers, with SEO improvements. Stack: Next.js, React, Tailwind CSS, i18n.
-- [Techjeeva](https://findfund.vercel.app/): Portal built for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship) that aggregates Indian government funding schemes for startups and entrepreneurs, filterable by sector and eligibility. Stack: React, Tailwind CSS, Google Apps Script API. Source: https://github.com/jjf2009/Techjeeva-
+- [Global Tourist Centre](https://globaltouristcentre.com/): Client project. He worked on moving a tourism company's website to Next.js and learned how to add German, French, Russian and Italian versions. Stack: Next.js, React, Tailwind CSS, i18n.
+- [Techjeeva](https://findfund.vercel.app/): Client project for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship): a simple page listing Indian government funding schemes for startups, with filters for sector and eligibility. Stack: React, Tailwind CSS, Google Script API. Source: https://github.com/jjf2009/Techjeeva-
 
-## Personal projects
-- [IntentOS](https://github.com/jjf2009/IntentOS): AI-powered, intent-driven interface that generates workflows from what the user wants to do. Stack: Next.js, React, Tailwind CSS, Tambo AI.
-- [Ride Buddy](https://github.com/jjf2009/RideBuddy_Forntend): Campus carpooling platform for Goa College of Engineering students with live location, Firebase authentication and route maps. Stack: React, Redux, Firebase, Leaflet.
-- [OpenCV Projects](https://github.com/jjf2009/OpenCV_Projects): Real-time computer vision tools — object detection, hand-gesture tracking and face recognition — running locally. Stack: Python, OpenCV, MediaPipe, YOLO.
-- [Nike Landing Page](https://nike-landing-lac.vercel.app/): Responsive, pixel-accurate landing page clone. Stack: React, Tailwind CSS, Vite.
+## Learning projects
+- [IntentOS](https://github.com/jjf2009/IntentOS): An experiment with Tambo AI's generative UI; you describe what you want to do and it tries to put together a workflow. Stack: Next.js, React, Tailwind CSS, Tambo AI.
+- [Ride Buddy](https://github.com/jjf2009/RideBuddy_Forntend): Learning project: carpooling for Goa College of Engineering students, where you can offer or find a ride and see it on a map. Stack: React, Redux, Firebase, Leaflet.
+- [OpenCV Projects](https://github.com/jjf2009/OpenCV_Projects): Small experiments to learn computer vision: object detection, hand tracking and face recognition. Stack: Python, OpenCV, MediaPipe, YOLO.
+- [Nike Landing Page](https://nike-landing-lac.vercel.app/): A copy of Nike's landing page made to practise responsive layouts. Stack: React, Tailwind CSS, Vite.
 
 ## Experience
-- Freelance Web Developer, self-employed (Dec 2025 – present): client projects above; SEO implementation (schema markup, Open Graph, robots.txt, XML sitemaps).
+- Freelance web developer, self-employed (Dec 2025 – present): worked on the two client websites above while learning.
 - Sales Intern, Avyott, North Goa (Dec 2025 – Jan 2026): B2B outreach for a text AI agent product; generated two qualified leads.
 - Event Coordinator, GEC Coders Club, Goa College of Engineering (Jul 2025 – present): runs technical workshops and coding competitions and mentors junior students.
 
-## Skills
+## Hackathons
+- Orix Hackathon 2026, hosted by McLaren Strategic Solutions (team received trophies and certificates of achievement)
+- Build with AI Hackathon 2026 (AgriTech), organised by GDG Goa
+- PCCE Hackathon 2026
+- Goa University Hackathon 2025
+- Goa Police Hackathon 2025
+- AIEM Hackathon 2024
+- InternSpirit Hackathon 2024
+- NIT Goa Hackathon 2024
+
+## Technologies he has worked with while learning
 JavaScript, React, Next.js, Node.js, Express.js, MongoDB, Prisma, Supabase, Redux, Tailwind CSS, REST APIs, i18n, Python, OpenCV, retrieval-augmented generation (RAG).
 
 ## Profiles

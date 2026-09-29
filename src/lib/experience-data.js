@@ -5,9 +5,10 @@ export const experiences = [
     location: "Remote / Goa, India",
     startDate: "2025-12",
     displayDate: "Dec 2025 — Present",
+    summary: "Two client websites so far: Global Tourist Centre and Techjeeva.",
     current: true,
     type: "Freelance",
-    description: "Specializing in building production-ready MERN stack applications for clients worldwide. Developed full-stack solutions with custom authentication, complex database schemas, and optimized frontends.",
+    description: "Worked on two client websites while learning: Global Tourist Centre and Techjeeva.",
     achievements: [
       "Completed two paid client projects including rebuilding the Global Tourist Centre website with multilingual support.",
       "Developed the Techjeeva funding platform for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship).",
@@ -22,6 +23,7 @@ export const experiences = [
     startDate: "2025-12",
     endDate: "2026-01",
     displayDate: "Dec 2025 — Jan 2026",
+    summary: "B2B outreach for a text AI agent product. Generated two qualified leads.",
     type: "Internship",
     description: "Worked closely with product teams to understand and communicate the value proposition of a text AI agent product.",
     achievements: [
@@ -37,6 +39,7 @@ export const experiences = [
     location: "Goa College of Engineering",
     startDate: "2025-07",
     displayDate: "Jul 2025 — Present",
+    summary: "Run coding workshops and competitions, and mentor juniors.",
     current: true,
     type: "Leadership",
     description: "Organizing and leading coding initiatives, technical workshops, and hackathon participation strategies for engineering students.",

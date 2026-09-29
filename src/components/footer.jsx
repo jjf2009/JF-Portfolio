@@ -1,71 +1,29 @@
-import { Github, Mail, Linkedin } from "lucide-react"
+import { profile } from "../lib/site-data"
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-background border-t border-border/50 pt-12 text-center md:text-left">
-      <div className="container px-6 md:px-12 mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8">
-        
-        <div className="space-y-2">
-          <p className="font-display font-bold text-2xl text-foreground">
-            Jared Furtado
-          </p>
-          <p className="font-mono text-sm text-muted-foreground uppercase tracking-widest">
-            Full Stack Developer
-          </p>
-          <address className="not-italic text-sm text-muted-foreground/80 mt-2 font-sans">
-            <p>Goa, India</p>
-            <a href="mailto:jaredfurtadowork@gmail.com" className="hover:text-primary transition-colors">
-              jaredfurtadowork@gmail.com
-            </a>
-          </address>
-        </div>
-
-        <div className="flex flex-col items-center md:items-end gap-6">
-          <ul className="flex items-center gap-6" aria-label="Social media links">
-          <li>
-              <a 
-                href="https://www.linkedin.com/in/jared-furtado/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors block p-2 -m-2"
-                aria-label="Jared Furtado's Linkedin Profile"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-            </li>
-    <li>
-              <a 
-                href="https://github.com/jjf2009" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors block p-2 -m-2"
-                aria-label="Jared Furtado's GitHub Profile"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-            </li>
-            <li>
-              <a 
-                href="mailto:jaredfurtadowork@gmail.com" 
-                className="text-muted-foreground hover:text-primary transition-colors block p-2 -m-2"
-                aria-label="Email Jared Furtado directly"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </li>
-          </ul>
-          
-          <p className="text-sm font-mono text-muted-foreground/60">
-            &copy; {new Date().getFullYear()} Jared Furtado. All rights reserved.
-          </p>
-        </div>
-      </div>
-
-      {/* Oversized signature */}
-      <div aria-hidden="true" className="mt-10 select-none overflow-hidden">
-        <p className="text-outline whitespace-nowrap text-center font-display text-[17vw] font-extrabold uppercase leading-[0.8] tracking-tighter">
-          Furtado
+    <footer className="border-t border-border">
+      <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between md:px-8">
+        <p>
+          © {new Date().getFullYear()} {profile.name} · Goa, India
         </p>
+        <ul className="flex gap-5" role="list">
+          <li>
+            <a className="hover:text-foreground" href={`mailto:${profile.email}`}>
+              Email
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-foreground" href={profile.social.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a className="hover:text-foreground" href={profile.social.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </li>
+        </ul>
       </div>
     </footer>
   )

@@ -1,14 +1,14 @@
 // Optional `devops` field marks a project that is being taken through DevOps work
-// (shown as a badge on the card and listed in the "Now" section), e.g.
+// (shown next to the project and listed under "Now"), e.g.
 //   devops: { status: "In progress", summary: "Containerising and automating deploys", stack: ["Docker", "GitHub Actions", "AWS"] },
 export const projectsData = [
   {
-    title: "IndentOS",
+    title: "IntentOS",
     description:
-      "An AI-powered intent-driven interface that understands what you want to do and generates intelligent workflows to help you achieve it.",
+      "An experiment with Tambo AI's generative UI. You describe what you want to do, and it tries to put together a workflow for it.",
     image: "/images/indentos.webp",
     imageFallback: "/images/indentos.jpg",
-    imageAlt: "IndentOS — AI productivity operating system interface",
+    imageAlt: "IntentOS interface screenshot",
     web: "",
     git: "https://github.com/jjf2009/IntentOS",
     technologies: ["Next.js", "React", "Tailwind CSS", "Tambo AI"],
@@ -16,7 +16,7 @@ export const projectsData = [
   {
     title: "Ride Buddy",
     description:
-      "A smart campus carpool platform built for Goa Engineering College. Students can publish or discover rides using live location tracking, Firebase authentication, and interactive route visualization — reducing commute friction while promoting sustainable mobility.",
+      "A learning project with React, Redux and Firebase: carpooling for students at Goa College of Engineering. You can offer or find a ride and see it on a map.",
     image: "/images/Ridebuddy.webp",
     imageFallback: "/images/Ridebuddy.png",
     imageAlt: "Ride Buddy — campus carpooling platform interface",
@@ -27,7 +27,7 @@ export const projectsData = [
   {
     title: "OpenCV Projects",
     description:
-      "A collection of computer vision tools leveraging YOLO and MediaPipe for real-time object detection, hand gesture tracking, and face recognition pipelines — executed entirely on local environments without reliance on cloud APIs.",
+      "Small experiments I did to learn computer vision with YOLO and MediaPipe: object detection, hand tracking and face recognition.",
     image: "/images/opencv.webp",
     imageFallback: "/images/opencv.jpg",
     imageAlt: "OpenCV project showing real-time computer vision detection",
@@ -38,7 +38,7 @@ export const projectsData = [
   {
     title: "Nike Landing Page",
     description:
-      "A pixel-accurate Nike website clone built to refine component architecture and responsive Tailwind implementation. Focused on layout precision, grid fidelity, and mobile-first performance optimization.",
+      "A copy of Nike's landing page that I made to practise responsive layouts with Tailwind.",
     image: "/images/nike-page.webp",
     imageFallback: "/images/nike-page.png",
     imageAlt: "Nike landing page clone screenshot",

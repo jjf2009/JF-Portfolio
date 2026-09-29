@@ -4,7 +4,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist'] },
+  { ignores: ['dist', '.agent'] },
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
@@ -29,5 +29,10 @@ export default [
         { allowConstantExport: true },
       ],
     },
+  },
+  {
+    // Build tooling runs in Node, not the browser
+    files: ['scripts/**/*.{js,mjs}', '*.config.js'],
+    languageOptions: { globals: globals.node },
   },
 ]
