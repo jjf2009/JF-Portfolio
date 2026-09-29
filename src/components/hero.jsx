@@ -12,23 +12,10 @@ export default function Hero() {
 
           <div className="mt-8 space-y-4 text-[1.0625rem] leading-relaxed text-foreground/85">
             <p>
-              I'm a full stack developer and an engineering student at Goa College of Engineering. I build websites and web apps with React,
-              Next.js and Node.js, mostly for small businesses and organisations.
+              I build websites and web apps with React, Next.js and Node.js. Engineering student at Goa College of Engineering, currently
+              learning DevOps through 100xDevs.
             </p>
-            <p>
-              Recently I rebuilt the{" "}
-              <a className="link" href="https://globaltouristcentre.com/" target="_blank" rel="noopener noreferrer">
-                Global Tourist Centre
-              </a>{" "}
-              website in Next.js and added four languages to it, and made{" "}
-              <a className="link" href="https://findfund.vercel.app/" target="_blank" rel="noopener noreferrer">
-                Techjeeva
-              </a>
-              , a funding-scheme finder for FIIRE Forum. At the moment I'm learning DevOps through 100xDevs.
-            </p>
-            <p>
-              I'm available for <span className="text-foreground">freelance and part-time work</span>.
-            </p>
+            <p>Available for freelance and part-time work.</p>
           </div>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm" role="list">

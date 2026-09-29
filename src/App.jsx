@@ -4,9 +4,7 @@ import Freelance from "./components/freelance"
 import Experience from "./components/experience"
 import Projects from "./components/projects"
 import Now from "./components/now"
-import Skills from "./components/skills"
 import Gallery from "./components/gallery"
-import Faq from "./components/faq"
 import Contact from "./components/contact"
 import Footer from "./components/footer"
 import SchemaMarkup from "./components/seo/SchemaMarkup"
@@ -23,9 +21,7 @@ function App() {
           <Experience />
           <Projects />
           <Now />
-          <Skills />
           <Gallery />
-          <Faq />
           <Contact />
         </main>
         <Footer />

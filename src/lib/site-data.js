@@ -60,33 +60,6 @@ export const now = [
     key: "events",
     title: "Going to hackathons",
     description: "I try to make it to every hackathon and meetup in Goa that I can.",
-    link: { href: "#photos", text: "Photos" },
-  },
-]
-
-export const faqs = [
-  {
-    q: "Who is Jared Furtado?",
-    a: "Jared Furtado is a full stack developer based in Goa, India. He specialises in the MERN stack (MongoDB, Express, React, Node.js) and Next.js, builds production websites for clients as a freelancer, and studies at Goa College of Engineering.",
-  },
-  {
-    q: "What does Jared Furtado build?",
-    a: "He builds full stack web applications and websites. Client work includes the Next.js rebuild of the Global Tourist Centre tourism website with support for German, French, Russian and Italian, and Techjeeva, a portal that aggregates Indian government funding schemes for startups, built for FIIRE Forum.",
-  },
-  {
-    q: "Which technologies does Jared Furtado work with?",
-    a: "JavaScript, React, Next.js, Node.js, Express.js, MongoDB, Prisma, Supabase, Redux, Tailwind CSS, REST APIs and i18n on the web side, plus Python, OpenCV and retrieval-augmented generation (RAG) for AI and computer vision work.",
-  },
-  {
-    q: "Is Jared Furtado available for hire?",
-    a: "Yes. He is available for freelance web development projects and part-time roles, remotely and worldwide. The best way to reach him is by email at jaredfurtadowork@gmail.com; he typically replies within 24 hours.",
-  },
-  {
-    q: "What is Jared Furtado working on right now?",
-    a: "He is learning DevOps through the 100xDevs cohort and applying it to his projects, taking on freelance client work, and regularly taking part in hackathons and tech events in Goa. He is also interested in entrepreneurship, though he has not started a venture yet.",
-  },
-  {
-    q: "Where is Jared Furtado based?",
-    a: "He is based in Goa, India, and works remotely with clients in India and internationally.",
+    link: { href: "#photos", text: "Events" },
   },
 ]

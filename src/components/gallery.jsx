@@ -49,9 +49,7 @@ export default function Gallery() {
   const current = active !== null ? galleryData[active] : null
 
   return (
-    <Section id="photos" title="Hackathons & events">
-      <p className="mb-8 max-w-[38rem] leading-relaxed text-muted-foreground">A few photos from hackathons and events around Goa.</p>
-
+    <Section id="photos" title="Events">
       <ul className="columns-1 gap-5 sm:columns-2 [&>li]:mb-6" role="list">
         {galleryData.map((item, i) => (
           <li key={item.src} className="break-inside-avoid">

@@ -1,5 +1,5 @@
 // JSON-LD structured data, generated from the same data the page renders so the two never drift apart.
-import { SITE_URL, profile, faqs, services } from "../../lib/site-data"
+import { SITE_URL, profile, services } from "../../lib/site-data"
 import { freelanceData } from "../../lib/freelance-data"
 import { projectsData } from "../../lib/projects-data"
 import { experiences } from "../../lib/experience-data"
@@ -134,15 +134,6 @@ const graph = [
       description: g.alt,
       ...(g.date && { dateCreated: g.date }),
       ...(g.location && { contentLocation: { "@type": "Place", name: g.location } }),
-    })),
-  },
-  {
-    "@type": "FAQPage",
-    "@id": `${SITE_URL}/#faq`,
-    mainEntity: faqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   },
 ]

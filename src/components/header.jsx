@@ -1,7 +1,7 @@
 const links = [
   { name: "Work", href: "#work" },
   { name: "Projects", href: "#projects" },
-  { name: "Photos", href: "#photos", hideOnMobile: true },
+  { name: "Events", href: "#photos", hideOnMobile: true },
   { name: "Contact", href: "#contact" },
 ]
 
