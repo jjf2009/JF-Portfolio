@@ -11,20 +11,14 @@ export default function Hero() {
 
           <div className="mt-8 space-y-4 text-[1.0625rem] leading-relaxed text-foreground/85">
             <p>
-              Computer Engineering student at Goa College of Engineering (2024–2028). I'm a full-stack developer working toward DevOps and
-              platform engineering: containerising services, automating pipelines, and learning Terraform and Kubernetes by building real
-              projects.
+              I'm a Computer Engineering student at Goa College of Engineering (2024–2028), still early in learning. I've been practising
+              with React, Next.js and Node.js through small projects, a couple of client websites and a lot of hackathons.
+            </p>
+            <p>
+              Right now I'm learning DevOps (Docker, GitHub Actions, Terraform and Kubernetes) through 100xDevs and a few small projects of
+              my own.
             </p>
           </div>
-
-          <dl className="mt-8 grid gap-x-6 gap-y-2 border-y border-border py-4 text-sm sm:grid-cols-[110px_1fr]">
-            <dt className="font-mono text-xs uppercase tracking-wide text-muted-foreground sm:pt-0.5">Looking for</dt>
-            <dd className="text-foreground">
-              {profile.lookingFor}
-            </dd>
-            <dt className="font-mono text-xs uppercase tracking-wide text-muted-foreground sm:pt-0.5">Stack</dt>
-            <dd className="text-foreground/85">React, Next.js, TypeScript, Node/Express, FastAPI, Supabase, Docker</dd>
-          </dl>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm" role="list">
             <li>

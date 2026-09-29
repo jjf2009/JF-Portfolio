@@ -4,7 +4,7 @@ import { profile } from "../lib/site-data"
 export default function Contact() {
   return (
     <Section id="contact" title="Contact">
-      <p className="text-foreground/85">Looking for a remote DevOps / platform engineering internship from January 2027. Email is the best way to reach me.</p>
+      <p className="text-foreground/85">Email is the best way to reach me.</p>
       <p className="mt-3 font-serif text-3xl">
         <a className="link" href={`mailto:${profile.email}`}>
           {profile.email}

@@ -9,10 +9,9 @@ export const profile = {
   familyName: "Furtado",
   tagline: "Portfolio",
   summary:
-    "Jared Furtado is a Computer Engineering student at Goa College of Engineering (2024–2028) and a full-stack developer working toward DevOps and platform engineering. He is looking for a remote DevOps / platform engineering internship from January 2027, and is learning Docker, GitHub Actions, Terraform and Kubernetes through his own projects.",
+    "Jared Furtado is a Computer Engineering student at Goa College of Engineering (2024–2028) in Goa, India who is still learning. He has practised with React, Next.js and Node.js through personal projects, two client websites and eight hackathons, and is learning DevOps (Docker, GitHub Actions, Terraform and Kubernetes) through 100xDevs and his own small projects.",
   degree: "Computer Engineering",
   years: "2024–2028",
-  lookingFor: "Remote DevOps / platform engineering internship, available from January 2027",
   email: "jaredfurtadowork@gmail.com",
   locality: "Goa",
   region: "Goa",

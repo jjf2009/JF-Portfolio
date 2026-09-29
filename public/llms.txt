@@ -1,15 +1,12 @@
 # Jared Furtado
 
-> Jared Furtado is a Computer Engineering student at Goa College of Engineering (2024–2028) in Goa, India, and a full-stack developer building toward DevOps and platform engineering. He is looking for a remote DevOps / platform engineering internship, available from January 2027. He has hands-on experience with Docker, GitHub Actions and scripted automation, and is deepening Terraform and Kubernetes skills by building the projects below rather than only following courses.
+> Jared Furtado is a Computer Engineering student at Goa College of Engineering (2024–2028) in Goa, India, and is still early in learning. He has practised with React, Next.js and Node.js through personal projects, two client websites and eight hackathons, and is learning DevOps (Docker, GitHub Actions, Terraform and Kubernetes) through the 100xDevs cohort and small projects of his own.
 
 Website: https://jaredfurtado.tech/
 Email: jaredfurtadowork@gmail.com
 Location: Goa, India
 
-## What he's looking for
-DevOps / platform engineering internship, remote, available from January 2027.
-
-## Infrastructure & tooling work (in progress)
+## DevOps learning projects (in progress)
 - [Beacon](https://github.com/jjf2009/Beacon): A deploy-aware monitoring and incident platform, run with Docker Compose. Early stage; built to learn observability.
 - [Cless-TUI](https://github.com/jjf2009/Cless-TUI): A terminal chess game against a bot, built module by module as a deliberate way to practise Go, testing, Docker, CI/CD, Terraform and Kubernetes.
 - [PairUp](https://github.com/jjf2009/PairUp): A collaborative interview platform. Early stage.
@@ -36,7 +33,7 @@ DevOps / platform engineering internship, remote, available from January 2027.
 
 ## Experience
 - Vice President, GEC Coders Club, Goa College of Engineering (Aug 2026 – present). Promoted from Event Coordinator.
-- Freelance web developer, self-employed (Dec 2025 – Aug 2026): delivered the two client projects above.
+- Freelance web developer, self-employed (Dec 2025 – Aug 2026): worked on the two client projects above.
 - Sales Intern, Avyott, North Goa (Dec 2025 – Jan 2026): B2B outreach for a text AI agent product; generated two qualified leads.
 - Event Coordinator, GEC Coders Club (Jul 2025 – Aug 2026): ran technical workshops and coding competitions and mentored junior students.
 
@@ -50,11 +47,11 @@ DevOps / platform engineering internship, remote, available from January 2027.
 - InternSpirit Hackathon 2024
 - NIT Goa Hackathon 2024
 
-## Stack
+## Technologies he has worked with while learning
 React, Next.js, TypeScript, Node.js/Express, FastAPI, Supabase, Docker.
 
 ## Currently learning
-Docker, GitHub Actions CI/CD, Terraform and Kubernetes, through small, deliberately scoped projects (see Infrastructure & tooling work) and the 100xDevs DevOps cohort. Interested in entrepreneurship; has not started a venture yet.
+Docker, GitHub Actions CI/CD, Terraform and Kubernetes, through small projects (see DevOps learning projects above) and the 100xDevs DevOps cohort. Interested in entrepreneurship; has not started a venture yet.
 
 ## Profiles
 - GitHub: https://github.com/jjf2009

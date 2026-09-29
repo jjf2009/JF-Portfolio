@@ -65,9 +65,8 @@ const graph = [
     affiliation: { "@type": "CollegeOrUniversity", name: profile.school },
     alumniOf: { "@type": "CollegeOrUniversity", name: profile.school, description: `${profile.degree}, ${profile.years}` },
     knowsAbout: [
-      "Full Stack Web Development",
+      "Web Development",
       "DevOps",
-      "Platform Engineering",
       "Docker",
       "GitHub Actions",
       "CI/CD",
@@ -95,7 +94,6 @@ const graph = [
     memberOf: experiences
       .filter((e) => e.current)
       .map((e) => ({ "@type": "Organization", name: e.company, roleName: e.role })),
-    seeks: { "@type": "Demand", name: profile.lookingFor },
   },
   ...freelanceData.map((p) => workToSchema(p, true)),
   ...allProjects.map((p) => workToSchema(p, false)),

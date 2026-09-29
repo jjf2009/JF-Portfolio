@@ -6,7 +6,7 @@ export function InfraProjects() {
   return (
     <Section id="infra" title="In progress">
       <p className="mb-8 max-w-[38rem] leading-relaxed text-muted-foreground">
-        Builds aimed at closing my DevOps gap: containers, pipelines, infrastructure as code and Kubernetes, learned hands-on.
+        Small projects I'm building to learn DevOps: containers, pipelines, infrastructure as code and Kubernetes.
       </p>
       <ul className="space-y-8" role="list">
         {infraProjects.map((p) => (

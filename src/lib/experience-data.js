@@ -16,7 +16,7 @@ export const experiences = [
     startDate: "2025-12",
     endDate: "2026-08",
     displayDate: "Dec 2025 — Aug 2026",
-    summary: "Built and shipped two client websites end to end: Global Tourist Centre and Techjeeva.",
+    summary: "Worked on two client websites: Global Tourist Centre and Techjeeva.",
   },
   {
     role: "Sales Intern",
