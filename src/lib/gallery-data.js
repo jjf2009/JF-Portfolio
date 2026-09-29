@@ -9,7 +9,7 @@ export const galleryData = [
     alt: "Jared Furtado and teammates holding certificates of participation at the Build with AI 2026 hackathon in Goa",
     event: "Build with AI Hackathon 2026",
     location: "Goa",
-    caption: "Certificates of participation with the team at Build with AI, hosted with Google Developer Groups Goa.",
+    caption: "With the team and our participation certificates. Organised with Google Developer Groups Goa.",
     featured: true,
   },
   {
@@ -20,7 +20,7 @@ export const galleryData = [
     event: "Hackathon pitch",
     location: "Assagao, Goa",
     date: "2025-04-11",
-    caption: "Demoing our build to the judging panel.",
+    caption: "Showing our project to the judges.",
   },
   {
     src: "/images/gallery/hackathon-coding-session",
@@ -28,7 +28,7 @@ export const galleryData = [
     height: 1050,
     alt: "Jared Furtado and teammates heads-down coding on laptops during a hackathon",
     event: "Hackathon",
-    caption: "Heads down, shipping against the clock.",
+    caption: "Coding with the team.",
   },
   {
     src: "/images/gallery/team-panaji-2026",
@@ -38,7 +38,7 @@ export const galleryData = [
     event: "Team day out",
     location: "Panaji, Goa",
     date: "2026-01-07",
-    caption: "The team in Panaji, with the Atal Setu in the background.",
+    caption: "The team in Panaji, with Atal Setu behind us.",
   },
   {
     src: "/images/gallery/pair-programming",
@@ -46,7 +46,7 @@ export const galleryData = [
     height: 916,
     alt: "Jared Furtado pair programming with a teammate at a hackathon",
     event: "Hackathon",
-    caption: "Pair programming through the build.",
+    caption: "Working through the build with a teammate.",
   },
   {
     src: "/images/gallery/team-selfie",
@@ -54,6 +54,6 @@ export const galleryData = [
     height: 924,
     alt: "Selfie of Jared Furtado with fellow participants in a hackathon hall",
     event: "Hackathon",
-    caption: "Fellow builders, mid-event.",
+    caption: "A quick selfie between sessions.",
   },
 ]

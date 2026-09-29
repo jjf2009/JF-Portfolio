@@ -46,26 +46,21 @@ export const services = [
 export const now = [
   {
     key: "devops",
-    label: "Learning",
-    title: "DevOps with 100xDevs",
-    description:
-      "Currently learning DevOps through the 100xDevs cohort and applying it to my own projects — taking them from “works on my machine” to properly deployed, automated and production-ready.",
-    link: { href: "https://100xdevs.com/", text: "100xdevs.com" },
+    title: "Learning DevOps",
+    description: "Going through the 100xDevs DevOps cohort and applying it to my own projects as I go.",
+    link: { href: "https://100xdevs.com/", text: "100xDevs" },
   },
   {
     key: "entrepreneurship",
-    label: "Interested in",
-    title: "Entrepreneurship",
+    title: "Thinking about starting something",
     description:
-      "Entrepreneurship is where I'd like to head one day. I haven't started a venture yet — for now I'm learning how businesses work through client projects, my sales internship and the founders I meet at events.",
+      "I'd like to build a company eventually. I haven't yet. For now I'm learning from client work, my sales internship and the founders I meet at events.",
   },
   {
     key: "events",
-    label: "Always at",
-    title: "Hackathons & tech events",
-    description:
-      "I show up to as many hackathons, meetups and community events as I can — to build under pressure, pitch to judges and meet people who are building things too.",
-    link: { href: "#gallery", text: "See the gallery" },
+    title: "Going to hackathons",
+    description: "I try to make it to every hackathon and meetup in Goa that I can.",
+    link: { href: "#photos", text: "Photos" },
   },
 ]
 

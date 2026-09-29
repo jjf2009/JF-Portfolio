@@ -3,7 +3,7 @@ export const freelanceData = [
         title: "Global Tourist Centre Website Rebuild",
         shortTitle: "Global Tourist Centre",
         description:
-            "Led the end-to-end modernization of a live production tourism website, rebuilding it with Next.js to improve scalability, SEO readiness, and international reach. Implemented multilingual support (German, French, Russian, Italian), integrated a persistent WhatsApp Business widget, and deployed conversion-focused enhancements including promotional pop-ups and real-time countdown timers.",
+            "Rebuilt a live tourism company's website in Next.js. I added German, French, Russian and Italian versions, a WhatsApp Business chat button, promotional pop-ups and countdown timers, and improved its SEO.",
         image: "/images/gtc.webp",
         imageFallback: "/images/gtc.png",
         imageAlt: "Global Tourist Centre tourism website interface",
@@ -15,7 +15,7 @@ export const freelanceData = [
     title: "Techjeeva",
     shortTitle: "Techjeeva (FIIRE Forum)",
     description:
-      "A centralized portal that aggregates government funding schemes for startups and entrepreneurs in India. Users filter by sector and eligibility to discover relevant grants — transforming fragmented funding data into an accessible, searchable directory.",
+      "Built for FIIRE Forum: a single place to find Indian government funding schemes for startups. You can filter schemes by sector and eligibility; the data is served through Google Apps Script.",
     image: "/images/techjeeva.webp",
     imageFallback: "/images/techjeeva.png",
     imageAlt: "Techjeeva — government funding portal screenshot",

@@ -12,9 +12,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ["Space Grotesk", "system-ui", "sans-serif"],
-				display: ["Syne", "Space Grotesk", "system-ui", "sans-serif"],
-				mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+				sans: ["Geist Sans", "system-ui", "sans-serif"],
+				serif: ["Instrument Serif", "Georgia", "serif"],
+				mono: ["Geist Mono", "ui-monospace", "monospace"],
 			},
 			colors: {
 				border: "hsl(var(--border))",

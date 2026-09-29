@@ -1,9 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
-import { motion } from "framer-motion"
-import { Send, MapPin, Globe, Clock, Mail } from "lucide-react"
 import { useForm as useHookForm } from "react-hook-form"
 import { useForm as useFormspree, ValidationError } from "@formspree/react"
+import Section from "./section"
+import { profile, services } from "../lib/site-data"
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -31,175 +31,69 @@ const onSubmit = async (data) => {
   }
 }
 
+  const field = "w-full rounded-sm border border-input bg-card px-3 py-2.5 text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
+  const err = (e) => e && <p className="mt-1.5 text-xs text-destructive" role="alert">{e.message}</p>
+
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="py-24 md:py-32 bg-card relative overflow-hidden text-foreground">
-      {/* Background divider */}
-      <div className="absolute top-0 left-0 w-full h-px section-divider opacity-100" />
-      
-      {/* Decorative background element */}
-      <div aria-hidden="true" className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] mix-blend-screen opacity-50 translate-x-1/3 translate-y-1/3" />
+    <Section id="contact" title="Contact">
+      <div className="max-w-[38rem]">
+        <p className="leading-relaxed text-foreground/85">
+          I'm available for freelance projects and part-time roles. The quickest way to reach me is email; I usually reply within a day.
+        </p>
+        <p className="mt-4 font-serif text-3xl">
+          <a className="link" href={`mailto:${profile.email}`}>
+            {profile.email}
+          </a>
+        </p>
 
-      <div className="container relative px-6 md:px-12 mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 items-start">
-          
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-2 space-y-10"
-          >
+        <p className="mt-8 text-sm text-muted-foreground">Things I can help with:</p>
+        <ul className="mt-2 list-disc space-y-1 pl-4 text-foreground/85 marker:text-border">
+          {services.map((s) => (
+            <li key={s.title}>{s.title}</li>
+          ))}
+        </ul>
+
+        <h3 className="mt-12 font-medium text-foreground">Or send a message</h3>
+        {state.succeeded ? (
+          <p className="mt-4 rounded-sm border border-border bg-card p-4 text-foreground/85" role="status">
+            Thanks, your message was sent. I'll get back to you soon.
+          </p>
+        ) : (
+          <form onSubmit={handleHookSubmit(onSubmit)} className="mt-4 space-y-4" noValidate>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label htmlFor="name" className="mb-1.5 block text-sm text-muted-foreground">Name</label>
+                <input id="name" autoComplete="name" {...register("name")} aria-invalid={!!errors.name} className={field} />
+                {err(errors.name)}
+              </div>
+              <div>
+                <label htmlFor="email" className="mb-1.5 block text-sm text-muted-foreground">Email</label>
+                <input id="email" type="email" autoComplete="email" {...register("email")} aria-invalid={!!errors.email} className={field} />
+                {err(errors.email)}
+              </div>
+            </div>
             <div>
-              <p className="mb-4 flex items-center gap-3 font-mono text-sm uppercase tracking-widest text-primary">
-                <span>09.</span>
-                <span className="h-px w-10 bg-primary/60" />
-                <span>Contact</span>
-              </p>
-              <h2 id="contact-heading" className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6">
-                Let's work together
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6 font-sans">
-                I'm available for freelance web development projects and part-time roles. Have a product idea, a site that needs rebuilding, or an event I should be at? My inbox is always open.
-              </p>
+              <label htmlFor="subject" className="mb-1.5 block text-sm text-muted-foreground">Subject</label>
+              <input id="subject" {...register("subject")} aria-invalid={!!errors.subject} className={field} />
+              {err(errors.subject)}
             </div>
-
-             {/* SEO/GEO contact entity block */}
-            <div className="space-y-6 pt-6 border-t border-border/40 font-mono text-sm sm:text-base">
-              <a href="mailto:jaredfurtadowork@gmail.com" className="group flex items-center gap-4 text-foreground/80 hover:text-primary transition-colors">
-                <div className="w-10 h-10 flex items-center justify-center bg-background border border-border/60 rounded-sm group-hover:border-primary/50 group-hover:bg-primary/10 transition-colors">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <span>jaredfurtadowork@gmail.com</span>
-              </a>
-              
-              <div className="flex items-center gap-4 text-foreground/80">
-                <div className="w-10 h-10 flex items-center justify-center bg-background border border-border/60 rounded-sm">
-                  <MapPin className="w-4 h-4 text-accent" />
-                </div>
-                <span>Based in Goa, India</span>
-              </div>
-              
-              <div className="flex items-center gap-4 text-foreground/80">
-                <div className="w-10 h-10 flex items-center justify-center bg-background border border-border/60 rounded-sm">
-                  <Globe className="w-4 h-4 text-emerald-400" />
-                </div>
-                <span>Freelance &amp; part-time · remote-friendly</span>
-              </div>
-              
-              <div className="flex items-center gap-4 text-foreground/80">
-                <div className="w-10 h-10 flex items-center justify-center bg-background border border-border/60 rounded-sm">
-                  <Clock className="w-4 h-4 text-primary" />
-                </div>
-                <span>Typically responds within 24 hours</span>
-              </div>
+            <div>
+              <label htmlFor="message" className="mb-1.5 block text-sm text-muted-foreground">Message</label>
+              <textarea id="message" rows={5} {...register("message")} aria-invalid={!!errors.message} className={`${field} resize-y`} />
+              {err(errors.message)}
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-3 bg-background border border-border/60 p-8 sm:p-12 relative overflow-hidden rounded-sm shadow-2xl"
-          >
-            {/* Form decorative blur */}
-            <div aria-hidden="true" className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-[80px] pointer-events-none" />
-
-            {state.succeeded ? (
-              <div className="h-full min-h-[400px] flex flex-col items-center justify-center text-center space-y-6">
-                <div className="w-20 h-20 rounded-full bg-emerald-400/20 flex items-center justify-center mb-4">
-                  <Send className="w-8 h-8 text-emerald-400" />
-                </div>
-                <h3 className="text-3xl font-display font-medium text-foreground">Message Sent</h3>
-                <p className="text-muted-foreground text-lg max-w-sm">
-                  Thank you for reaching out. I'll get back to you as soon as possible.
-                </p>
-                <button
-                  onClick={() => reset()}
-                  className="mt-8 px-6 py-3 border border-border text-foreground hover:bg-muted font-mono text-sm transition-colors"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleHookSubmit(onSubmit)} className="space-y-6 relative z-10" noValidate>
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-mono text-muted-foreground ml-1">Name</label>
-                    <input
-                      id="name"
-                      name="name"
-                      {...register("name")}
-                      aria-invalid={!!errors.name}
-                      className="w-full bg-card border border-border/50 px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all font-sans"
-                      placeholder="John Doe"
-                    />
-                    {errors.name && <p className="text-destructive text-xs font-mono mt-2 ml-1" role="alert">{errors.name.message}</p>}
-                  </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-mono text-muted-foreground ml-1">Email</label>
-                    <input
-                      id="email"
-                      type="email"
-                      name="email"
-                      {...register("email")}
-                      aria-invalid={!!errors.email}
-                      className="w-full bg-card border border-border/50 px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all font-sans"
-                      placeholder="john@example.com"
-                    />
-                    {errors.email && <p className="text-destructive text-xs font-mono mt-2 ml-1" role="alert">{errors.email.message}</p>}
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-mono text-muted-foreground ml-1">Subject</label>
-                  <input
-                    id="subject"
-                    name="subject"
-                    {...register("subject")}
-                    aria-invalid={!!errors.subject}
-                    className="w-full bg-card border border-border/50 px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all font-sans"
-                    placeholder="Freelance Project Inquiry"
-                  />
-                  {errors.subject && <p className="text-destructive text-xs font-mono mt-2 ml-1" role="alert">{errors.subject.message}</p>}
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-mono text-muted-foreground ml-1">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    {...register("message")}
-                    aria-invalid={!!errors.message}
-                    rows="5"
-                    className="w-full bg-card border border-border/50 px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all font-sans resize-y"
-                    placeholder="Hello Jared, I have a project in mind..."
-                  ></textarea>
-                  {errors.message && <p className="text-destructive text-xs font-mono mt-2 ml-1" role="alert">{errors.message.message}</p>}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={state.submitting}
-                  className="relative w-full overflow-hidden flex items-center justify-center gap-3 bg-primary text-primary-foreground rounded-md px-8 py-4 font-semibold shadow-[0_0_40px_hsl(var(--primary)/0.25)] hover:shadow-[0_0_60px_hsl(var(--primary)/0.5)] transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
-                >
-                  {state.submitting ?  (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </>
-                  )}
-                </button>
-                <ValidationError prefix="Email" field="email" errors={state.errors} />
-<ValidationError prefix="Message" field="message" errors={state.errors} />
-              </form>
-            )}
-          </motion.div>
-        </div>
+            <button
+              type="submit"
+              disabled={state.submitting}
+              className="rounded-sm bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85 disabled:opacity-50"
+            >
+              {state.submitting ? "Sending…" : "Send message"}
+            </button>
+            <ValidationError prefix="Email" field="email" errors={state.errors} />
+            <ValidationError prefix="Message" field="message" errors={state.errors} />
+          </form>
+        )}
       </div>
-    </section>
+    </Section>
   )
 }

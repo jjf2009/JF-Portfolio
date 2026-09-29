@@ -11,7 +11,6 @@ export default defineConfig(({ isSsrBuild }) => ({
           output: {
             manualChunks: {
               vendor: ['react', 'react-dom'],
-              animations: ['framer-motion'],
             },
           },
         },
