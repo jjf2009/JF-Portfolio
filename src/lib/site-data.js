@@ -9,7 +9,9 @@ export const profile = {
   familyName: "Furtado",
   tagline: "Portfolio",
   summary:
-    "Jared Furtado is an engineering student at Goa College of Engineering in Goa, India who is learning web development. He has practised with React, Next.js and Node.js through personal projects, two client websites (Global Tourist Centre and Techjeeva) and eight hackathons, and is currently learning DevOps through 100xDevs.",
+    "Jared Furtado is a Computer Engineering student at Goa College of Engineering (2024–2028) in Goa, India who is still learning. He has practised with React, Next.js and Node.js through personal projects, two client websites and eight hackathons, and is learning DevOps (Docker, GitHub Actions, Terraform and Kubernetes) through 100xDevs and his own small projects.",
+  degree: "Computer Engineering",
+  years: "2024–2028",
   email: "jaredfurtadowork@gmail.com",
   locality: "Goa",
   region: "Goa",
@@ -30,7 +32,7 @@ export const now = [
   {
     key: "devops",
     title: "Learning DevOps",
-    description: "Going through the 100xDevs DevOps cohort and applying it to my own projects as I go.",
+    description: "Docker, GitHub Actions, Terraform and Kubernetes, through small, deliberately scoped projects (see In progress above) and the 100xDevs DevOps cohort.",
     link: { href: "https://100xdevs.com/", text: "100xDevs" },
   },
   {

@@ -2,7 +2,7 @@ import Header from "./components/header"
 import Hero from "./components/hero"
 import Freelance from "./components/freelance"
 import Experience from "./components/experience"
-import Projects from "./components/projects"
+import Projects, { InfraProjects } from "./components/projects"
 import Now from "./components/now"
 import Gallery from "./components/gallery"
 import Contact from "./components/contact"
@@ -17,9 +17,10 @@ function App() {
         <Header />
         <main id="main" className="flex-1">
           <Hero />
-          <Freelance />
-          <Experience />
+          <InfraProjects />
           <Projects />
+          <Experience />
+          <Freelance />
           <Now />
           <Gallery />
           <Contact />

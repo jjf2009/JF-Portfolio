@@ -1,9 +1,7 @@
 import { now } from "../lib/site-data"
-import { projectsData } from "../lib/projects-data"
 import Section from "./section"
 
 export default function Now() {
-  const devopsProjects = projectsData.filter((p) => p.devops)
   return (
     <Section id="now" title="Now">
       <p className="mb-6 font-mono text-xs text-muted-foreground">Updated September 2026</p>
@@ -24,15 +22,6 @@ export default function Now() {
                 </a>
               )}
             </p>
-            {item.key === "devops" && devopsProjects.length > 0 && (
-              <ul className="mt-3 list-disc space-y-1 pl-4 text-sm text-muted-foreground marker:text-border">
-                {devopsProjects.map((p) => (
-                  <li key={p.title}>
-                    <span className="text-foreground">{p.title}</span>: {p.devops.summary} ({p.devops.stack.join(", ")})
-                  </li>
-                ))}
-              </ul>
-            )}
           </li>
         ))}
       </ul>

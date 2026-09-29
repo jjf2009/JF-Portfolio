@@ -4,6 +4,7 @@ export default function Entry({ item }) {
     <li className="max-w-[38rem]">
       <h3 className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
         <span className="font-medium text-foreground">{item.title}</span>
+        {item.status && <span className="font-mono text-[11px] uppercase tracking-wide text-primary">{item.status}</span>}
         {item.web && (
           <a className="link text-sm" href={item.web} target="_blank" rel="noopener noreferrer" aria-label={`${item.title} website`}>
             Site ↗
@@ -16,10 +17,7 @@ export default function Entry({ item }) {
         )}
       </h3>
       <p className="mt-1 leading-relaxed text-muted-foreground">{item.description}</p>
-      <p className="mt-1.5 font-mono text-xs text-muted-foreground">
-        {item.technologies.join(" · ")}
-        {item.devops && <span className="text-primary"> · DevOps: {item.devops.status.toLowerCase()}</span>}
-      </p>
+      {item.technologies?.length > 0 && <p className="mt-1.5 font-mono text-xs text-muted-foreground">{item.technologies.join(" · ")}</p>}
     </li>
   )
 }

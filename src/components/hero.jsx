@@ -11,10 +11,13 @@ export default function Hero() {
 
           <div className="mt-8 space-y-4 text-[1.0625rem] leading-relaxed text-foreground/85">
             <p>
-              I'm an engineering student at Goa College of Engineering, still early in learning web development. I've been practising with
-              React, Next.js and Node.js through small projects, a couple of client websites and a lot of hackathons.
+              I'm a Computer Engineering student at Goa College of Engineering (2024–2028), still early in learning. I've been practising
+              with React, Next.js and Node.js through small projects, a couple of client websites and a lot of hackathons.
             </p>
-            <p>Right now I'm learning DevOps through 100xDevs.</p>
+            <p>
+              Right now I'm learning DevOps (Docker, GitHub Actions, Terraform and Kubernetes) through 100xDevs and a few small projects of
+              my own.
+            </p>
           </div>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm" role="list">
