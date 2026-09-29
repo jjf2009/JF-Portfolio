@@ -9,7 +9,7 @@ export const profile = {
   familyName: "Furtado",
   tagline: "Portfolio",
   summary:
-    "Jared Furtado is an engineering student at Goa College of Engineering in Goa, India. He builds websites and web apps with React, Next.js and Node.js, has delivered client projects including Global Tourist Centre and Techjeeva, is learning DevOps through 100xDevs, and takes part in hackathons across Goa.",
+    "Jared Furtado is an engineering student at Goa College of Engineering in Goa, India who is learning web development. He has practised with React, Next.js and Node.js through personal projects, two client websites (Global Tourist Centre and Techjeeva) and eight hackathons, and is currently learning DevOps through 100xDevs.",
   email: "jaredfurtadowork@gmail.com",
   locality: "Goa",
   region: "Goa",

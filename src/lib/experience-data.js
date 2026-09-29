@@ -5,10 +5,10 @@ export const experiences = [
     location: "Remote / Goa, India",
     startDate: "2025-12",
     displayDate: "Dec 2025 — Present",
-    summary: "Client websites, including Global Tourist Centre and Techjeeva.",
+    summary: "Two client websites so far: Global Tourist Centre and Techjeeva.",
     current: true,
     type: "Freelance",
-    description: "Specializing in building production-ready MERN stack applications for clients worldwide. Developed full-stack solutions with custom authentication, complex database schemas, and optimized frontends.",
+    description: "Worked on two client websites while learning: Global Tourist Centre and Techjeeva.",
     achievements: [
       "Completed two paid client projects including rebuilding the Global Tourist Centre website with multilingual support.",
       "Developed the Techjeeva funding platform for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship).",
