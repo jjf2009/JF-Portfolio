@@ -49,8 +49,8 @@ export default function Hero() {
             <img
               src="/images/jared-furtado-profile.jpg"
               alt="Portrait of Jared Furtado"
-              width={400}
-              height={500}
+              width={480}
+              height={600}
               fetchpriority="high"
               loading="eager"
               decoding="async"

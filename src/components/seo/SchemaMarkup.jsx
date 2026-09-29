@@ -53,7 +53,7 @@ const graph = [
     description: profile.summary,
     url: SITE_URL,
     email: `mailto:${profile.email}`,
-    image: { "@type": "ImageObject", url: profile.image, width: 400, height: 500 },
+    image: { "@type": "ImageObject", url: profile.image, width: 480, height: 600 },
     address: {
       "@type": "PostalAddress",
       addressLocality: profile.locality,
