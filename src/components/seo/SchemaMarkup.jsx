@@ -1,7 +1,7 @@
 // JSON-LD structured data, generated from the same data the page renders so the two never drift apart.
 import { SITE_URL, profile } from "../../lib/site-data"
 import { freelanceData } from "../../lib/freelance-data"
-import { projectsData } from "../../lib/projects-data"
+import { projectsData, infraProjects, otherProjects } from "../../lib/projects-data"
 import { experiences } from "../../lib/experience-data"
 import { galleryData, hackathons } from "../../lib/gallery-data"
 
@@ -16,11 +16,13 @@ const workToSchema = (p, isClient) => ({
   description: p.description,
   ...(p.web && { url: p.web }),
   ...(p.git && { codeRepository: p.git }),
-  image: `${SITE_URL}${p.imageFallback}`,
-  keywords: p.technologies.join(", "),
+  ...(p.imageFallback && { image: `${SITE_URL}${p.imageFallback}` }),
+  ...(p.technologies && { keywords: p.technologies.join(", ") }),
   creator: { "@id": PERSON_ID },
   ...(isClient && { genre: "Client project" }),
 })
+
+const allProjects = [...infraProjects, ...projectsData, ...otherProjects]
 
 const graph = [
   {
@@ -32,7 +34,7 @@ const graph = [
     isPartOf: { "@id": `${SITE_URL}/#website` },
     mainEntity: { "@id": PERSON_ID },
     primaryImageOfPage: { "@type": "ImageObject", url: profile.image },
-    hasPart: [...freelanceData, ...projectsData].map((p) => ({ "@id": `${SITE_URL}/#work-${slug(p.title)}` })),
+    hasPart: [...freelanceData, ...allProjects].map((p) => ({ "@id": `${SITE_URL}/#work-${slug(p.title)}` })),
   },
   {
     "@type": "WebSite",
@@ -61,28 +63,25 @@ const graph = [
     },
     homeLocation: { "@type": "Place", name: `${profile.locality}, ${profile.countryName}` },
     affiliation: { "@type": "CollegeOrUniversity", name: profile.school },
-    alumniOf: { "@type": "CollegeOrUniversity", name: profile.school },
+    alumniOf: { "@type": "CollegeOrUniversity", name: profile.school, description: `${profile.degree}, ${profile.years}` },
     knowsAbout: [
-      "Web Development",
-      "MERN Stack",
-      "JavaScript",
+      "Full Stack Web Development",
+      "DevOps",
+      "Platform Engineering",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD",
+      "Terraform",
+      "Kubernetes",
+      "Go",
+      "TypeScript",
       "React",
       "Next.js",
       "Node.js",
       "Express.js",
-      "MongoDB",
-      "Prisma",
+      "FastAPI",
       "Supabase",
-      "Redux",
-      "Tailwind CSS",
-      "REST APIs",
       "Internationalization (i18n)",
-      "Technical SEO",
-      "Python",
-      "OpenCV",
-      "Computer Vision",
-      "Retrieval-Augmented Generation",
-      "DevOps",
     ],
     knowsLanguage: ["en"],
     sameAs: [profile.social.github, profile.social.linkedin],
@@ -93,12 +92,13 @@ const graph = [
       location: { "@type": "Place", name: "Goa, India" },
       ...(h.organiser && { organizer: { "@type": "Organization", name: h.organiser } }),
     })),
-    worksFor: experiences
+    memberOf: experiences
       .filter((e) => e.current)
-      .map((e) => ({ "@type": "Organization", name: e.company === "Self-Employed" ? `${profile.name} (Freelance)` : e.company })),
+      .map((e) => ({ "@type": "Organization", name: e.company, roleName: e.role })),
+    seeks: { "@type": "Demand", name: profile.lookingFor },
   },
   ...freelanceData.map((p) => workToSchema(p, true)),
-  ...projectsData.map((p) => workToSchema(p, false)),
+  ...allProjects.map((p) => workToSchema(p, false)),
   {
     "@type": "ImageGallery",
     "@id": `${SITE_URL}/#gallery`,

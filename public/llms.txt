@@ -1,33 +1,47 @@
 # Jared Furtado
 
-> Jared Furtado is an engineering student at Goa College of Engineering in Goa, India, and is still early in learning web development. He has practised with React, Next.js and Node.js through personal learning projects, two client websites (Global Tourist Centre and Techjeeva) and eight hackathons in Goa. He is currently learning DevOps through the 100xDevs cohort. He is interested in entrepreneurship but has not started a venture yet.
+> Jared Furtado is a Computer Engineering student at Goa College of Engineering (2024–2028) in Goa, India, and a full-stack developer building toward DevOps and platform engineering. He is looking for a remote DevOps / platform engineering internship, available from January 2027. He has hands-on experience with Docker, GitHub Actions and scripted automation, and is deepening Terraform and Kubernetes skills by building the projects below rather than only following courses.
 
 Website: https://jaredfurtado.tech/
 Email: jaredfurtadowork@gmail.com
 Location: Goa, India
 
-## Now
-- Learning DevOps through the 100xDevs cohort (https://100xdevs.com/) and applying it to his own projects.
-- Interested in entrepreneurship; has not started a venture yet and is learning the business side through client work, a sales internship and events.
-- Takes part in hackathons across Goa (see the list below).
+## What he's looking for
+DevOps / platform engineering internship, remote, available from January 2027.
 
-## Client work
-- [Global Tourist Centre](https://globaltouristcentre.com/): Client project. He worked on moving a tourism company's website to Next.js and learned how to add German, French, Russian and Italian versions. Stack: Next.js, React, Tailwind CSS, i18n.
-- [Techjeeva](https://findfund.vercel.app/): Client project for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship): a simple page listing Indian government funding schemes for startups, with filters for sector and eligibility. Stack: React, Tailwind CSS, Google Script API. Source: https://github.com/jjf2009/Techjeeva-
+## Infrastructure & tooling work (in progress)
+- [Beacon](https://github.com/jjf2009/Beacon): A deploy-aware monitoring and incident platform, run with Docker Compose. Early stage; built to learn observability.
+- [Cless-TUI](https://github.com/jjf2009/Cless-TUI): A terminal chess game against a bot, built module by module as a deliberate way to practise Go, testing, Docker, CI/CD, Terraform and Kubernetes.
+- [PairUp](https://github.com/jjf2009/PairUp): A collaborative interview platform. Early stage.
+- [Runbox](https://github.com/jjf2009/Runbox): A sandboxed code-execution engine. Early stage.
+- [ReviewPilot](https://github.com/jjf2009/ReviewPilot): An AI code-review GitHub App. Early stage.
 
-## Learning projects
-- [IntentOS](https://github.com/jjf2009/IntentOS): An experiment with Tambo AI's generative UI; you describe what you want to do and it tries to put together a workflow. Stack: Next.js, React, Tailwind CSS, Tambo AI.
-- [Ride Buddy](https://github.com/jjf2009/RideBuddy_Forntend): Learning project: carpooling for Goa College of Engineering students, where you can offer or find a ride and see it on a map. Stack: React, Redux, Firebase, Leaflet.
-- [OpenCV Projects](https://github.com/jjf2009/OpenCV_Projects): Small experiments to learn computer vision: object detection, hand tracking and face recognition. Stack: Python, OpenCV, MediaPipe, YOLO.
-- [Nike Landing Page](https://nike-landing-lac.vercel.app/): A copy of Nike's landing page made to practise responsive layouts. Stack: React, Tailwind CSS, Vite.
+## Selected projects
+- [InvestorFinder](https://github.com/jjf2009/InvestorFinder): A free, automated weekly scraper that collects Indian startup funding data from public sources, filters for EdTech deals and cross-references investors against the SEBI AIF registry. Runs on a scheduled GitHub Actions workflow with no server, writing results to public CSVs.
+- [Latex-Service](https://github.com/jjf2009/Latex-Service): An Express.js microservice with a REST API that compiles LaTeX source to PDF. Fully Dockerized as a single stateless container.
+- [secure-image-encryption-aes-256-gcm](https://github.com/jjf2009/secure-image-encryption-aes-256-gcm): Encrypts images client-side with AES-256-GCM via the Web Crypto API, so no plaintext or key touches a server. Runs entirely in the browser.
+- [broken-link-audit](https://github.com/jjf2009/broken-link-audit): A free CLI crawler that scans any site for broken links, images and media with no URL cap, reporting issues by parent page. Includes an automated test suite.
+- [RideBuddy](https://github.com/jjf2009/RideBuddy): Student carpooling with a React frontend, Node/Express backend and Firebase authentication, merged into one monorepo. Containerising and deploying it is next.
+
+## Other projects
+- [ScrapCo](https://github.com/jjf2009/ScrapCo): Scrap material trading platform (frontend + backend monorepo)
+- [IntentOS](https://github.com/jjf2009/IntentOS): AI-driven intent interface
+- [CampusHearts](https://github.com/jjf2009/CampusHearts)
+- [AnnaData](https://github.com/jjf2009/AnnaData-Smart-Farm-Management-Portal): Smart farm management portal
+- [litmus](https://github.com/jjf2009/litmus-milk-adulteration-detector): Real-time milk adulteration detection
+
+## Client work (freelance, Dec 2025 – Aug 2026)
+- [Global Tourist Centre](https://globaltouristcentre.com/): Moved a tourism company's website to Next.js and added German, French, Russian and Italian versions. Stack: Next.js, React, Tailwind CSS, i18n.
+- [Techjeeva](https://findfund.vercel.app/): Funding-discovery platform for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship) listing Indian government funding schemes for startups, filterable by sector and eligibility. Source: https://github.com/jjf2009/Techjeeva-
 
 ## Experience
-- Freelance web developer, self-employed (Dec 2025 – present): worked on the two client websites above while learning.
+- Vice President, GEC Coders Club, Goa College of Engineering (Aug 2026 – present). Promoted from Event Coordinator.
+- Freelance web developer, self-employed (Dec 2025 – Aug 2026): delivered the two client projects above.
 - Sales Intern, Avyott, North Goa (Dec 2025 – Jan 2026): B2B outreach for a text AI agent product; generated two qualified leads.
-- Event Coordinator, GEC Coders Club, Goa College of Engineering (Jul 2025 – present): runs technical workshops and coding competitions and mentors junior students.
+- Event Coordinator, GEC Coders Club (Jul 2025 – Aug 2026): ran technical workshops and coding competitions and mentored junior students.
 
 ## Hackathons
-- Orix Hackathon 2026, hosted by McLaren Strategic Solutions (team received trophies and certificates of achievement)
+- Orix Hackathon 2026, hosted by McLaren Strategic Solutions (as team Qbits; the team received trophies and certificates of achievement)
 - Build with AI Hackathon 2026 (AgriTech), organised by GDG Goa
 - PCCE Hackathon 2026
 - Goa University Hackathon 2025
@@ -36,8 +50,11 @@ Location: Goa, India
 - InternSpirit Hackathon 2024
 - NIT Goa Hackathon 2024
 
-## Technologies he has worked with while learning
-JavaScript, React, Next.js, Node.js, Express.js, MongoDB, Prisma, Supabase, Redux, Tailwind CSS, REST APIs, i18n, Python, OpenCV, retrieval-augmented generation (RAG).
+## Stack
+React, Next.js, TypeScript, Node.js/Express, FastAPI, Supabase, Docker.
+
+## Currently learning
+Docker, GitHub Actions CI/CD, Terraform and Kubernetes, through small, deliberately scoped projects (see Infrastructure & tooling work) and the 100xDevs DevOps cohort. Interested in entrepreneurship; has not started a venture yet.
 
 ## Profiles
 - GitHub: https://github.com/jjf2009
