@@ -5,7 +5,7 @@ export const projectsData = [
   {
     title: "IntentOS",
     description:
-      "An interface where you describe what you want to get done and it generates a workflow for it. Built on Tambo AI's generative UI components.",
+      "An experiment with Tambo AI's generative UI. You describe what you want to do, and it tries to put together a workflow for it.",
     image: "/images/indentos.webp",
     imageFallback: "/images/indentos.jpg",
     imageAlt: "IntentOS interface screenshot",
@@ -16,7 +16,7 @@ export const projectsData = [
   {
     title: "Ride Buddy",
     description:
-      "Carpooling for students at Goa College of Engineering. You can offer or find a ride, see it on a map and track location live. Sign-in is handled with Firebase.",
+      "A learning project with React, Redux and Firebase: carpooling for students at Goa College of Engineering. You can offer or find a ride and see it on a map.",
     image: "/images/Ridebuddy.webp",
     imageFallback: "/images/Ridebuddy.png",
     imageAlt: "Ride Buddy — campus carpooling platform interface",
@@ -27,7 +27,7 @@ export const projectsData = [
   {
     title: "OpenCV Projects",
     description:
-      "Small computer vision experiments with YOLO and MediaPipe: object detection, hand-gesture tracking and face recognition, all running locally in real time.",
+      "Small experiments I did to learn computer vision with YOLO and MediaPipe: object detection, hand tracking and face recognition.",
     image: "/images/opencv.webp",
     imageFallback: "/images/opencv.jpg",
     imageAlt: "OpenCV project showing real-time computer vision detection",
@@ -38,7 +38,7 @@ export const projectsData = [
   {
     title: "Nike Landing Page",
     description:
-      "A close copy of Nike's landing page, built to practise component structure and responsive layouts with Tailwind.",
+      "A copy of Nike's landing page that I made to practise responsive layouts with Tailwind.",
     image: "/images/nike-page.webp",
     imageFallback: "/images/nike-page.png",
     imageAlt: "Nike landing page clone screenshot",

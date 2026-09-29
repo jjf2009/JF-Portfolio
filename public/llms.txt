@@ -12,14 +12,14 @@ Location: Goa, India
 - Takes part in hackathons across Goa (see the list below).
 
 ## Client work
-- [Global Tourist Centre](https://globaltouristcentre.com/): Rebuilt a tourism company's live website in Next.js, with German, French, Russian and Italian versions. Stack: Next.js, React, Tailwind CSS, i18n.
-- [Techjeeva](https://findfund.vercel.app/): One place to find Indian government funding schemes for startups, filterable by sector and eligibility. Built for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship). Stack: React, Tailwind CSS, Google Script API. Source: https://github.com/jjf2009/Techjeeva-
+- [Global Tourist Centre](https://globaltouristcentre.com/): Client project. He worked on moving a tourism company's website to Next.js and learned how to add German, French, Russian and Italian versions. Stack: Next.js, React, Tailwind CSS, i18n.
+- [Techjeeva](https://findfund.vercel.app/): Client project for FIIRE Forum (Forum for Innovation, Incubation, Research and Entrepreneurship): a simple page listing Indian government funding schemes for startups, with filters for sector and eligibility. Stack: React, Tailwind CSS, Google Script API. Source: https://github.com/jjf2009/Techjeeva-
 
 ## Learning projects
-- [IntentOS](https://github.com/jjf2009/IntentOS): An interface where you describe what you want to get done and it generates a workflow for it, built on Tambo AI's generative UI components. Stack: Next.js, React, Tailwind CSS, Tambo AI.
-- [Ride Buddy](https://github.com/jjf2009/RideBuddy_Forntend): Campus carpooling platform for Goa College of Engineering students with live location, Firebase authentication and route maps. Stack: React, Redux, Firebase, Leaflet.
-- [OpenCV Projects](https://github.com/jjf2009/OpenCV_Projects): Real-time computer vision tools — object detection, hand-gesture tracking and face recognition — running locally. Stack: Python, OpenCV, MediaPipe, YOLO.
-- [Nike Landing Page](https://nike-landing-lac.vercel.app/): Responsive, pixel-accurate landing page clone. Stack: React, Tailwind CSS, Vite.
+- [IntentOS](https://github.com/jjf2009/IntentOS): An experiment with Tambo AI's generative UI; you describe what you want to do and it tries to put together a workflow. Stack: Next.js, React, Tailwind CSS, Tambo AI.
+- [Ride Buddy](https://github.com/jjf2009/RideBuddy_Forntend): Learning project: carpooling for Goa College of Engineering students, where you can offer or find a ride and see it on a map. Stack: React, Redux, Firebase, Leaflet.
+- [OpenCV Projects](https://github.com/jjf2009/OpenCV_Projects): Small experiments to learn computer vision: object detection, hand tracking and face recognition. Stack: Python, OpenCV, MediaPipe, YOLO.
+- [Nike Landing Page](https://nike-landing-lac.vercel.app/): A copy of Nike's landing page made to practise responsive layouts. Stack: React, Tailwind CSS, Vite.
 
 ## Experience
 - Freelance web developer, self-employed (Dec 2025 – present): worked on the two client websites above while learning.

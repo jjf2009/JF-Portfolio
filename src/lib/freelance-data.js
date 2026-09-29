@@ -1,9 +1,9 @@
 export const freelanceData = [
     {
-        title: "Global Tourist Centre Website Rebuild",
+        title: "Global Tourist Centre website",
         shortTitle: "Global Tourist Centre",
         description:
-            "Rebuilt a tourism company's live website in Next.js, with German, French, Russian and Italian versions.",
+            "I worked on moving a tourism company's website to Next.js, and learned how to add German, French, Russian and Italian versions of it.",
         image: "/images/gtc.webp",
         imageFallback: "/images/gtc.png",
         imageAlt: "Global Tourist Centre tourism website interface",
@@ -15,7 +15,7 @@ export const freelanceData = [
     title: "Techjeeva",
     shortTitle: "Techjeeva (FIIRE Forum)",
     description:
-      "One place to find Indian government funding schemes for startups, filterable by sector and eligibility. Built for FIIRE Forum.",
+      "I made this for FIIRE Forum: a simple page that lists Indian government funding schemes for startups, with filters for sector and eligibility.",
     image: "/images/techjeeva.webp",
     imageFallback: "/images/techjeeva.png",
     imageAlt: "Techjeeva — government funding portal screenshot",
