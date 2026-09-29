@@ -1,6 +1,6 @@
 # Jared Furtado
 
-> Jared Furtado is a full stack developer based in Goa, India. He specialises in the MERN stack (MongoDB, Express, React, Node.js) and Next.js, builds production websites and web applications for clients as a freelancer, and is a student at Goa College of Engineering. He is currently learning DevOps through the 100xDevs cohort, is interested in entrepreneurship (no venture yet), and regularly takes part in hackathons and tech events in Goa. He is available for freelance projects and part-time roles, remotely and worldwide.
+> Jared Furtado is an engineering student at Goa College of Engineering in Goa, India. He builds websites and web apps with React, Next.js and Node.js, has delivered client projects including Global Tourist Centre and Techjeeva, is learning DevOps through the 100xDevs cohort, and has taken part in eight hackathons in Goa. He is interested in entrepreneurship but has not started a venture yet.
 
 Website: https://jaredfurtado.tech/
 Email: jaredfurtadowork@gmail.com
@@ -9,12 +9,7 @@ Location: Goa, India (works remotely worldwide)
 ## Now
 - Learning DevOps through the 100xDevs cohort (https://100xdevs.com/) and applying it to his own projects.
 - Interested in entrepreneurship; has not started a venture yet and is learning the business side through client work, a sales internship and events.
-- Regularly attends and competes in hackathons and tech events, e.g. the Build with AI 2026 hackathon in Goa with Google Developer Groups Goa (certificate of participation).
-
-## Services
-- Full stack web applications: end-to-end MERN and Next.js builds — data model, API, authentication and a fast, responsive interface.
-- Website rebuilds & modernisation: migrating live sites to modern stacks with better performance, multilingual support and conversion-focused UX.
-- Technical SEO & discoverability: structured data, Open Graph, sitemaps and crawlability.
+- Takes part in hackathons across Goa (see the list below).
 
 ## Client work
 - [Global Tourist Centre](https://globaltouristcentre.com/): Rebuilt a tourism company's live website in Next.js, with German, French, Russian and Italian versions. Stack: Next.js, React, Tailwind CSS, i18n.
@@ -30,6 +25,16 @@ Location: Goa, India (works remotely worldwide)
 - Freelance Web Developer, self-employed (Dec 2025 – present): client projects above; SEO implementation (schema markup, Open Graph, robots.txt, XML sitemaps).
 - Sales Intern, Avyott, North Goa (Dec 2025 – Jan 2026): B2B outreach for a text AI agent product; generated two qualified leads.
 - Event Coordinator, GEC Coders Club, Goa College of Engineering (Jul 2025 – present): runs technical workshops and coding competitions and mentors junior students.
+
+## Hackathons
+- Orix Hackathon 2026, hosted by McLaren Strategic Solutions (team received trophies and certificates of achievement)
+- Build with AI Hackathon 2026 (AgriTech), organised by GDG Goa
+- PCCE Hackathon 2026
+- Goa University Hackathon 2025
+- Goa Police Hackathon 2025
+- AIEM Hackathon 2024
+- InternSpirit Hackathon 2024
+- NIT Goa Hackathon 2024
 
 ## Skills
 JavaScript, React, Next.js, Node.js, Express.js, MongoDB, Prisma, Supabase, Redux, Tailwind CSS, REST APIs, i18n, Python, OpenCV, retrieval-augmented generation (RAG).

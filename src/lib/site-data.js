@@ -7,11 +7,9 @@ export const profile = {
   name: "Jared Furtado",
   givenName: "Jared",
   familyName: "Furtado",
-  jobTitle: "Full Stack Developer",
-  tagline: "Full Stack Developer in Goa, India",
+  tagline: "Portfolio",
   summary:
-    "Jared Furtado is a full stack developer based in Goa, India, specialising in the MERN stack (MongoDB, Express, React, Node.js) and Next.js. He builds production web applications for clients, is currently learning DevOps through 100xDevs, and is a student at Goa College of Engineering with a strong interest in entrepreneurship.",
-  availability: "Available for freelance & part-time work",
+    "Jared Furtado is an engineering student at Goa College of Engineering in Goa, India. He builds websites and web apps with React, Next.js and Node.js, has delivered client projects including Global Tourist Centre and Techjeeva, is learning DevOps through 100xDevs, and takes part in hackathons across Goa.",
   email: "jaredfurtadowork@gmail.com",
   locality: "Goa",
   region: "Goa",
@@ -26,21 +24,6 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/jared-furtado/",
   },
 }
-
-export const services = [
-  {
-    title: "Full stack web applications",
-    description: "End-to-end MERN and Next.js builds — data model, API, authentication and a fast, responsive interface.",
-  },
-  {
-    title: "Website rebuilds & modernisation",
-    description: "Migrating live sites to modern stacks with better performance, multilingual support and conversion-focused UX.",
-  },
-  {
-    title: "Technical SEO & discoverability",
-    description: "Structured data, Open Graph, sitemaps and crawlability so search engines and AI assistants understand your site.",
-  },
-]
 
 // What I'm focused on right now (rendered in the "Now" section).
 export const now = [
@@ -59,7 +42,7 @@ export const now = [
   {
     key: "events",
     title: "Going to hackathons",
-    description: "I try to make it to every hackathon and meetup in Goa that I can.",
-    link: { href: "#photos", text: "Events" },
+    description: "Eight so far, all in Goa. I try to make it to every one I can.",
+    link: { href: "#photos", text: "See the list" },
   },
 ]

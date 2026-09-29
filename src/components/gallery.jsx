@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
-import { galleryData } from "../lib/gallery-data"
+import { galleryData, hackathons } from "../lib/gallery-data"
 import Section from "./section"
 
 // Deterministic formatting (no locale APIs) so server and client render identical HTML.
@@ -49,7 +49,19 @@ export default function Gallery() {
   const current = active !== null ? galleryData[active] : null
 
   return (
-    <Section id="photos" title="Events">
+    <Section id="photos" title="Hackathons">
+      <ul className="mb-10 max-w-[38rem] divide-y divide-border border-y border-border" role="list">
+        {hackathons.map((h) => (
+          <li key={h.name + h.year} className="flex items-baseline justify-between gap-6 py-2.5">
+            <span className="text-foreground">
+              {h.name}
+              {h.organiser && <span className="text-muted-foreground"> · {h.organiser}</span>}
+            </span>
+            <span className="font-mono text-xs text-muted-foreground">{h.year}</span>
+          </li>
+        ))}
+      </ul>
+
       <ul className="columns-1 gap-5 sm:columns-2 [&>li]:mb-6" role="list">
         {galleryData.map((item, i) => (
           <li key={item.src} className="break-inside-avoid">

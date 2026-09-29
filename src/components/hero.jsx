@@ -6,8 +6,7 @@ export default function Hero() {
       <div className="grid gap-10 md:grid-cols-[1fr_220px] md:gap-16">
         <div className="max-w-[38rem]">
           <h1 id="hero-heading" className="font-serif text-5xl leading-[1.05] tracking-tight text-foreground md:text-6xl">
-            Jared Furtado{" "}
-            <span className="mt-2 block text-2xl italic tracking-normal text-muted-foreground md:text-3xl">Full Stack Developer in Goa, India</span>
+            Jared Furtado
           </h1>
 
           <div className="mt-8 space-y-4 text-[1.0625rem] leading-relaxed text-foreground/85">
@@ -15,7 +14,6 @@ export default function Hero() {
               I build websites and web apps with React, Next.js and Node.js. Engineering student at Goa College of Engineering, currently
               learning DevOps through 100xDevs.
             </p>
-            <p>Available for freelance and part-time work.</p>
           </div>
 
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm" role="list">
